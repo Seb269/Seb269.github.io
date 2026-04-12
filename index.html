@@ -1,66 +1,112 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import * as XLSX from "xlsx";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function Spelbibliotek() {
   const [games, setGames] = useState([]);
-  const [newGame, setNewGame] = useState("");
+  const [query, setQuery] = useState("");
+  const [selectedConsole, setSelectedConsole] = useState("all");
 
-  // Load from localStorage
   useEffect(() => {
     const saved = localStorage.getItem("games");
-    if (saved) {
-      setGames(JSON.parse(saved));
-    }
+    if (saved) setGames(JSON.parse(saved));
   }, []);
 
-  // Save to localStorage
   useEffect(() => {
     localStorage.setItem("games", JSON.stringify(games));
   }, [games]);
 
-  const addGame = () => {
-    if (!newGame.trim()) return;
-    setGames([...games, newGame.trim()]);
-    setNewGame("");
+  const handleFileUpload = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      const data = new Uint8Array(evt.target.result);
+      const workbook = XLSX.read(data, { type: "array" });
+
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const json = XLSX.utils.sheet_to_json(sheet);
+
+      setGames(json);
+    };
+
+    reader.readAsArrayBuffer(file);
   };
 
-  const removeGame = (index) => {
-    const updated = games.filter((_, i) => i !== index);
-    setGames(updated);
-  };
+  const consoles = useMemo(() => {
+    const set = new Set(games.map(g => g.Console).filter(Boolean));
+    return ["all", ...Array.from(set)];
+  }, [games]);
+
+  const filteredGames = useMemo(() => {
+    return games.filter(g => {
+      const name = (g.Games || "").toLowerCase();
+      const matchesSearch = name.includes(query.toLowerCase());
+      const matchesConsole = selectedConsole === "all" || g.Console === selectedConsole;
+      return matchesSearch && matchesConsole;
+    });
+  }, [games, query, selectedConsole]);
 
   return (
-    <div className="min-h-screen p-6 bg-gray-100 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-6">Mitt Spelbibliotek</h1>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white p-6">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold mb-2">🎮 Mitt Spelbibliotek</h1>
+        <p className="text-gray-400 mb-6">Din samling av spel – snyggt organiserad</p>
 
-      <div className="flex gap-2 mb-6 w-full max-w-md">
-        <Input
-          value={newGame}
-          onChange={(e) => setNewGame(e.target.value)}
-          placeholder="Lägg till ett spel..."
-        />
-        <Button onClick={addGame}>Lägg till</Button>
-      </div>
+        {/* Upload */}
+        <div className="mb-6 flex gap-3 items-center">
+          <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload} />
+        </div>
 
-      <div className="w-full max-w-md space-y-3">
-        {games.length === 0 && (
-          <p className="text-gray-500">Inga spel tillagda ännu.</p>
-        )}
+        {/* Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <Card><CardContent className="p-4">🎮 Totala spel: {games.length}</CardContent></Card>
+          <Card><CardContent className="p-4">🕹️ Plattformar: {consoles.length - 1}</CardContent></Card>
+          <Card><CardContent className="p-4">📚 Visas nu: {filteredGames.length}</CardContent></Card>
+        </div>
 
-        {games.map((game, index) => (
-          <Card key={index} className="flex justify-between items-center">
-            <CardContent className="p-4 flex justify-between w-full">
-              <span>{game}</span>
-              <Button variant="destructive" onClick={() => removeGame(index)}>
-                Ta bort
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+        {/* Filters */}
+        <div className="flex flex-col md:flex-row gap-3 mb-6">
+          <Input
+            placeholder="Sök spel..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+
+          <select
+            className="p-2 rounded bg-gray-800 border border-gray-700"
+            value={selectedConsole}
+            onChange={(e) => setSelectedConsole(e.target.value)}
+          >
+            {consoles.map(c => (
+              <option key={c} value={c}>{c}</option>
+            ))}
+          </select>
+        </div>
+
+        {/* Game list */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {filteredGames.map((game, i) => (
+            <Card key={i} className="bg-gray-800 border-gray-700">
+              <CardContent className="p-4">
+                <div className="text-xl font-semibold">{game.Games}</div>
+                <div className="text-sm text-gray-400">
+                  {game.Console} • {game.Year}
+                </div>
+                <div className="text-xs mt-2 text-gray-500">
+                  {game.Developer} / {game.Publisher}
+                </div>
+                <div className="text-xs mt-1">
+                  📦 Box: {game.Box} | 📘 Manual: {game.Manual}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
-
