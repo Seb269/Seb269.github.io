@@ -1,1 +1,60 @@
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* KORT */
+.card {
+  background: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* BILD */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* TEXT */
+.card h3 {
+  font-size: 14px;
+  margin: 10px;
+}
+
+/* STATUS */
+.status {
+  font-size: 12px;
+  margin: 10px;
+  color: #aaa;
+}
+
+.status.playing {
+  color: #4caf50;
+}
+
+.status.backlog {
+  color: #ff9800;
+}
