@@ -1,10 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Mitt spel</title>
-</head>
-<body>
-  <h1>Välkommen till mitt spel 🎮</h1>
-  <p>Här kommer mina spel att finnas!</p>
-</body>
-</html>
+import { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+export default function Spelbibliotek() {
+  const [games, setGames] = useState([]);
+  const [newGame, setNewGame] = useState("");
+
+  // Load from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem("games");
+    if (saved) {
+      setGames(JSON.parse(saved));
+    }
+  }, []);
+
+  // Save to localStorage
+  useEffect(() => {
+    localStorage.setItem("games", JSON.stringify(games));
+  }, [games]);
+
+  const addGame = () => {
+    if (!newGame.trim()) return;
+    setGames([...games, newGame.trim()]);
+    setNewGame("");
+  };
+
+  const removeGame = (index) => {
+    const updated = games.filter((_, i) => i !== index);
+    setGames(updated);
+  };
+
+  return (
+    <div className="min-h-screen p-6 bg-gray-100 flex flex-col items-center">
+      <h1 className="text-3xl font-bold mb-6">Mitt Spelbibliotek</h1>
+
+      <div className="flex gap-2 mb-6 w-full max-w-md">
+        <Input
+          value={newGame}
+          onChange={(e) => setNewGame(e.target.value)}
+          placeholder="Lägg till ett spel..."
+        />
+        <Button onClick={addGame}>Lägg till</Button>
+      </div>
+
+      <div className="w-full max-w-md space-y-3">
+        {games.length === 0 && (
+          <p className="text-gray-500">Inga spel tillagda ännu.</p>
+        )}
+
+        {games.map((game, index) => (
+          <Card key={index} className="flex justify-between items-center">
+            <CardContent className="p-4 flex justify-between w-full">
+              <span>{game}</span>
+              <Button variant="destructive" onClick={() => removeGame(index)}>
+                Ta bort
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
+
