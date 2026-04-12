@@ -25,3 +25,45 @@ games.forEach(game => {
 
   grid.appendChild(card);
 });
+
+
+fetch("games.csv")
+  .then(response => response.text())
+  .then(data => {
+    const rows = data.split("\n");
+
+    const games = rows.slice(1).map(row => {
+      const cols = row.split(",");
+
+      return {
+        title: cols[0],
+        console: cols[1],
+        edition: cols[2],
+        developer: cols[3],
+        publisher: cols[4],
+        year: cols[5],
+        new: cols[6],
+        box: cols[7],
+        manual: cols[8]
+      };
+    });
+
+    renderGames(games);
+  });
+
+function renderGames(games) {
+  const grid = document.getElementById("grid");
+
+  games.forEach(game => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+      <h3>${game.title}</h3>
+      <p>${game.console}</p>
+      <p>${game.year}</p>
+    `;
+
+    grid.appendChild(card);
+  });
+}
