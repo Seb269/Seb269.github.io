@@ -110,3 +110,113 @@ export default function Spelbibliotek() {
     </div>
   );
 }
+
+import { useEffect, useMemo, useState } from "react";
+import * as XLSX from "xlsx";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+
+export default function Spelbibliotek() {
+  const [games, setGames] = useState([]);
+  const [query, setQuery] = useState("");
+  const [selectedConsole, setSelectedConsole] = useState("all");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("games");
+    if (saved) setGames(JSON.parse(saved));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("games", JSON.stringify(games));
+  }, [games]);
+
+  const handleFileUpload = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (evt) => {
+      const data = new Uint8Array(evt.target.result);
+      const workbook = XLSX.read(data, { type: "array" });
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const json = XLSX.utils.sheet_to_json(sheet);
+      setGames(json);
+    };
+    reader.readAsArrayBuffer(file);
+  };
+
+  const consoles = useMemo(() => {
+    const set = new Set(games.map(g => g.Console).filter(Boolean));
+    return ["all", ...Array.from(set)];
+  }, [games]);
+
+  const filteredGames = useMemo(() => {
+    return games.filter(g => {
+      const name = (g.Games || "").toLowerCase();
+      const matchesSearch = name.includes(query.toLowerCase());
+      const matchesConsole = selectedConsole === "all" || g.Console === selectedConsole;
+      return matchesSearch && matchesConsole;
+    });
+  }, [games, query, selectedConsole]);
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Top bar */}
+      <div className="sticky top-0 z-10 bg-black/80 backdrop-blur border-b border-gray-800 p-4">
+        <h1 className="text-3xl font-bold">🎮 Spelbibliotek</h1>
+        <div className="flex flex-col md:flex-row gap-3 mt-3">
+          <Input
+            placeholder="Sök spel..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+
+          <select
+            className="p-2 rounded bg-gray-900 border border-gray-700"
+            value={selectedConsole}
+            onChange={(e) => setSelectedConsole(e.target.value)}
+          >
+            {consoles.map(c => (
+              <option key={c} value={c}>{c}</option>
+            ))}
+          </select>
+
+          <input type="file" accept=".xlsx,.xls" onChange={handleFileUpload} />
+        </div>
+
+        <div className="text-sm text-gray-400 mt-2">
+          Totalt: {games.length} • Visar: {filteredGames.length}
+        </div>
+      </div>
+
+      {/* GRID like MyAnimeList */}
+      <div className="p-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {filteredGames.map((game, i) => (
+            <div key={i} className="group">
+              <Card className="bg-gray-900 border-gray-800 overflow-hidden hover:scale-105 transition-transform duration-200">
+                <div className="aspect-[3/4] bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center">
+                  <div className="text-center p-2">
+                    <div className="text-xs text-gray-400">{game.Console}</div>
+                    <div className="font-semibold text-sm mt-1 line-clamp-2">
+                      {game.Games}
+                    </div>
+                  </div>
+                </div>
+
+                <CardContent className="p-2">
+                  <div className="text-xs text-gray-400">
+                    {game.Year}
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    {game.Developer}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
