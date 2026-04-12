@@ -1,7 +1,6 @@
-
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #0f0f0f;
   color: white;
 }
@@ -11,19 +10,17 @@ h1 {
   padding: 20px;
 }
 
-/* GRID */
-.grid {
+#grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
+  gap: 15px;
   padding: 20px;
 }
 
-/* KORT */
 .card {
   background: #1c1c1c;
   border-radius: 10px;
-  overflow: hidden;
+  padding: 10px;
   transition: 0.2s;
 }
 
@@ -31,30 +28,7 @@ h1 {
   transform: scale(1.05);
 }
 
-/* BILD */
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-/* TEXT */
-.card h3 {
-  font-size: 14px;
-  margin: 10px;
-}
-
-/* STATUS */
-.status {
+.console {
   font-size: 12px;
-  margin: 10px;
   color: #aaa;
-}
-
-.status.playing {
-  color: #4caf50;
-}
-
-.status.backlog {
-  color: #ff9800;
 }
