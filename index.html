@@ -1,7 +1,10 @@
-<body>
-  <h1>Mina spel</h1>
+<div id="output"></div>
 
-  <div id="grid"></div>
+<script>
+const csv = `DIN CSV HÄR`;
 
-  <script src="script.js"></script>
-</body>
+const rows = csv.split("\n");
+
+document.getElementById("output").innerHTML =
+  rows.map(r => `<p>${r}</p>`).join("");
+</script>
