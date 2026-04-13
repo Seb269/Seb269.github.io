@@ -144,3 +144,15 @@ function renderGames(games) {
 
 const games = parseCSV(csvData);
 renderGames(games);
+
+
+
+function parseCSV(text) {
+  return text
+    .trim()
+    .split("\n")
+    .map(row => row.split(","));
+}
+
+
+
