@@ -1,37 +1,21 @@
 let allGames = [];
 const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const RAWG_KEY = "7746f81d5f174c5f9680d649b81cd37a";
 
-// 1. Ladda CSV
+// LOAD CSV
 Papa.parse("games_clean.csv", {
   download: true,
   header: true,
   skipEmptyLines: true,
-  complete: async function(result) {
+  complete: function(result) {
     allGames = result.data;
-
-    // (valfritt) hämta bilder
-    for (let game of allGames) {
-      game.image = await fetchImage(game.Games);
-    }
-
     render(allGames);
   }
 });
 
-// 2. Render funktion
-function render(data) {
-  grid.innerHTML = data.map(game => `
-    <div class="card">
-      <img src="${game.image || 'https://via.placeholder.com/300x400'}" />
-      <div class="title">${game.Games || ""}</div>
-      <div class="meta">${game.Console || ""}</div>
-      <div class="meta">${game.Year || ""} • ${game.Developer || ""}</div>
-    </div>
-  `).join("");
-}
-
-// 3. Search
-document.getElementById("search").addEventListener("input", (e) => {
+// SEARCH
+search.addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
 
   const filtered = allGames.filter(game =>
@@ -43,14 +27,68 @@ document.getElementById("search").addEventListener("input", (e) => {
   render(filtered);
 });
 
-// 4. Hämta bild från RAWG
+// RENDER
+function render(data) {
+  grid.innerHTML = "";
+
+  data.forEach(async (game) => {
+    const image = await fetchImage(game.Games);
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${image || 'https://via.placeholder.com/300x400'}">
+      <div class="title">${game.Games || ""}</div>
+      <div class="meta">${game.Console || ""}</div>
+      <div class="meta">${game.Year || ""} • ${game.Developer || ""}</div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+  data.forEach(async (game) => {
+    const image = await fetchImage(game.Games);
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${image || 'https://via.placeholder.com/300x400'}">
+      <div class="title">${game.Games || ""}</div>
+      <div class="meta">${game.Console || ""}</div>
+      <div class="meta">${game.Year || ""} • ${game.Developer || ""}</div>
+    `;
+
+    grid.appendChild(card);
+  });
+}
+
+// RAWG IMAGE FETCH (optional)
 async function fetchImage(name) {
   try {
-    const res = await fetch(`https://api.rawg.io/api/games?key=YOUR_API_KEY&search=${name}`);
-    const data = await res.json();
+    const res = await fetch(
+      `https://api.rawg.io/api/games?key=YOUR_API_KEY&search=${encodeURIComponent(name)}`
+    );
 
+    const data = await res.json();
     return data.results?.[0]?.background_image || null;
+
   } catch (e) {
+    return null;
+  }
+}
+async function fetchImage(name) {
+  try {
+    const res = await fetch(
+      `https://api.rawg.io/api/games?key=${RAWG_KEY}&search=${encodeURIComponent(name)}`
+    );
+
+    const data = await res.json();
+    return data.results?.[0]?.background_image || null;
+
+  } catch (err) {
     return null;
   }
 }
