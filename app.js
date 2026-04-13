@@ -31,3 +31,16 @@ document.getElementById("search").addEventListener("input", (e) => {
 
   render(filtered);
 });
+
+document.getElementById("search").addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+
+  const filtered = allGames.filter(game =>
+    (game.Games || "").toLowerCase().includes(value) ||
+    (game.Console || "").toLowerCase().includes(value) ||
+    (game.Developer || "").toLowerCase().includes(value)
+  );
+
+  render(filtered);
+});
+
