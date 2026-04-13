@@ -154,5 +154,9 @@ function parseCSV(text) {
     .map(row => row.split(","));
 }
 
-
+Papa.parse("games_clean.csv", {
+  download: true,
+  header: true,
+  complete: (result) => console.log(result.data)
+});
 
