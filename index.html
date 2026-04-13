@@ -14,3 +14,24 @@
 
 </body>
 </html>
+
+
+<div id="games"></div>
+
+<script>
+fetch("games.csv")
+  .then(res => res.text())
+  .then(text => {
+    const rows = text.trim().split("\n").slice(1); // skip header
+
+    const html = rows.map(row => {
+      const cols = row.split(",");
+      return `<div>
+        <b>${cols[0]}</b> (${cols[2]})
+      </div>`;
+    }).join("");
+
+    document.getElementById("games").innerHTML = html;
+  });
+</script>
+
