@@ -12,11 +12,6 @@ Papa.parse("games_clean.csv", {
 });
 
 function render(data) {
-  if (!data || data.length === 0) {
-    grid.innerHTML = "<p>No games found</p>";
-    return;
-  }
-
   grid.innerHTML = data.map(game => `
     <div class="card">
       <div class="title">${game.Games || ""}</div>
@@ -26,7 +21,6 @@ function render(data) {
   `).join("");
 }
 
-// search
 document.getElementById("search").addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
 
