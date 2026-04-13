@@ -1,10 +1,5 @@
 let allGames = [];
 const grid = document.getElementById("grid");
-const search = document.getElementById("search");
-const RAWG_KEY = "7746f81d5f174c5f9680d649b81cd37a";
-
-let allGames = [];
-const grid = document.getElementById("grid");
 
 // 🔹 Ladda CSV
 Papa.parse("games_clean.csv", {
@@ -15,7 +10,7 @@ Papa.parse("games_clean.csv", {
   complete: async function(result) {
     allGames = result.data;
 
-    // 🔥 Hämta bilder från RAWG
+    // 🔥 Hämta bilder
     await Promise.all(
       allGames.map(async (game) => {
         game.image = await fetchImage(game.Games);
@@ -23,6 +18,19 @@ Papa.parse("games_clean.csv", {
     );
 
     render(allGames);
+
+    // 🔍 Search (läggs EFTER data laddats)
+    document.getElementById("search").addEventListener("input", (e) => {
+      const value = e.target.value.toLowerCase();
+
+      const filtered = allGames.filter(game =>
+        (game.Games || "").toLowerCase().includes(value) ||
+        (game.Console || "").toLowerCase().includes(value) ||
+        (game.Developer || "").toLowerCase().includes(value)
+      );
+
+      render(filtered);
+    });
   }
 });
 
@@ -43,24 +51,11 @@ function render(data) {
   `).join("");
 }
 
-// 🔹 Search
-document.getElementById("search").addEventListener("input", (e) => {
-  const value = e.target.value.toLowerCase();
-
-  const filtered = allGames.filter(game =>
-    (game.Games || "").toLowerCase().includes(value) ||
-    (game.Console || "").toLowerCase().includes(value) ||
-    (game.Developer || "").toLowerCase().includes(value)
-  );
-
-  render(filtered);
-});
-
-// 🔹 Hämta bild (RAWG API)
+// 🔹 RAWG bild
 async function fetchImage(name) {
   try {
     const res = await fetch(
-      `https://api.rawg.io/api/games?key=66968a72697f470d8d38f30e466f148c&search=${encodeURIComponent(name)}`
+      `https://api.rawg.io/api/games?key=7746f81d5f174c5f9680d649b81cd37a&search=${encodeURIComponent(name)}`
     );
 
     const data = await res.json();
