@@ -12,6 +12,11 @@ Papa.parse("games_clean.csv", {
 function render(data) {
   const grid = document.getElementById("grid");
 
+  if (data.length === 0) {
+    grid.innerHTML = "<p>No games found</p>";
+    return;
+  }
+
   grid.innerHTML = data.map(game => `
     <div class="card">
       <div class="title">${game.Games}</div>
@@ -22,16 +27,7 @@ function render(data) {
 }
 
 
-document.getElementById("search").addEventListener("input", (e) => {
-  const value = e.target.value.toLowerCase();
-
-  const filtered = allGames.filter(g =>
-    (g.Games || "").toLowerCase().includes(value)
-  );
-
-  render(filtered);
-});
-
+// 🔎 SEARCH (ENDA versionen)
 document.getElementById("search").addEventListener("input", (e) => {
   const value = e.target.value.toLowerCase();
 
@@ -43,4 +39,3 @@ document.getElementById("search").addEventListener("input", (e) => {
 
   render(filtered);
 });
-
