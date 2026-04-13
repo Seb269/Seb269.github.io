@@ -20,3 +20,14 @@ function render(data) {
     </div>
   `).join("");
 }
+
+
+document.getElementById("search").addEventListener("input", (e) => {
+  const value = e.target.value.toLowerCase();
+
+  const filtered = allGames.filter(g =>
+    (g.Games || "").toLowerCase().includes(value)
+  );
+
+  render(filtered);
+});
