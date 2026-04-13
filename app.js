@@ -82,13 +82,13 @@ async function fetchImage(name) {
 async function fetchImage(name) {
   try {
     const res = await fetch(
-      `https://api.rawg.io/api/games?key=${RAWG_KEY}&search=${encodeURIComponent(name)}`
+      `https://api.rawg.io/api/games?key=66968a72697f470d8d38f30e466f148c&search=${encodeURIComponent(name)}&page_size=1`
     );
 
     const data = await res.json();
-    return data.results?.[0]?.background_image || null;
 
-  } catch (err) {
+    return data.results?.[0]?.background_image || null;
+  } catch (e) {
     return null;
   }
 }
