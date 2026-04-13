@@ -1,37 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>Game Collection</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>My Game List</h1>
+<h1>My Game Collection</h1>
+
+<input id="search" placeholder="Search games...">
 
 <div id="grid"></div>
 
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="app.js"></script>
 
 </body>
 </html>
 
 
-<div id="games"></div>
 
-<script>
-fetch("games.csv")
-  .then(res => res.text())
-  .then(text => {
-    const rows = text.trim().split("\n").slice(1); // skip header
-
-    const html = rows.map(row => {
-      const cols = row.split(",");
-      return `<div>
-        <b>${cols[0]}</b> (${cols[2]})
-      </div>`;
-    }).join("");
-
-    document.getElementById("games").innerHTML = html;
-  });
-</script>
 
