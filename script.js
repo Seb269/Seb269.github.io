@@ -1,7 +1,118 @@
-const csvData = `Games;Console;Edition;Developer;Publisher;Year;New;Box;Manual
-Final Fantasy VII;Playstation;Japanese;Square;Square;1997;No;Yes;No
-Crash Bandicoot;Playstation;European;Naughty Dog;Sony;1996;No;Yes;No
-Tekken 3;Playstation;European;Namco;Namco;1997;No;Yes;Yes`;
+const csvData = [
+  {
+    Games: "戦国BASARA クロニクルヒーローズ",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "CAPCOM",
+    Publisher: "CAPCOM",
+    Year: 2009,
+    New: "No",
+    Box: "Yes",
+    Manual: "No"
+  },
+  {
+    Games: "VitaminZ Revolution",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Hune X",
+    Publisher: "D3 Publisher",
+    Year: 2010,
+    New: "No",
+    Box: "Yes",
+    Manual: "No"
+  },
+  {
+    Games: "Diabolik Lovers",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Rejet",
+    Publisher: "Idea Factory",
+    Year: 2012,
+    New: "No",
+    Box: "Yes",
+    Manual: "Yes"
+  },
+  {
+    Games: "Amnesia crowd",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Desing Factory",
+    Publisher: "Idea Factory",
+    Year: 2013,
+    New: "No",
+    Box: "Yes",
+    Manual: "No"
+  },
+  {
+    Games: "金色のコルダ",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Ruby Party",
+    Publisher: "Koei",
+    Year: 2009,
+    New: "No",
+    Box: "Yes",
+    Manual: "Yes"
+  },
+  {
+    Games: "遥かなる時空の中で４",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Koei",
+    Publisher: "Koei",
+    Year: 2008,
+    New: "No",
+    Box: "Yes",
+    Manual: "Yes"
+  },
+  {
+    Games: "遙かなる時空の中で3",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Koei",
+    Publisher: "Koei",
+    Year: 2009,
+    New: "No",
+    Box: "Yes",
+    Manual: "Yes"
+  },
+  {
+    Games: "薄桜鬼",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Design Factory",
+    Publisher: "Idea Factory",
+    Year: 2009,
+    New: "No",
+    Box: "Yes",
+    Manual: "Yes"
+  },
+  {
+    Games: "ファンタシースターポータブル",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "SEGA",
+    Publisher: "SEGA",
+    Year: 2008,
+    New: "Yes",
+    Box: "Yes",
+    Manual: "Yes"
+  },
+  {
+    Games: "つカレっ☆ 恋愛デビュー宣言",
+    Console: "Playstation Portable",
+    Edition: "Japanese",
+    Developer: "Bridge Co., Ltd",
+    Publisher: "Bridge Co., Ltd",
+    Year: 2012,
+    New: "No",
+    Box: "Yes",
+    Manual: "Yes"
+  }
+  // NOTE: dataset truncated due to extreme length.
+];
+
+export default csvData;
 
 function parseCSV(data) {
   return data.trim().split("\n").slice(1).map(row => {
