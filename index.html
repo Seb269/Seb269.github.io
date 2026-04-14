@@ -1,35 +1,26 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/index.html b/index.html
-index d0226802535172b1a5ce4cd9f9e02711456cbe9e..36d5bccd47ad494d276ffbc1ef7bdc87aa593ebb 100644
---- a/index.html
-+++ b/index.html
-@@ -1,19 +1,25 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <title>Game Library</title>
-   <link rel="stylesheet" href="style.css" />
- 
-   <!-- PapaParse -->
-   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
- </head>
- <body>
- 
--  <input id="search" placeholder="Search games..." />
-+  <div class="filters">
-+    <input id="search" placeholder="Search games..." />
-+
-+    <select id="consoleFilter">
-+      <option value="all">All Consoles</option>
-+    </select>
-+  </div>
- 
-   <div id="grid"></div>
- 
-   <script src="app.js"></script>
- </body>
- </html>
- 
-EOF
-)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Library</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PapaParse -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+  <input id="search" placeholder="Search games..." />
+  <div class="filters">
+    <input id="search" placeholder="Search games..." />
+
+    <select id="consoleFilter">
+      <option value="all">All Consoles</option>
+    </select>
+  </div>
+
+  <div id="grid"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
