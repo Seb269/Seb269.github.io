@@ -9,10 +9,6 @@ const yearFilter = document.getElementById("yearFilter");
 const regionFilter = document.getElementById("regionFilter");
 const sortFilter = document.getElementById("sortFilter");
 
-const FALLBACK_COVER = "https://via.placeholder.com/300x400?text=No+Cover";
-const coverCache = new Map();
-const pendingCoverLoads = new Map();
-
 // ------------------------
 // LOAD CSV
 // ------------------------
@@ -85,12 +81,19 @@ function applyFilters() {
       (game.Games || "").toLowerCase().includes(searchValue) ||
       (game.Console || "").toLowerCase().includes(searchValue) ||
       (game.Developer || "").toLowerCase().includes(searchValue) ||
+      (game.Publisher || "").toLowerCase().includes(searchValue) ||
       (game.Edition || "").toLowerCase().includes(searchValue);
 
+    const filtered = allGames.filter(game =>
+      (game.Games || "").toLowerCase().includes(value) ||
+      (game.Console || "").toLowerCase().includes(value) ||
+      (game.Developer || "").toLowerCase().includes(value)
+    );
     const matchesConsole = selectedConsole === "all" || (game.Console || "") === selectedConsole;
     const matchesYear = selectedYear === "all" || (game.Year || "") === selectedYear;
     const matchesRegion = selectedRegion === "all" || (game.Edition || "") === selectedRegion;
 
+    render(filtered);
     return matchesSearch && matchesConsole && matchesYear && matchesRegion;
   });
 
@@ -106,16 +109,10 @@ function sortGames(games, sortOption) {
     const yearA = Number.parseInt(a.Year, 10) || 0;
     const yearB = Number.parseInt(b.Year, 10) || 0;
 
-    const filtered = allGames.filter(game =>
-      (game.Games || "").toLowerCase().includes(value) ||
-      (game.Console || "").toLowerCase().includes(value) ||
-      (game.Developer || "").toLowerCase().includes(value)
-    );
     if (sortOption === "title_desc") return -titleCompare;
     if (sortOption === "year_desc") return yearB - yearA || titleCompare;
     if (sortOption === "year_asc") return yearA - yearB || titleCompare;
 
-    render(filtered);
     return titleCompare;
   });
 
@@ -128,6 +125,7 @@ function sortGames(games, sortOption) {
 function render(data) {
   if (!data || data.length === 0) {
     grid.innerHTML = "<p>No games found</p>";
+    grid.innerHTML = "<p class='empty'>No games found</p>";
     return;
   }
 
@@ -142,136 +140,33 @@ function render(data) {
       <div class="title">${game.Games || ""}</div>
       <div class="meta">${game.Console || ""}</div>
       <div class="meta">${game.Year || ""} • ${game.Developer || ""}</div>
+  grid.innerHTML = `
+    <div class="list-header game-row">
+      <div>Title</div>
+      <div>Console</div>
+      <div>Region</div>
+      <div>Developer</div>
+      <div>Publisher</div>
+      <div>Year</div>
+      <div>New</div>
+      <div>Box</div>
+      <div>Manual</div>
     </div>
   `).join("");
-}
-
-// ------------------------
-// IMAGE SYSTEM (KEEP SIMPLE FOR NOW)
-// ------------------------
-function getCover(game) {
-  const name = encodeURIComponent(game.Games || "");
-  return `https://via.placeholder.com/300x400?text=${name}`;
-  grid.innerHTML = data.map((game) => {
-    const gameKey = getGameKey(game);
-
-    return `
-      <div class="card">
-        <img
-          src="${escapeHtml(getCachedCover(game))}"
-          loading="lazy"
-          class="game-cover"
-          data-game-key="${escapeHtml(gameKey)}"
-          alt="${escapeHtml((game.Games || "Unknown game") + " cover art")}" 
-          onerror="this.src='${FALLBACK_COVER}'"
-        />
-
-        <div class="title">${escapeHtml(game.Games || "")}</div>
-        <div class="meta">${escapeHtml(game.Console || "")}</div>
-        <div class="meta">${escapeHtml(game.Year || "")} • ${escapeHtml(game.Developer || "")}</div>
-      </div>
-    `;
-  }).join("");
-
-  loadWikipediaCovers(data);
-}
-
-function getCachedCover(game) {
-  const gameKey = getGameKey(game);
-  return coverCache.get(gameKey) || FALLBACK_COVER;
-}
-
-function getGameKey(game) {
-  return `${(game.Games || "").trim()}|${(game.Console || "").trim()}`;
-}
-
-async function loadWikipediaCovers(games) {
-  for (const game of games) {
-    const gameKey = getGameKey(game);
-
-    if (coverCache.has(gameKey) || pendingCoverLoads.has(gameKey)) {
-      continue;
-    }
-
-    const loadPromise = fetchWikipediaCover(game)
-      .then((coverUrl) => {
-        coverCache.set(gameKey, coverUrl || FALLBACK_COVER);
-        updateCoverElements(gameKey, coverCache.get(gameKey));
-      })
-      .catch(() => {
-        coverCache.set(gameKey, FALLBACK_COVER);
-      })
-      .finally(() => {
-        pendingCoverLoads.delete(gameKey);
-      });
-
-    pendingCoverLoads.set(gameKey, loadPromise);
-  }
-}
-
-function updateCoverElements(gameKey, coverUrl) {
-  const selector = `.game-cover[data-game-key="${cssEscape(gameKey)}"]`;
-  const images = document.querySelectorAll(selector);
-
-  images.forEach((img) => {
-    img.src = coverUrl;
-  });
-}
-
-async function fetchWikipediaCover(game) {
-  const terms = buildWikipediaSearchTerms(game);
-
-  for (const term of terms) {
-    const imageUrl = await fetchCoverFromSearch(term);
-
-    if (imageUrl) {
-      return imageUrl;
-    }
-  }
-
-  return null;
-}
-
-function buildWikipediaSearchTerms(game) {
-  const title = (game.Games || "").trim();
-  const consoleName = (game.Console || "").trim();
-
-  const termSet = new Set([
-    `${title} video game`,
-    `${title} (${consoleName} video game)`,
-    `${title} ${consoleName} video game`,
-    title
-  ].filter(Boolean));
-
-  return Array.from(termSet);
-}
-
-async function fetchCoverFromSearch(searchTerm) {
-  const url = new URL("https://en.wikipedia.org/w/api.php");
-  url.searchParams.set("action", "query");
-  url.searchParams.set("format", "json");
-  url.searchParams.set("origin", "*");
-  url.searchParams.set("generator", "search");
-  url.searchParams.set("gsrsearch", searchTerm);
-  url.searchParams.set("gsrlimit", "1");
-  url.searchParams.set("prop", "pageimages");
-  url.searchParams.set("piprop", "thumbnail");
-  url.searchParams.set("pithumbsize", "500");
-
-  const response = await fetch(url.toString());
-
-  if (!response.ok) {
-    return null;
-  }
-
-  const data = await response.json();
-  const pages = Object.values(data?.query?.pages || {});
-
-  if (pages.length === 0) {
-    return null;
-  }
-
-  return pages[0]?.thumbnail?.source || null;
+    ${data.map((game) => `
+      <article class="game-row">
+        <div class="title-cell" title="${escapeHtml(game.Games || "")}">${escapeHtml(game.Games || "")}</div>
+        <div>${escapeHtml(game.Console || "")}</div>
+        <div>${escapeHtml(game.Edition || "")}</div>
+        <div>${escapeHtml(game.Developer || "")}</div>
+        <div>${escapeHtml(game.Publisher || "")}</div>
+        <div>${escapeHtml(game.Year || "")}</div>
+        <div>${escapeHtml(game.New || "")}</div>
+        <div>${escapeHtml(game.Box || "")}</div>
+        <div>${escapeHtml(game.Manual || "")}</div>
+      </article>
+    `).join("")}
+  `;
 }
 
 function sortYearsDesc(a, b) {
@@ -282,14 +177,12 @@ function localeSort(a, b) {
   return a.localeCompare(b, undefined, { sensitivity: "base", numeric: true });
 }
 
-function cssEscape(value) {
-  if (window.CSS && typeof window.CSS.escape === "function") {
-    return window.CSS.escape(value);
-  }
-
-  return value.replaceAll('"', '\\"');
-}
-
+// ------------------------
+// IMAGE SYSTEM (KEEP SIMPLE FOR NOW)
+// ------------------------
+function getCover(game) {
+  const name = encodeURIComponent(game.Games || "");
+  return `https://via.placeholder.com/300x400?text=${name}`;
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
