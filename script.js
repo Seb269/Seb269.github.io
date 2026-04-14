@@ -47,3 +47,72 @@ Papa.parse("games_clean.csv", {
   complete: (result) => console.log(result.data)
 });
 
+diff --git a/style.css b/style.css
+index 95a981593d0721f75724284e6dfa492f280e0864..0fdbcd04e1110f2f8d5e9c94007c971f8dd08443 100644
+--- a/style.css
++++ b/style.css
+@@ -1,45 +1,62 @@
+ body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 20px;
+   background: #111;
+   color: white;
+ }
+ 
+-#search {
++.filters {
++  display: grid;
++  grid-template-columns: minmax(220px, 1fr) 220px;
++  gap: 12px;
++  margin-bottom: 20px;
++}
++
++#search,
++#consoleFilter {
+   width: 100%;
+   padding: 12px;
+-  margin-bottom: 20px;
+   font-size: 16px;
++  border-radius: 8px;
++  border: 1px solid #333;
++  background: #1d1d1d;
++  color: white;
+ }
+ 
+ #grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+   gap: 15px;
+ }
+ 
+ .card {
+   background: #222;
+   border-radius: 10px;
+   overflow: hidden;
+   padding-bottom: 10px;
+ }
+ 
+ .card img {
+   width: 100%;
+   height: 240px;
+   object-fit: cover;
+   background: #333;
+ }
+ 
+ .title {
+   font-weight: bold;
+   padding: 8px;
+ }
+ 
+ .meta {
+   font-size: 12px;
+   padding: 0 8px;
+   opacity: 0.7;
+ }
++
++@media (max-width: 700px) {
++  .filters {
++    grid-template-columns: 1fr;
++  }
++}
