@@ -24,6 +24,21 @@ index 95a981593d0721f75724284e6dfa492f280e0864..0fdbcd04e1110f2f8d5e9c94007c971f
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #0d1117;
+  --panel: #151b26;
+  --panel-2: #1d2533;
+  --line: #2a3446;
+  --text: #edf2ff;
+  --muted: #9aa8c0;
+  --accent: #2e51a2;
+  --accent-hover: #3a63c4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -56,7 +71,6 @@ body {
   border-bottom: 1px solid var(--line);
 }
 
-#search {
 .search-bar {
   grid-template-columns: 1fr 160px;
 }
@@ -66,6 +80,7 @@ body {
   background: var(--panel-2);
 }
 
+#search {
 #search,
 #toggleFilters,
 #advancedFilters select {
@@ -94,19 +109,35 @@ body {
 }
 
 #grid {
-  padding: 18px 20px 24px;
+  padding: 14px 20px 24px;
+}
+
+.game-row {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
+  grid-template-columns: minmax(230px, 2fr) repeat(8, minmax(100px, 1fr));
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: var(--panel);
+  font-size: 13px;
 }
 
 .card {
   background: #222;
-  background: var(--panel);
   border-radius: 10px;
   overflow: hidden;
-  border: 1px solid var(--line);
   padding-bottom: 10px;
+.list-header {
+  background: #1d2a45;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .card img {
@@ -114,10 +145,14 @@ body {
   height: 240px;
   object-fit: cover;
   background: #333;
-  background: #131a26;
+.game-row div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title {
+.title-cell {
   font-weight: bold;
   padding: 8px;
 }
@@ -126,8 +161,19 @@ body {
   font-size: 12px;
   padding: 0 8px;
   opacity: 0.7;
-  opacity: 0.8;
+.empty {
   color: var(--muted);
+  margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+  #grid {
+    overflow-x: auto;
+  }
+
+  .game-row {
+    min-width: 1080px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -135,4 +181,3 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
