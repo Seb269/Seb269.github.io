@@ -1,51 +1,45 @@
 body {
-  background: #0b0b0b;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #111;
   color: white;
-  font-family: Arial;
-  text-align: center;
-}
-
-h1 {
-  margin-top: 20px;
 }
 
 #search {
-  padding: 10px;
-  width: 300px;
-  margin: 20px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 #grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
-  padding: 20px;
 }
 
 .card {
-  background: #111;
+  background: #222;
   border-radius: 10px;
   overflow: hidden;
-  text-align: left;
+  padding-bottom: 10px;
 }
 
 .card img {
   width: 100%;
-  height: 250px;
+  height: 240px;
   object-fit: cover;
-  background: #222;
+  background: #333;
 }
 
 .title {
   font-weight: bold;
-  padding: 5px;
+  padding: 8px;
 }
 
 .meta {
   font-size: 12px;
-  color: #aaa;
-  padding: 0 5px 5px;
+  padding: 0 8px;
+  opacity: 0.7;
 }
