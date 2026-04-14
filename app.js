@@ -2,6 +2,7 @@ let allGames = [];
 
 const grid = document.getElementById("grid");
 const search = document.getElementById("search");
+const consoleFilter = document.getElementById("consoleFilter");
 
 // ------------------------
 // LOAD CSV
@@ -16,24 +17,56 @@ Papa.parse("games_clean.csv", {
 
     render(allGames);
     setupSearch();
+    setupConsoleFilter();
+    setupFilters();
+    applyFilters();
   }
 });
 
 // ------------------------
 // SEARCH
+// FILTER CONTROLS
 // ------------------------
 function setupSearch() {
   search.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase();
+function setupConsoleFilter() {
+  const consoles = Array.from(
+    new Set(allGames.map((game) => (game.Console || "").trim()).filter(Boolean))
+  ).sort((a, b) => a.localeCompare(b));
 
     const filtered = allGames.filter(game =>
+  const options = consoles.map(
+    (consoleName) => `<option value="${escapeHtml(consoleName)}">${escapeHtml(consoleName)}</option>`
+  );
+
+  consoleFilter.insertAdjacentHTML("beforeend", options.join(""));
+}
+
+function setupFilters() {
+  search.addEventListener("input", applyFilters);
+  consoleFilter.addEventListener("change", applyFilters);
+}
+
+function applyFilters() {
+  const value = search.value.toLowerCase();
+  const selectedConsole = consoleFilter.value;
+
+  const filtered = allGames.filter((game) => {
+    const matchesSearch =
       (game.Games || "").toLowerCase().includes(value) ||
       (game.Console || "").toLowerCase().includes(value) ||
       (game.Developer || "").toLowerCase().includes(value)
     );
+      (game.Developer || "").toLowerCase().includes(value);
+
+    const matchesConsole = selectedConsole === "all" || (game.Console || "") === selectedConsole;
 
     render(filtered);
+    return matchesSearch && matchesConsole;
   });
+
+  render(filtered);
 }
 
 // ------------------------
@@ -46,6 +79,7 @@ function render(data) {
   }
 
   grid.innerHTML = data.map(game => `
+  grid.innerHTML = data.map((game) => `
     <div class="card">
       <img
         src="${getCover(game)}"
@@ -56,6 +90,9 @@ function render(data) {
       <div class="title">${game.Games || ""}</div>
       <div class="meta">${game.Console || ""}</div>
       <div class="meta">${game.Year || ""} • ${game.Developer || ""}</div>
+      <div class="title">${escapeHtml(game.Games || "")}</div>
+      <div class="meta">${escapeHtml(game.Console || "")}</div>
+      <div class="meta">${escapeHtml(game.Year || "")} • ${escapeHtml(game.Developer || "")}</div>
     </div>
   `).join("");
 }
@@ -67,3 +104,11 @@ function getCover(game) {
   const name = encodeURIComponent(game.Games || "");
   return `https://via.placeholder.com/300x400?text=${name}`;
 }
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
