@@ -35,17 +35,11 @@ index 95a981593d0721f75724284e6dfa492f280e0864..0fdbcd04e1110f2f8d5e9c94007c971f
   --accent-hover: #3a63c4;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 20px;
-  background: #111;
-  color: white;
-  padding: 0;
   background: var(--bg);
   color: var(--text);
 }
@@ -59,7 +53,6 @@ body {
 .top-bar h1 {
   margin: 0;
   font-size: 18px;
-  letter-spacing: 0.4px;
 }
 
 .search-bar,
@@ -67,55 +60,51 @@ body {
   display: grid;
   gap: 10px;
   padding: 12px 20px;
-  background: var(--panel);
   border-bottom: 1px solid var(--line);
 }
 
 .search-bar {
-  grid-template-columns: 1fr 160px;
+  grid-template-columns: 1fr 170px;
+  background: var(--panel);
 }
 
 .advanced-filters {
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   background: var(--panel-2);
 }
 
-#search {
 #search,
 #toggleFilters,
 #advancedFilters select {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  font-size: 16px;
   height: 40px;
   border-radius: 6px;
   border: 1px solid var(--line);
   background: #0f1520;
   color: var(--text);
   padding: 0 12px;
-  font-size: 14px;
 }
 
 #toggleFilters {
-  background: var(--accent);
-  border-color: #223d7b;
   cursor: pointer;
+  background: var(--accent);
   font-weight: bold;
 }
 
-#toggleFilters:hover {
-  background: var(--accent-hover);
+#toggleFilters:hover { background: var(--accent-hover); }
+
+.results-meta {
+  margin: 10px 20px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 #grid {
-  padding: 14px 20px 24px;
+  padding: 0 20px 24px;
 }
 
 .game-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
   grid-template-columns: minmax(230px, 2fr) repeat(8, minmax(100px, 1fr));
   gap: 10px;
   align-items: center;
@@ -127,57 +116,28 @@ body {
   font-size: 13px;
 }
 
-.card {
-  background: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  padding-bottom: 10px;
 .list-header {
   background: #1d2a45;
   font-weight: bold;
-  position: sticky;
-  top: 0;
-  z-index: 2;
 }
 
-.card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  background: #333;
 .game-row div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.title {
-.title-cell {
-  font-weight: bold;
-  padding: 8px;
-}
+.title-cell { font-weight: bold; }
 
-.meta {
-  font-size: 12px;
-  padding: 0 8px;
-  opacity: 0.7;
 .empty {
   color: var(--muted);
   margin-top: 20px;
 }
 
 @media (max-width: 1200px) {
-  #grid {
-    overflow-x: auto;
-  }
-
-  .game-row {
-    min-width: 1080px;
-  }
+  #grid { overflow-x: auto; }
+  .game-row { min-width: 1080px; }
 }
 
 @media (max-width: 700px) {
-  .search-bar {
-    grid-template-columns: 1fr;
-  }
-}
+  .search-bar { grid-template-columns: 1fr; }
