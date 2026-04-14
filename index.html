@@ -9,15 +9,36 @@
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
+  <header class="top-bar">
+    <h1>Game Library</h1>
+  </header>
 
   <input id="search" placeholder="Search games..." />
-  <div class="filters">
-    <input id="search" placeholder="Search games..." />
+  <section class="search-bar">
+    <input id="search" placeholder="Search games, consoles, developers..." />
+    <button id="toggleFilters" type="button">Categories ▾</button>
+  </section>
 
+  <section id="advancedFilters" class="advanced-filters" hidden>
     <select id="consoleFilter">
       <option value="all">All Consoles</option>
     </select>
-  </div>
+
+    <select id="yearFilter">
+      <option value="all">All Years</option>
+    </select>
+
+    <select id="regionFilter">
+      <option value="all">All Regions</option>
+    </select>
+
+    <select id="sortFilter">
+      <option value="title_asc">Title A–Z</option>
+      <option value="title_desc">Title Z–A</option>
+      <option value="year_desc">Year New → Old</option>
+      <option value="year_asc">Year Old → New</option>
+    </select>
+  </section>
 
   <div id="grid"></div>
 
