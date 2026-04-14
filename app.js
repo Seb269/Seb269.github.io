@@ -37,7 +37,7 @@ function setupSearch() {
 }
 
 // ------------------------
-// RENDER FUNCTION
+// RENDER
 // ------------------------
 function render(data) {
   if (!data || data.length === 0) {
@@ -47,7 +47,7 @@ function render(data) {
 
   grid.innerHTML = data.map(game => `
     <div class="card">
-      <img 
+      <img
         src="${getCover(game)}"
         loading="lazy"
         onerror="this.src='https://via.placeholder.com/300x400?text=No+Cover'"
@@ -61,13 +61,9 @@ function render(data) {
 }
 
 // ------------------------
-// COVER IMAGE SYSTEM
-// (FAST + SAFE + NO API LAG)
+// IMAGE SYSTEM (KEEP SIMPLE FOR NOW)
 // ------------------------
 function getCover(game) {
   const name = encodeURIComponent(game.Games || "");
-
-  // TEMP SOLUTION (instant, no lag)
-  // Replace later with IGDB or SteamGridDB if you want real covers
   return `https://via.placeholder.com/300x400?text=${name}`;
 }
