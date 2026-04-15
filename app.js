@@ -258,7 +258,7 @@ function render(data, count) {
 
     return `
       <article class="game-card">
-        <div class="cover-placeholder">PICTURE</div>
+        <div class="cover-placeholder" aria-hidden="true"></div>
 
         <div class="info-bar">
           <div class="game-title">${escapeHtml(game.Games)}</div>
