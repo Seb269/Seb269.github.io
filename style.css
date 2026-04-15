@@ -81,29 +81,16 @@ body {
   overflow: hidden;
 }
 
-.cover-wrap {
+.cover-placeholder {
   width: 100%;
   height: 290px;
-  background: #000;
-  position: relative;
-}
-
-.cover-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cover-fallback {
-  width: 100%;
-  height: 100%;
   display: grid;
   place-items: center;
-  color: #6e7f9f;
-  letter-spacing: 1px;
-  text-transform: uppercase;
   background: #000;
+  color: #6e7f9f;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .info-bar {
