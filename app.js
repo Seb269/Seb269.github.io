@@ -1,5 +1,7 @@
 let allGames = [];
 
+const CSV_FILE = "sebs game list.csv";
+
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
 const search = document.getElementById("search");
@@ -11,60 +13,58 @@ const regionFilter = document.getElementById("regionFilter");
 const companyFilter = document.getElementById("companyFilter");
 const sortFilter = document.getElementById("sortFilter");
 
-const CSV_CANDIDATES = [
-  "sebs game list.csv",
-  "sebs_game_list.csv",
-  "sebs-game-list.csv",
-  "games_clean.csv",
-  "games.csv"
-];
-
 grid.innerHTML = "<p class='empty'>Loading games...</p>";
 initialize();
 
-async function initialize() {
-  const loaded = await loadGameData();
+function initialize() {
+  Papa.parse(CSV_FILE, {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: (result) => {
+      allGames = normalizeRows(result.data || []);
 
-  if (!loaded) {
-    grid.innerHTML = "<p class='empty'>Could not load your CSV. Add sebs game list.csv in the project folder.</p>";
-    return;
-  }
+      if (allGames.length === 0) {
+        grid.innerHTML = "<p class='empty'>CSV loaded but no valid game rows were found.</p>";
+        resultsMeta.textContent = "0 games shown";
+        return;
+      }
 
-  setupCategoryFilters();
-  setupFilterEvents();
-  applyFilters();
+      setupCategoryFilters();
+      setupFilterEvents();
+      applyFilters();
+    },
+    error: () => {
+      grid.innerHTML = `<p class='empty'>Could not load <strong>${escapeHtml(CSV_FILE)}</strong>. Check the filename and run the site from a web server.</p>`;
+      resultsMeta.textContent = "0 games shown";
+    }
+  });
 }
 
-async function loadGameData() {
-  for (const fileName of CSV_CANDIDATES) {
-    try {
-      const response = await fetch(fileName);
+function normalizeRows(rows) {
+  return rows
+    .map((row) => ({
+      Games: pick(row, ["Games", "Game", "Title", "Name"]),
+      Console: pick(row, ["Console", "Platform", "System"]),
+      Edition: pick(row, ["Edition", "Region", "Version"]),
+      Developer: pick(row, ["Developer", "Company", "Studio"]),
+      Publisher: pick(row, ["Publisher"]),
+      Year: pick(row, ["Year", "Release Year", "Release"]),
+      New: pick(row, ["New", "Condition"]),
+      Box: pick(row, ["Box"]),
+      Manual: pick(row, ["Manual"])
+    }))
+    .filter((game) => normalize(game.Games));
+}
 
-      if (!response.ok) {
-        continue;
-      }
-
-      const csvText = await response.text();
-      const parsed = Papa.parse(csvText, {
-        header: true,
-        skipEmptyLines: true,
-        delimiter: ","
-      });
-
-      const rows = (parsed.data || []).filter((game) => normalize(game.Games));
-
-      if (rows.length === 0) {
-        continue;
-      }
-
-      allGames = rows;
-      return true;
-    } catch {
-      // Try next candidate.
+function pick(row, keys) {
+  for (const key of keys) {
+    if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== "") {
+      return String(row[key]).trim();
     }
   }
 
-  return false;
+  return "";
 }
 
 function setupCategoryFilters() {
@@ -195,3 +195,4 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
