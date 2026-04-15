@@ -21,11 +21,13 @@ function initialize() {
     download: true,
     header: true,
     skipEmptyLines: true,
+    delimitersToGuess: [",", ";", "\t", "|"],
+    transformHeader: sanitizeHeader,
     complete: (result) => {
       allGames = normalizeRows(result.data || []);
 
       if (allGames.length === 0) {
-        grid.innerHTML = "<p class='empty'>CSV loaded but no valid game rows were found.</p>";
+        grid.innerHTML = "<p class='empty'>No games found in CSV. If your file is .xlsx, export it as .csv first.</p>";
         resultsMeta.textContent = "0 games shown";
         return;
       }
@@ -35,7 +37,7 @@ function initialize() {
       applyFilters();
     },
     error: () => {
-      grid.innerHTML = `<p class='empty'>Could not load <strong>${escapeHtml(CSV_FILE)}</strong>. Check the filename and run the site from a web server.</p>`;
+      grid.innerHTML = `<p class='empty'>Could not load <strong>${escapeHtml(CSV_FILE)}</strong>. Check filename/path and use .csv (not .xlsx).</p>`;
       resultsMeta.textContent = "0 games shown";
     }
   });
@@ -43,24 +45,58 @@ function initialize() {
 
 function normalizeRows(rows) {
   return rows
-    .map((row) => ({
-      Games: pick(row, ["Games", "Game", "Title", "Name"]),
-      Console: pick(row, ["Console", "Platform", "System"]),
-      Edition: pick(row, ["Edition", "Region", "Version"]),
-      Developer: pick(row, ["Developer", "Company", "Studio"]),
-      Publisher: pick(row, ["Publisher"]),
-      Year: pick(row, ["Year", "Release Year", "Release"]),
-      New: pick(row, ["New", "Condition"]),
-      Box: pick(row, ["Box"]),
-      Manual: pick(row, ["Manual"])
-    }))
+    .map((rawRow) => {
+      const row = normalizeKeys(rawRow);
+
+      const game = {
+        Games: pick(row, ["games", "game", "title", "name", "spel"]),
+        Console: pick(row, ["console", "platform", "system", "konsol"]),
+        Edition: pick(row, ["edition", "region", "version"]),
+        Developer: pick(row, ["developer", "company", "studio", "utvecklare"]),
+        Publisher: pick(row, ["publisher", "utgivare"]),
+        Year: pick(row, ["year", "releaseyear", "release", "ar", "år"]),
+        New: pick(row, ["new", "condition", "ny"]),
+        Box: pick(row, ["box", "fodral"]),
+        Manual: pick(row, ["manual", "instruktion"])
+      };
+
+      if (!game.Games) {
+        game.Games = findFirstValue(row);
+      }
+
+      return game;
+    })
     .filter((game) => normalize(game.Games));
+}
+
+function normalizeKeys(row) {
+  const normalized = {};
+
+  for (const [key, value] of Object.entries(row || {})) {
+    normalized[sanitizeHeader(key)] = normalize(value);
+  }
+
+  return normalized;
+}
+
+function sanitizeHeader(header) {
+  return String(header || "")
+    .replace(/^\uFEFF/, "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9åäö]/g, "");
+}
+
+function findFirstValue(row) {
+  const values = Object.values(row || {}).map(normalize).filter(Boolean);
+  return values[0] || "";
 }
 
 function pick(row, keys) {
   for (const key of keys) {
-    if (row[key] !== undefined && row[key] !== null && String(row[key]).trim() !== "") {
-      return String(row[key]).trim();
+    const value = normalize(row[key]);
+    if (value) {
+      return value;
     }
   }
 
