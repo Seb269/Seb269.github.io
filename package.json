@@ -1,0 +1,14 @@
+{
+  "name": "sebs-game-library",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start:proxy": "node metacritic-proxy.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "metacritic": "^1.3.0"
+  }
+}
