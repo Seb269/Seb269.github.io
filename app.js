@@ -26,7 +26,7 @@ async function initialize() {
   const loaded = await loadGameData();
 
   if (!loaded) {
-    grid.innerHTML = `<p class='empty'>Could not find a valid game file. Tried: ${escapeHtml(FILE_CANDIDATES.join(", "))}</p>`;
+    grid.innerHTML = `<p class='empty'>No game rows found. Check your file name and first worksheet.</p>`;
     resultsMeta.textContent = "0 games shown";
     return;
   }
@@ -76,26 +76,41 @@ function parseCsvText(text) {
 function parseXlsxBuffer(buffer) {
   const workbook = XLSX.read(buffer, { type: "array" });
   const firstSheetName = workbook.SheetNames[0];
-
   if (!firstSheetName) return [];
 
   const sheet = workbook.Sheets[firstSheetName];
   const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
-
   if (rows.length < 2) return [];
 
-  const rawHeaders = rows[0].map((header) => sanitizeHeader(header));
+  const headerRowIndex = findHeaderRowIndex(rows);
+  const headers = (rows[headerRowIndex] || []).map((header) => sanitizeHeader(header));
 
-  return rows.slice(1).map((row) => {
+  return rows.slice(headerRowIndex + 1).map((row) => {
     const record = {};
 
-    rawHeaders.forEach((header, idx) => {
+    headers.forEach((header, idx) => {
       if (!header) return;
       record[header] = normalize(row[idx]);
     });
 
     return record;
   });
+}
+
+function findHeaderRowIndex(rows) {
+  const sample = rows.slice(0, 10);
+  let bestIdx = 0;
+  let bestScore = -1;
+
+  sample.forEach((row, idx) => {
+    const score = row.reduce((acc, cell) => acc + (normalize(cell) ? 1 : 0), 0);
+    if (score > bestScore) {
+      bestScore = score;
+      bestIdx = idx;
+    }
+  });
+
+  return bestIdx;
 }
 
 function normalizeRows(rows) {
@@ -110,10 +125,6 @@ function normalizeRows(rows) {
         Developer: pick(row, ["developer", "company", "studio", "utvecklare"]),
         Publisher: pick(row, ["publisher", "utgivare"]),
         Year: pick(row, ["year", "releaseyear", "release", "ar", "år"]),
-        New: pick(row, ["new", "condition", "ny"]),
-        Box: pick(row, ["box", "fodral"]),
-        Manual: pick(row, ["manual", "instruktion"]),
-        Cover: pick(row, ["cover", "image", "imageurl", "coverurl", "poster"]),
         Metacritic: pick(row, ["metacritic", "metacriticscore", "metascore", "review", "score"])
       };
 
@@ -128,11 +139,9 @@ function normalizeRows(rows) {
 
 function normalizeKeys(row) {
   const normalized = {};
-
   for (const [key, value] of Object.entries(row || {})) {
     normalized[sanitizeHeader(key)] = normalize(value);
   }
-
   return normalized;
 }
 
@@ -154,7 +163,6 @@ function pick(row, keys) {
     const value = normalize(row[key]);
     if (value) return value;
   }
-
   return "";
 }
 
@@ -245,19 +253,12 @@ function render(data, count) {
   }
 
   grid.innerHTML = data.map((game) => {
-    const cover = getCoverUrl(game);
     const metaScore = normalize(game.Metacritic) || "N/A";
     const metaSearch = `https://www.metacritic.com/search/${encodeURIComponent(game.Games || "")}/`;
 
     return `
       <article class="game-card">
-        <div class="cover-wrap">
-          ${cover
-            ? `<img class="cover-image" src="${escapeHtml(cover)}" alt="${escapeHtml(game.Games)} cover" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />`
-            : ""
-          }
-          <div class="cover-fallback" style="${cover ? "display:none;" : "display:grid;"}">No Cover</div>
-        </div>
+        <div class="cover-placeholder">PICTURE</div>
 
         <div class="info-bar">
           <div class="game-title">${escapeHtml(game.Games)}</div>
@@ -268,13 +269,6 @@ function render(data, count) {
       </article>
     `;
   }).join("");
-}
-
-function getCoverUrl(game) {
-  const direct = normalize(game.Cover);
-  if (direct) return direct;
-
-  return "";
 }
 
 function normalize(value) {
@@ -296,3 +290,4 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
