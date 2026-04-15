@@ -119,7 +119,7 @@ function normalizeRows(rows) {
 
       const game = {
         Games: pick(row, ["games", "game", "title", "name", "spel"]),
-        Console: pick(row, ["console", "platform", "system", "konsol"]),
+        Console: pick(row, ["console", "consoles", "platform", "consoleplatform", "system", "konsol", "plattform"]),
         Edition: pick(row, ["edition", "region", "version"]),
         Developer: pick(row, ["developer", "company", "studio", "utvecklare"]),
         Publisher: pick(row, ["publisher", "utgivare"]),
