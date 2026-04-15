@@ -1,12 +1,15 @@
 :root {
-  --bg: #0d1117;
-  --panel: #151b26;
-  --panel-2: #1d2533;
-  --line: #2a3446;
-  --text: #edf2ff;
-  --muted: #9aa8c0;
-  --accent: #2e51a2;
+  --bg: #070b12;
+  --panel: #0d1524;
+  --panel-2: #111c31;
+  --line: #1f3151;
+  --text: #eaf2ff;
+  --muted: #9fb2d3;
+  --accent: #2b4f9e;
   --accent-hover: #3a63c4;
+  --grid-navy: #0b162a;
+  --row-navy: #10213c;
+  --row-hover: #163056;
 }
 
 * { box-sizing: border-box; }
@@ -19,8 +22,8 @@ body {
 }
 
 .top-bar {
-  background: linear-gradient(180deg, #2e51a2 0%, #244185 100%);
-  border-bottom: 1px solid #1e3263;
+  background: linear-gradient(180deg, #2b4f9e 0%, #203c7a 100%);
+  border-bottom: 1px solid #1c3260;
   padding: 12px 20px;
 }
 
@@ -54,7 +57,7 @@ body {
   height: 40px;
   border-radius: 6px;
   border: 1px solid var(--line);
-  background: #0f1520;
+  background: #081224;
   color: var(--text);
   padding: 0 12px;
 }
@@ -74,7 +77,9 @@ body {
 }
 
 #grid {
-  padding: 0 20px 24px;
+  padding: 12px 20px 24px;
+  background: var(--grid-navy);
+  border-top: 1px solid var(--line);
 }
 
 .game-row {
@@ -83,15 +88,19 @@ body {
   gap: 10px;
   align-items: center;
   padding: 10px 12px;
-  border: 1px solid var(--line);
+  border: 1px solid #28426b;
   border-radius: 8px;
   margin-bottom: 8px;
-  background: var(--panel);
+  background: var(--row-navy);
   font-size: 13px;
 }
 
+.game-row:hover {
+  background: var(--row-hover);
+}
+
 .list-header {
-  background: #1d2a45;
+  background: #1d3561;
   font-weight: bold;
 }
 
