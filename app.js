@@ -10,6 +10,9 @@ const FILE_CANDIDATES = [
   "games.csv"
 ];
 
+const METACRITIC_PROXY_API = window.location.hostname === "localhost"
+  ? "http://localhost:8787/api/metacritic"
+  : "/api/metacritic";
 const METACRITIC_SEARCH_API = "https://www.cheapshark.com/api/1.0/games";
 const scoreCache = new Map();
 const pendingScoreLoads = new Map();
@@ -339,6 +342,32 @@ async function fetchMetacriticScore(game) {
   const title = normalize(game.Games);
   if (!title) return null;
 
+  const proxyData = await fetchScoreFromProxy(title);
+  if (proxyData) return proxyData;
+
+  return fetchScoreFromCheapShark(title);
+}
+
+async function fetchScoreFromProxy(title) {
+  try {
+    const response = await fetch(`${METACRITIC_PROXY_API}?title=${encodeURIComponent(title)}`);
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    const score = normalize(data?.score);
+
+    if (!score || score === "0") return null;
+
+    return {
+      score,
+      link: buildMetacriticSearchLink(title)
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function fetchScoreFromCheapShark(title) {
   const url = `${METACRITIC_SEARCH_API}?title=${encodeURIComponent(title)}&limit=1`;
   const response = await fetch(url);
   if (!response.ok) return null;
