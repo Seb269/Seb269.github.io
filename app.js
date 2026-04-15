@@ -11,24 +11,61 @@ const regionFilter = document.getElementById("regionFilter");
 const companyFilter = document.getElementById("companyFilter");
 const sortFilter = document.getElementById("sortFilter");
 
+const CSV_CANDIDATES = [
+  "sebs game list.csv",
+  "sebs_game_list.csv",
+  "sebs-game-list.csv",
+  "games_clean.csv",
+  "games.csv"
+];
+
 grid.innerHTML = "<p class='empty'>Loading games...</p>";
+initialize();
 
-Papa.parse("games_clean.csv", {
-  download: true,
-  header: true,
-  skipEmptyLines: true,
-  delimiter: ",",
-  complete: (result) => {
-    allGames = (result.data || []).filter((game) => (game.Games || "").trim());
+async function initialize() {
+  const loaded = await loadGameData();
 
-    setupCategoryFilters();
-    setupFilterEvents();
-    applyFilters();
-  },
-  error: () => {
-    grid.innerHTML = "<p class='empty'>Could not load games_clean.csv. Make sure the file exists next to index.html.</p>";
+  if (!loaded) {
+    grid.innerHTML = "<p class='empty'>Could not load your CSV. Add sebs game list.csv in the project folder.</p>";
+    return;
   }
-});
+
+  setupCategoryFilters();
+  setupFilterEvents();
+  applyFilters();
+}
+
+async function loadGameData() {
+  for (const fileName of CSV_CANDIDATES) {
+    try {
+      const response = await fetch(fileName);
+
+      if (!response.ok) {
+        continue;
+      }
+
+      const csvText = await response.text();
+      const parsed = Papa.parse(csvText, {
+        header: true,
+        skipEmptyLines: true,
+        delimiter: ","
+      });
+
+      const rows = (parsed.data || []).filter((game) => normalize(game.Games));
+
+      if (rows.length === 0) {
+        continue;
+      }
+
+      allGames = rows;
+      return true;
+    } catch {
+      // Try next candidate.
+    }
+  }
+
+  return false;
+}
 
 function setupCategoryFilters() {
   populateSelect(consoleFilter, allGames.map((game) => game.Console), "All Consoles");
@@ -69,11 +106,11 @@ function applyFilters() {
   const query = search.value.toLowerCase();
 
   const filteredGames = allGames.filter((game) => {
-    const title = (game.Games || "").toLowerCase();
-    const consoleName = (game.Console || "").toLowerCase();
-    const developer = (game.Developer || "").toLowerCase();
-    const publisher = (game.Publisher || "").toLowerCase();
-    const region = (game.Edition || "").toLowerCase();
+    const title = normalize(game.Games).toLowerCase();
+    const consoleName = normalize(game.Console).toLowerCase();
+    const developer = normalize(game.Developer).toLowerCase();
+    const publisher = normalize(game.Publisher).toLowerCase();
+    const region = normalize(game.Edition).toLowerCase();
 
     const matchesSearch =
       title.includes(query) ||
@@ -158,4 +195,3 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#039;");
-}
