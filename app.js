@@ -1,6 +1,14 @@
 let allGames = [];
 
-const CSV_FILE = "Sebs Game List(All game 全部ゲーム).csv";
+const FILE_CANDIDATES = [
+  "Sebs Game List(All game 全部ゲーム).csv",
+  "sebs game list.csv",
+  "Sebs Game List(All game 全部ゲーム).xlsx",
+  "Sebs Game List.xlsx",
+  "sebs game list.xlsx",
+  "games_clean.csv",
+  "games.csv"
+];
 
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
@@ -16,30 +24,92 @@ const sortFilter = document.getElementById("sortFilter");
 grid.innerHTML = "<p class='empty'>Loading games...</p>";
 initialize();
 
-function initialize() {
-  Papa.parse(CSV_FILE, {
-    download: true,
+async function initialize() {
+  const loaded = await loadGameData();
+
+  if (!loaded) {
+    grid.innerHTML = `<p class='empty'>Could not find a valid game file. Tried: ${escapeHtml(FILE_CANDIDATES.join(", "))}</p>`;
+    resultsMeta.textContent = "0 games shown";
+    return;
+  }
+
+  setupCategoryFilters();
+  setupFilterEvents();
+  applyFilters();
+}
+
+async function loadGameData() {
+  for (const fileName of FILE_CANDIDATES) {
+    try {
+      const response = await fetch(fileName);
+
+      if (!response.ok) {
+        continue;
+      }
+
+      let rawRows = [];
+
+      if (fileName.toLowerCase().endsWith(".xlsx")) {
+        const buffer = await response.arrayBuffer();
+        rawRows = parseXlsxBuffer(buffer);
+      } else {
+        const text = await response.text();
+        rawRows = parseCsvText(text);
+      }
+
+      allGames = normalizeRows(rawRows);
+
+      if (allGames.length > 0) {
+        return true;
+      }
+    } catch {
+      // try next file
+    }
+  }
+
+  return false;
+}
+
+function parseCsvText(text) {
+  const parsed = Papa.parse(text, {
     header: true,
     skipEmptyLines: true,
     delimitersToGuess: [",", ";", "\t", "|"],
-    transformHeader: sanitizeHeader,
-    complete: (result) => {
-      allGames = normalizeRows(result.data || []);
+    transformHeader: sanitizeHeader
+  });
 
-      if (allGames.length === 0) {
-        grid.innerHTML = "<p class='empty'>No games found in CSV. If your file is .xlsx, export it as .csv first.</p>";
-        resultsMeta.textContent = "0 games shown";
+  return parsed.data || [];
+}
+
+function parseXlsxBuffer(buffer) {
+  const workbook = XLSX.read(buffer, { type: "array" });
+  const firstSheetName = workbook.SheetNames[0];
+
+  if (!firstSheetName) {
+    return [];
+  }
+
+  const sheet = workbook.Sheets[firstSheetName];
+  const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
+
+  if (rows.length < 2) {
+    return [];
+  }
+
+  const rawHeaders = rows[0].map((header) => sanitizeHeader(header));
+
+  return rows.slice(1).map((row) => {
+    const record = {};
+
+    rawHeaders.forEach((header, idx) => {
+      if (!header) {
         return;
       }
 
-      setupCategoryFilters();
-      setupFilterEvents();
-      applyFilters();
-    },
-    error: () => {
-      grid.innerHTML = `<p class='empty'>Could not load <strong>${escapeHtml(CSV_FILE)}</strong>. Check filename/path and use .csv (not .xlsx).</p>`;
-      resultsMeta.textContent = "0 games shown";
-    }
+      record[header] = normalize(row[idx]);
+    });
+
+    return record;
   });
 }
 
