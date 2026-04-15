@@ -41,7 +41,7 @@ body {
 }
 
 .search-bar {
-  grid-template-columns: 1fr 170px;
+  grid-template-columns: 1fr;
   background: var(--panel);
 }
 
@@ -51,7 +51,6 @@ body {
 }
 
 #search,
-#toggleFilters,
 #advancedFilters select {
   width: 100%;
   height: 40px;
@@ -61,14 +60,6 @@ body {
   color: var(--text);
   padding: 0 12px;
 }
-
-#toggleFilters {
-  cursor: pointer;
-  background: var(--accent);
-  font-weight: bold;
-}
-
-#toggleFilters:hover { background: var(--accent-hover); }
 
 .results-meta {
   margin: 10px 20px;
@@ -120,8 +111,4 @@ body {
 @media (max-width: 1200px) {
   #grid { overflow-x: auto; }
   .game-row { min-width: 1080px; }
-}
-
-@media (max-width: 700px) {
-  .search-bar { grid-template-columns: 1fr; }
 }
