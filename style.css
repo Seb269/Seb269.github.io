@@ -1,3 +1,7 @@
+/*
+  Keep existing base styling (body, grid, cards, text) and add filter UI styles.
+  You do NOT need to delete old styles—just extend them.
+*/
 body {
   font-family: Arial, sans-serif;
   margin: 0;
