@@ -10,6 +10,10 @@ const FILE_CANDIDATES = [
   "games.csv"
 ];
 
+const METACRITIC_SEARCH_API = "https://www.cheapshark.com/api/1.0/games";
+const scoreCache = new Map();
+const pendingScoreLoads = new Map();
+
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
 const search = document.getElementById("search");
@@ -253,8 +257,8 @@ function render(data, count) {
   }
 
   grid.innerHTML = data.map((game) => {
-    const metaScore = normalize(game.Metacritic) || "N/A";
-    const metaSearch = `https://www.metacritic.com/search/${encodeURIComponent(game.Games || "")}/`;
+    const gameKey = getGameKey(game);
+    const score = getCurrentScore(game);
 
     return `
       <article class="game-card">
@@ -264,11 +268,117 @@ function render(data, count) {
           <div class="game-title">${escapeHtml(game.Games)}</div>
           <div class="game-meta">${escapeHtml(game.Console || "Unknown Console")} • ${escapeHtml(game.Year || "?")}</div>
           <div class="game-meta">${escapeHtml(game.Developer || game.Publisher || "Unknown Company")}</div>
-          <div class="game-meta">Metacritic: <strong>${escapeHtml(metaScore)}</strong> <a href="${metaSearch}" target="_blank" rel="noopener noreferrer">reviews</a></div>
+          <div class="game-meta">Metacritic: <strong class="meta-score" data-game-key="${escapeHtml(gameKey)}">${escapeHtml(score.score)}</strong> <a href="${escapeHtml(score.link)}" target="_blank" rel="noopener noreferrer">reviews</a></div>
         </div>
       </article>
     `;
   }).join("");
+
+  loadMetacriticScores(data);
+}
+
+function getGameKey(game) {
+  return `${normalize(game.Games)}|${normalize(game.Console)}`;
+}
+
+function getCurrentScore(game) {
+  const key = getGameKey(game);
+  const cached = scoreCache.get(key);
+
+  if (cached) {
+    return cached;
+  }
+
+  const existing = normalize(game.Metacritic);
+  if (existing) {
+    const value = {
+      score: existing,
+      link: buildMetacriticSearchLink(game.Games)
+    };
+
+    scoreCache.set(key, value);
+    return value;
+  }
+
+  const fallback = {
+    score: "N/A",
+    link: buildMetacriticSearchLink(game.Games)
+  };
+
+  scoreCache.set(key, fallback);
+  return fallback;
+}
+
+async function loadMetacriticScores(games) {
+  for (const game of games) {
+    const key = getGameKey(game);
+    const current = scoreCache.get(key);
+
+    if ((current && current.score !== "N/A") || pendingScoreLoads.has(key)) {
+      continue;
+    }
+
+    const promise = fetchMetacriticScore(game)
+      .then((value) => {
+        if (!value) {
+          return;
+        }
+
+        scoreCache.set(key, value);
+        updateScoreElements(key, value);
+      })
+      .finally(() => {
+        pendingScoreLoads.delete(key);
+      });
+
+    pendingScoreLoads.set(key, promise);
+  }
+}
+
+async function fetchMetacriticScore(game) {
+  const title = normalize(game.Games);
+  if (!title) return null;
+
+  const url = `${METACRITIC_SEARCH_API}?title=${encodeURIComponent(title)}&limit=1`;
+  const response = await fetch(url);
+  if (!response.ok) return null;
+
+  const data = await response.json();
+  if (!Array.isArray(data) || data.length === 0) return null;
+
+  const best = data[0];
+  const rawScore = normalize(best.metacriticScore);
+
+  if (!rawScore || rawScore === "0") return null;
+
+  return {
+    score: rawScore,
+    link: best.metacriticLink ? `https://www.metacritic.com${best.metacriticLink}` : buildMetacriticSearchLink(title)
+  };
+}
+
+function updateScoreElements(gameKey, value) {
+  const nodes = document.querySelectorAll(`.meta-score[data-game-key="${cssEscape(gameKey)}"]`);
+
+  nodes.forEach((node) => {
+    node.textContent = value.score;
+    const link = node.parentElement.querySelector("a");
+    if (link && value.link) {
+      link.href = value.link;
+    }
+  });
+}
+
+function buildMetacriticSearchLink(title) {
+  return `https://www.metacritic.com/search/${encodeURIComponent(normalize(title))}/`;
+}
+
+function cssEscape(value) {
+  if (window.CSS && typeof window.CSS.escape === "function") {
+    return window.CSS.escape(value);
+  }
+
+  return String(value).replace(/"/g, "\\\"");
 }
 
 function normalize(value) {
