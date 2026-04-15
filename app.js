@@ -13,7 +13,6 @@ const FILE_CANDIDATES = [
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
 const search = document.getElementById("search");
-const advancedFilters = document.getElementById("advancedFilters");
 const consoleFilter = document.getElementById("consoleFilter");
 const yearFilter = document.getElementById("yearFilter");
 const regionFilter = document.getElementById("regionFilter");
@@ -41,10 +40,7 @@ async function loadGameData() {
   for (const fileName of FILE_CANDIDATES) {
     try {
       const response = await fetch(fileName);
-
-      if (!response.ok) {
-        continue;
-      }
+      if (!response.ok) continue;
 
       let rawRows = [];
 
@@ -57,10 +53,7 @@ async function loadGameData() {
       }
 
       allGames = normalizeRows(rawRows);
-
-      if (allGames.length > 0) {
-        return true;
-      }
+      if (allGames.length > 0) return true;
     } catch {
       // try next file
     }
@@ -84,16 +77,12 @@ function parseXlsxBuffer(buffer) {
   const workbook = XLSX.read(buffer, { type: "array" });
   const firstSheetName = workbook.SheetNames[0];
 
-  if (!firstSheetName) {
-    return [];
-  }
+  if (!firstSheetName) return [];
 
   const sheet = workbook.Sheets[firstSheetName];
   const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: "" });
 
-  if (rows.length < 2) {
-    return [];
-  }
+  if (rows.length < 2) return [];
 
   const rawHeaders = rows[0].map((header) => sanitizeHeader(header));
 
@@ -101,10 +90,7 @@ function parseXlsxBuffer(buffer) {
     const record = {};
 
     rawHeaders.forEach((header, idx) => {
-      if (!header) {
-        return;
-      }
-
+      if (!header) return;
       record[header] = normalize(row[idx]);
     });
 
@@ -126,7 +112,9 @@ function normalizeRows(rows) {
         Year: pick(row, ["year", "releaseyear", "release", "ar", "år"]),
         New: pick(row, ["new", "condition", "ny"]),
         Box: pick(row, ["box", "fodral"]),
-        Manual: pick(row, ["manual", "instruktion"])
+        Manual: pick(row, ["manual", "instruktion"]),
+        Cover: pick(row, ["cover", "image", "imageurl", "coverurl", "poster"]),
+        Metacritic: pick(row, ["metacritic", "metacriticscore", "metascore", "review", "score"])
       };
 
       if (!game.Games) {
@@ -164,9 +152,7 @@ function findFirstValue(row) {
 function pick(row, keys) {
   for (const key of keys) {
     const value = normalize(row[key]);
-    if (value) {
-      return value;
-    }
+    if (value) return value;
   }
 
   return "";
@@ -199,7 +185,6 @@ function setupFilterEvents() {
   regionFilter.addEventListener("change", applyFilters);
   companyFilter.addEventListener("change", applyFilters);
   sortFilter.addEventListener("change", applyFilters);
-
 }
 
 function applyFilters() {
@@ -259,24 +244,37 @@ function render(data, count) {
     return;
   }
 
-  grid.innerHTML = `
-    <div class="list-header game-row">
-      <div>Title</div><div>Console</div><div>Region</div><div>Developer</div><div>Publisher</div><div>Year</div><div>New</div><div>Box</div><div>Manual</div>
-    </div>
-    ${data.map((game) => `
-      <article class="game-row">
-        <div class="title-cell" title="${escapeHtml(game.Games)}">${escapeHtml(game.Games)}</div>
-        <div>${escapeHtml(game.Console)}</div>
-        <div>${escapeHtml(game.Edition)}</div>
-        <div>${escapeHtml(game.Developer)}</div>
-        <div>${escapeHtml(game.Publisher)}</div>
-        <div>${escapeHtml(game.Year)}</div>
-        <div>${escapeHtml(game.New)}</div>
-        <div>${escapeHtml(game.Box)}</div>
-        <div>${escapeHtml(game.Manual)}</div>
+  grid.innerHTML = data.map((game) => {
+    const cover = getCoverUrl(game);
+    const metaScore = normalize(game.Metacritic) || "N/A";
+    const metaSearch = `https://www.metacritic.com/search/${encodeURIComponent(game.Games || "")}/`;
+
+    return `
+      <article class="game-card">
+        <div class="cover-wrap">
+          ${cover
+            ? `<img class="cover-image" src="${escapeHtml(cover)}" alt="${escapeHtml(game.Games)} cover" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />`
+            : ""
+          }
+          <div class="cover-fallback" style="${cover ? "display:none;" : "display:grid;"}">No Cover</div>
+        </div>
+
+        <div class="info-bar">
+          <div class="game-title">${escapeHtml(game.Games)}</div>
+          <div class="game-meta">${escapeHtml(game.Console || "Unknown Console")} • ${escapeHtml(game.Year || "?")}</div>
+          <div class="game-meta">${escapeHtml(game.Developer || game.Publisher || "Unknown Company")}</div>
+          <div class="game-meta">Metacritic: <strong>${escapeHtml(metaScore)}</strong> <a href="${metaSearch}" target="_blank" rel="noopener noreferrer">reviews</a></div>
+        </div>
       </article>
-    `).join("")}
-  `;
+    `;
+  }).join("");
+}
+
+function getCoverUrl(game) {
+  const direct = normalize(game.Cover);
+  if (direct) return direct;
+
+  return "";
 }
 
 function normalize(value) {
@@ -298,4 +296,3 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/\"/g, "&quot;")
     .replace(/'/g, "&#039;");
-}
