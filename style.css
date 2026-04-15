@@ -1,30 +1,4 @@
-Papa.parse("games_clean.csv", {
-  download: true,
-  header: true,
-  complete: (result) => console.log(result.data)
-});
-
-diff --git a/style.css b/style.css
-index 95a981593d0721f75724284e6dfa492f280e0864..0fdbcd04e1110f2f8d5e9c94007c971f8dd08443 100644
---- a/style.css
-+++ b/style.css
-@@ -1,45 +1,62 @@
-:root {
-  --bg: #0d1117;
-  --panel: #151b26;
-  --panel-2: #1d2533;
-  --line: #2a3446;
-  --text: #edf2ff;
-  --muted: #9aa8c0;
-  --accent: #2e51a2;
-  --accent-hover: #3a63c4;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-:root {
+root {
   --bg: #0d1117;
   --panel: #151b26;
   --panel-2: #1d2533;
@@ -141,3 +115,4 @@ body {
 
 @media (max-width: 700px) {
   .search-bar { grid-template-columns: 1fr; }
+}
