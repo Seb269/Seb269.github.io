@@ -15,6 +15,7 @@ const METACRITIC_PROXY_API = window.location.hostname === "localhost"
   : "/api/metacritic";
 const METACRITIC_SEARCH_API = "https://www.cheapshark.com/api/1.0/games";
 const WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php";
+const WIKIDATA_API = "https://www.wikidata.org/w/api.php";
 
 const scoreCache = new Map();
 const pendingScoreLoads = new Map();
@@ -300,7 +301,7 @@ function render(data, count) {
           <div class="game-meta">${escapeHtml(game.Console || "Unknown Console")} • ${escapeHtml(game.Year || "?")}</div>
           <div class="game-meta genre-value" data-game-key="${escapeHtml(gameKey)}">Genre: ${renderGenreBadges(game)}</div>
           <div class="game-meta">${escapeHtml(game.Developer || game.Publisher || "Unknown Company")}</div>
-          <div class="game-meta">Metacritic: <strong class="meta-score" data-game-key="${escapeHtml(gameKey)}">${escapeHtml(score.score)}</strong> <a href="${escapeHtml(score.link)}" target="_blank" rel="noopener noreferrer">reviews</a></div>
+          <div class="game-meta">Rating: <strong class="meta-score" data-game-key="${escapeHtml(gameKey)}">${escapeHtml(score.score)}</strong> <span class="score-source">(${escapeHtml(score.source || "Unknown")})</span> <a href="${escapeHtml(score.link)}" target="_blank" rel="noopener noreferrer">reviews</a></div>
         </div>
       </article>
     `;
@@ -324,7 +325,8 @@ function getCurrentScore(game) {
   if (existing) {
     const value = {
       score: existing,
-      link: buildMetacriticSearchLink(game.Games)
+      link: buildMetacriticSearchLink(game.Games),
+      source: "CSV/XLSX"
     };
 
     scoreCache.set(key, value);
@@ -333,7 +335,8 @@ function getCurrentScore(game) {
 
   const fallback = {
     score: "N/A",
-    link: buildMetacriticSearchLink(game.Games)
+    link: buildMetacriticSearchLink(game.Games),
+    source: "No source"
   };
 
   scoreCache.set(key, fallback);
@@ -369,7 +372,10 @@ async function fetchMetacriticScore(game) {
   const proxyData = await fetchScoreFromProxy(title);
   if (proxyData) return proxyData;
 
-  return fetchScoreFromCheapShark(title);
+  const cheapSharkData = await fetchScoreFromCheapShark(title);
+  if (cheapSharkData) return cheapSharkData;
+
+  return fetchScoreFromWikidata(title);
 }
 
 async function fetchScoreFromProxy(title) {
@@ -384,7 +390,8 @@ async function fetchScoreFromProxy(title) {
 
     return {
       score,
-      link: buildMetacriticSearchLink(title)
+      link: buildMetacriticSearchLink(title),
+      source: "Metacritic API Proxy"
     };
   } catch {
     return null;
@@ -406,8 +413,113 @@ async function fetchScoreFromCheapShark(title) {
 
   return {
     score: rawScore,
-    link: best.metacriticLink ? `https://www.metacritic.com${best.metacriticLink}` : buildMetacriticSearchLink(title)
+    link: best.metacriticLink ? `https://www.metacritic.com${best.metacriticLink}` : buildMetacriticSearchLink(title),
+    source: "CheapShark/Metacritic"
   };
+}
+
+async function fetchScoreFromWikidata(title) {
+  try {
+    const searchUrl = new URL(WIKIDATA_API);
+    searchUrl.searchParams.set("action", "wbsearchentities");
+    searchUrl.searchParams.set("search", `${title} video game`);
+    searchUrl.searchParams.set("language", "en");
+    searchUrl.searchParams.set("type", "item");
+    searchUrl.searchParams.set("limit", "1");
+    searchUrl.searchParams.set("format", "json");
+    searchUrl.searchParams.set("origin", "*");
+
+    const searchResponse = await fetch(searchUrl.toString());
+    if (!searchResponse.ok) return null;
+
+    const searchData = await searchResponse.json();
+    const entityId = searchData?.search?.[0]?.id;
+    if (!entityId) return null;
+
+    const entityUrl = new URL(WIKIDATA_API);
+    entityUrl.searchParams.set("action", "wbgetentities");
+    entityUrl.searchParams.set("ids", entityId);
+    entityUrl.searchParams.set("props", "claims");
+    entityUrl.searchParams.set("format", "json");
+    entityUrl.searchParams.set("origin", "*");
+
+    const entityResponse = await fetch(entityUrl.toString());
+    if (!entityResponse.ok) return null;
+
+    const entityData = await entityResponse.json();
+    const claims = entityData?.entities?.[entityId]?.claims?.P444 || [];
+    if (claims.length === 0) return null;
+
+    const scored = claims
+      .map((claim) => {
+        const value = claim?.mainsnak?.datavalue?.value;
+        const raw = typeof value === "object" ? value.amount : value;
+        const score = normalize(raw).replace(/^\+/, "");
+        const sourceId = claim?.qualifiers?.P447?.[0]?.datavalue?.value?.id || "";
+        return { score, sourceId };
+      })
+      .filter((item) => item.score);
+
+    if (scored.length === 0) return null;
+
+    const sourceIds = Array.from(new Set(scored.map((item) => item.sourceId).filter(Boolean)));
+    const sourceLabels = await fetchWikidataLabels(sourceIds);
+
+    const preferred = pickPreferredWikidataScore(scored, sourceLabels, title);
+    if (!preferred) return null;
+
+    const sourceLabel = sourceLabels.get(preferred.sourceId) || "Wikidata";
+
+    return {
+      score: preferred.score,
+      link: sourceLabel.toLowerCase().includes("famitsu")
+        ? `https://www.famitsu.com/search/?q=${encodeURIComponent(title)}`
+        : buildMetacriticSearchLink(title),
+      source: sourceLabel
+    };
+  } catch {
+    return null;
+  }
+}
+
+async function fetchWikidataLabels(ids) {
+  const labelMap = new Map();
+  if (ids.length === 0) return labelMap;
+
+  const labelsUrl = new URL(WIKIDATA_API);
+  labelsUrl.searchParams.set("action", "wbgetentities");
+  labelsUrl.searchParams.set("ids", ids.join("|"));
+  labelsUrl.searchParams.set("props", "labels");
+  labelsUrl.searchParams.set("languages", "en");
+  labelsUrl.searchParams.set("format", "json");
+  labelsUrl.searchParams.set("origin", "*");
+
+  const response = await fetch(labelsUrl.toString());
+  if (!response.ok) return labelMap;
+
+  const data = await response.json();
+  Object.entries(data?.entities || {}).forEach(([id, entity]) => {
+    const label = entity?.labels?.en?.value;
+    if (label) {
+      labelMap.set(id, label);
+    }
+  });
+
+  return labelMap;
+}
+
+function pickPreferredWikidataScore(scores, sourceLabels, title) {
+  const japanese = /[぀-ヿ㐀-鿿]/.test(title);
+
+  if (japanese) {
+    const famitsu = scores.find((item) => (sourceLabels.get(item.sourceId) || "").toLowerCase().includes("famitsu"));
+    if (famitsu) return famitsu;
+  }
+
+  const metacritic = scores.find((item) => (sourceLabels.get(item.sourceId) || "").toLowerCase().includes("metacritic"));
+  if (metacritic) return metacritic;
+
+  return scores[0] || null;
 }
 
 async function loadGenresFromWikipedia(games) {
@@ -418,17 +530,21 @@ async function loadGenresFromWikipedia(games) {
     if (!key || pendingGenreLoads.has(key) || genreCache.has(key)) continue;
 
     const promise = fetchGenreFromWikipedia(game.Games)
-      .then((genre) => {
-        if (!genre) return;
+      .then(async (genre) => {
+        let resolvedGenre = genre;
+        if (!resolvedGenre) {
+          resolvedGenre = await fetchGenreFromWikidata(game.Games);
+        }
+        if (!resolvedGenre) return;
 
-        genreCache.set(key, genre);
+        genreCache.set(key, resolvedGenre);
         allGames.forEach((entry) => {
           if (normalize(entry.Games) === key && !normalize(entry.Genre)) {
-            entry.Genre = genre;
+            entry.Genre = resolvedGenre;
           }
         });
 
-        updateGenreElements(key, genre);
+        updateGenreElements(key, resolvedGenre);
         updateGenreFilterOptions();
       })
       .finally(() => {
@@ -470,6 +586,49 @@ async function fetchGenreFromWikipedia(title) {
   const categories = (page?.categories || []).map((item) => String(item.title || "").toLowerCase());
 
   return findGenreFromCategories(categories);
+}
+
+async function fetchGenreFromWikidata(title) {
+  try {
+    const searchUrl = new URL(WIKIDATA_API);
+    searchUrl.searchParams.set("action", "wbsearchentities");
+    searchUrl.searchParams.set("search", `${title} video game`);
+    searchUrl.searchParams.set("language", "en");
+    searchUrl.searchParams.set("type", "item");
+    searchUrl.searchParams.set("limit", "1");
+    searchUrl.searchParams.set("format", "json");
+    searchUrl.searchParams.set("origin", "*");
+
+    const searchResponse = await fetch(searchUrl.toString());
+    if (!searchResponse.ok) return null;
+
+    const searchData = await searchResponse.json();
+    const entityId = searchData?.search?.[0]?.id;
+    if (!entityId) return null;
+
+    const entityUrl = new URL(WIKIDATA_API);
+    entityUrl.searchParams.set("action", "wbgetentities");
+    entityUrl.searchParams.set("ids", entityId);
+    entityUrl.searchParams.set("props", "claims");
+    entityUrl.searchParams.set("format", "json");
+    entityUrl.searchParams.set("origin", "*");
+
+    const entityResponse = await fetch(entityUrl.toString());
+    if (!entityResponse.ok) return null;
+
+    const entityData = await entityResponse.json();
+    const claims = entityData?.entities?.[entityId]?.claims?.P136 || [];
+    const genreIds = claims
+      .map((claim) => claim?.mainsnak?.datavalue?.value?.id)
+      .filter(Boolean);
+
+    const labels = await fetchWikidataLabels(genreIds);
+    const values = genreIds.map((id) => labels.get(id)).filter(Boolean);
+
+    return values.join(", ") || null;
+  } catch {
+    return null;
+  }
 }
 
 function findGenreFromCategories(categories) {
