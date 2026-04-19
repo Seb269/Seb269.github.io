@@ -14,10 +14,9 @@
 
   <section class="search-bar">
     <input id="search" placeholder="Search games, consoles, developers, publishers..." />
-    <button id="toggleFilters" type="button">Categories ▾</button>
   </section>
 
-  <section id="advancedFilters" class="advanced-filters" hidden>
+  <section id="advancedFilters" class="advanced-filters">
     <select id="consoleFilter"><option value="all">All Consoles</option></select>
     <select id="yearFilter"><option value="all">All Years</option></select>
     <select id="regionFilter"><option value="all">All Regions</option></select>
@@ -25,6 +24,8 @@
     <select id="sortFilter">
       <option value="title_asc">Title A–Z</option>
       <option value="title_desc">Title Z–A</option>
+      <option value="console_asc">Console A–Z</option>
+      <option value="console_desc">Console Z–A</option>
       <option value="year_desc">Year New → Old</option>
       <option value="year_asc">Year Old → New</option>
     </select>

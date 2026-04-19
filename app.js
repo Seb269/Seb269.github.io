@@ -13,7 +13,6 @@ const FILE_CANDIDATES = [
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
 const search = document.getElementById("search");
-const toggleFilters = document.getElementById("toggleFilters");
 const advancedFilters = document.getElementById("advancedFilters");
 const consoleFilter = document.getElementById("consoleFilter");
 const yearFilter = document.getElementById("yearFilter");
@@ -201,11 +200,6 @@ function setupFilterEvents() {
   companyFilter.addEventListener("change", applyFilters);
   sortFilter.addEventListener("change", applyFilters);
 
-  toggleFilters.addEventListener("click", () => {
-    const opening = advancedFilters.hidden;
-    advancedFilters.hidden = !opening;
-    toggleFilters.textContent = opening ? "Categories ▴" : "Categories ▾";
-  });
 }
 
 function applyFilters() {
@@ -241,10 +235,13 @@ function sortGames(games, sortOption) {
 
   sorted.sort((a, b) => {
     const titleCompare = localeSort(normalize(a.Games), normalize(b.Games));
+    const consoleCompare = localeSort(normalize(a.Console), normalize(b.Console));
     const yearA = Number.parseInt(a.Year, 10) || 0;
     const yearB = Number.parseInt(b.Year, 10) || 0;
 
     if (sortOption === "title_desc") return -titleCompare;
+    if (sortOption === "console_asc") return consoleCompare || titleCompare;
+    if (sortOption === "console_desc") return -consoleCompare || titleCompare;
     if (sortOption === "year_desc") return yearB - yearA || titleCompare;
     if (sortOption === "year_asc") return yearA - yearB || titleCompare;
 
