@@ -1,6 +1,6 @@
 let allGames = [];
 
-const CSV_FILE = "sebs game list.csv";
+const CSV_FILE = "Sebs Game List(All game 全部ゲーム).csv";
 
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
