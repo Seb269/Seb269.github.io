@@ -298,7 +298,7 @@ function render(data, count) {
         <div class="info-bar">
           <div class="game-title">${escapeHtml(game.Games)}</div>
           <div class="game-meta">${escapeHtml(game.Console || "Unknown Console")} • ${escapeHtml(game.Year || "?")}</div>
-          <div class="game-meta genre-value" data-game-key="${escapeHtml(gameKey)}">Genre: ${escapeHtml(game.Genre || "Finding genre...")}</div>
+          <div class="game-meta genre-value" data-game-key="${escapeHtml(gameKey)}">Genre: ${renderGenreBadges(game)}</div>
           <div class="game-meta">${escapeHtml(game.Developer || game.Publisher || "Unknown Company")}</div>
           <div class="game-meta">Metacritic: <strong class="meta-score" data-game-key="${escapeHtml(gameKey)}">${escapeHtml(score.score)}</strong> <a href="${escapeHtml(score.link)}" target="_blank" rel="noopener noreferrer">reviews</a></div>
         </div>
@@ -508,13 +508,30 @@ function findGenreFromCategories(categories) {
   return found.join(", ") || null;
 }
 
+
+function renderGenreBadges(game) {
+  const genres = splitGenres(game.Genre);
+
+  if (genres.length === 0) {
+    return "<span class=\"genre-tag genre-pending\">Finding genre...</span>";
+  }
+
+  return genres
+    .map((genre) => `<span class=\"genre-tag ${genreClassName(genre)}\">${escapeHtml(genre)}</span>`)
+    .join(" ");
+}
+
+function genreClassName(genre) {
+  return `genre-${normalize(genre).toLowerCase().replaceAll(" ", "-").replaceAll("/", "-")}`;
+}
+
 function updateGenreElements(titleKey, genre) {
   allGames.forEach((game) => {
     if (normalize(game.Games) === titleKey) {
       const gameKey = getGameKey(game);
       const nodes = document.querySelectorAll(`.genre-value[data-game-key="${cssEscape(gameKey)}"]`);
       nodes.forEach((node) => {
-        node.textContent = `Genre: ${genre}`;
+        node.innerHTML = `Genre: ${renderGenreBadges({ Genre: genre })}`;
       });
     }
   });
