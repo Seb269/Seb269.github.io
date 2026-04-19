@@ -14,13 +14,10 @@ const METACRITIC_PROXY_API = window.location.hostname === "localhost"
   ? "http://localhost:8787/api/metacritic"
   : "/api/metacritic";
 const METACRITIC_SEARCH_API = "https://www.cheapshark.com/api/1.0/games";
-const WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php";
 const WIKIDATA_API = "https://www.wikidata.org/w/api.php";
 
 const scoreCache = new Map();
 const pendingScoreLoads = new Map();
-const genreCache = new Map();
-const pendingGenreLoads = new Map();
 
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
@@ -308,7 +305,6 @@ function render(data, count) {
   }).join("");
 
   loadMetacriticScores(data);
-  loadGenresFromWikipedia(data);
 }
 
 function getGameKey(game) {
@@ -520,180 +516,6 @@ function pickPreferredWikidataScore(scores, sourceLabels, title) {
   if (metacritic) return metacritic;
 
   return scores[0] || null;
-}
-
-async function loadGenresFromWikipedia(games) {
-  for (const game of games) {
-    if (normalize(game.Genre)) continue;
-
-    const key = normalize(game.Games);
-    if (!key || pendingGenreLoads.has(key) || genreCache.has(key)) continue;
-
-    const promise = fetchGenreFromWikipedia(game.Games)
-      .then(async (genre) => {
-        let resolvedGenre = genre;
-        if (!resolvedGenre) {
-          resolvedGenre = await fetchGenreFromWikidata(game.Games);
-        }
-        if (!resolvedGenre) return;
-
-        genreCache.set(key, resolvedGenre);
-        allGames.forEach((entry) => {
-          if (normalize(entry.Games) === key && !normalize(entry.Genre)) {
-            entry.Genre = resolvedGenre;
-          }
-        });
-
-        updateGenreElements(key, resolvedGenre);
-        updateGenreFilterOptions();
-      })
-      .finally(() => {
-        pendingGenreLoads.delete(key);
-      });
-
-    pendingGenreLoads.set(key, promise);
-  }
-}
-
-async function fetchGenreFromWikipedia(title) {
-  const searchUrl = new URL(WIKIPEDIA_API);
-  searchUrl.searchParams.set("action", "query");
-  searchUrl.searchParams.set("list", "search");
-  searchUrl.searchParams.set("srsearch", `${title} video game`);
-  searchUrl.searchParams.set("format", "json");
-  searchUrl.searchParams.set("origin", "*");
-
-  const searchResponse = await fetch(searchUrl.toString());
-  if (!searchResponse.ok) return null;
-
-  const searchData = await searchResponse.json();
-  const pageTitle = searchData?.query?.search?.[0]?.title;
-  if (!pageTitle) return null;
-
-  const categoriesUrl = new URL(WIKIPEDIA_API);
-  categoriesUrl.searchParams.set("action", "query");
-  categoriesUrl.searchParams.set("prop", "categories");
-  categoriesUrl.searchParams.set("titles", pageTitle);
-  categoriesUrl.searchParams.set("cllimit", "max");
-  categoriesUrl.searchParams.set("format", "json");
-  categoriesUrl.searchParams.set("origin", "*");
-
-  const categoriesResponse = await fetch(categoriesUrl.toString());
-  if (!categoriesResponse.ok) return null;
-
-  const categoriesData = await categoriesResponse.json();
-  const page = Object.values(categoriesData?.query?.pages || {})[0];
-  const categories = (page?.categories || []).map((item) => String(item.title || "").toLowerCase());
-
-  return findGenreFromCategories(categories);
-}
-
-async function fetchGenreFromWikidata(title) {
-  try {
-    const searchUrl = new URL(WIKIDATA_API);
-    searchUrl.searchParams.set("action", "wbsearchentities");
-    searchUrl.searchParams.set("search", `${title} video game`);
-    searchUrl.searchParams.set("language", "en");
-    searchUrl.searchParams.set("type", "item");
-    searchUrl.searchParams.set("limit", "1");
-    searchUrl.searchParams.set("format", "json");
-    searchUrl.searchParams.set("origin", "*");
-
-    const searchResponse = await fetch(searchUrl.toString());
-    if (!searchResponse.ok) return null;
-
-    const searchData = await searchResponse.json();
-    const entityId = searchData?.search?.[0]?.id;
-    if (!entityId) return null;
-
-    const entityUrl = new URL(WIKIDATA_API);
-    entityUrl.searchParams.set("action", "wbgetentities");
-    entityUrl.searchParams.set("ids", entityId);
-    entityUrl.searchParams.set("props", "claims");
-    entityUrl.searchParams.set("format", "json");
-    entityUrl.searchParams.set("origin", "*");
-
-    const entityResponse = await fetch(entityUrl.toString());
-    if (!entityResponse.ok) return null;
-
-    const entityData = await entityResponse.json();
-    const claims = entityData?.entities?.[entityId]?.claims?.P136 || [];
-    const genreIds = claims
-      .map((claim) => claim?.mainsnak?.datavalue?.value?.id)
-      .filter(Boolean);
-
-    const labels = await fetchWikidataLabels(genreIds);
-    const values = genreIds.map((id) => labels.get(id)).filter(Boolean);
-
-    return values.join(", ") || null;
-  } catch {
-    return null;
-  }
-}
-
-function findGenreFromCategories(categories) {
-  const genreMap = [
-    ["role-playing", "RPG"],
-    ["action-adventure", "Action-Adventure"],
-    ["action", "Action"],
-    ["platform", "Platformer"],
-    ["first-person shooter", "Shooter"],
-    ["shooter", "Shooter"],
-    ["fighting", "Fighting"],
-    ["racing", "Racing"],
-    ["sports", "Sports"],
-    ["simulation", "Simulation"],
-    ["strategy", "Strategy"],
-    ["puzzle", "Puzzle"],
-    ["survival horror", "Survival Horror"],
-    ["horror", "Horror"],
-    ["visual novel", "Visual Novel"],
-    ["rhythm", "Rhythm"],
-    ["party", "Party"],
-    ["adventure", "Adventure"],
-    ["stealth", "Stealth"],
-    ["metroidvania", "Metroidvania"],
-    ["roguelike", "Roguelike"]
-  ];
-
-  const found = [];
-
-  genreMap.forEach(([keyword, label]) => {
-    if (categories.some((cat) => cat.includes(keyword)) && !found.includes(label)) {
-      found.push(label);
-    }
-  });
-
-  return found.join(", ") || null;
-}
-
-
-function renderGenreBadges(game) {
-  const genres = splitGenres(game.Genre);
-
-  if (genres.length === 0) {
-    return "<span class=\"genre-tag genre-pending\">Finding genre...</span>";
-  }
-
-  return genres
-    .map((genre) => `<span class=\"genre-tag ${genreClassName(genre)}\">${escapeHtml(genre)}</span>`)
-    .join(" ");
-}
-
-function genreClassName(genre) {
-  return `genre-${normalize(genre).toLowerCase().replaceAll(" ", "-").replaceAll("/", "-")}`;
-}
-
-function updateGenreElements(titleKey, genre) {
-  allGames.forEach((game) => {
-    if (normalize(game.Games) === titleKey) {
-      const gameKey = getGameKey(game);
-      const nodes = document.querySelectorAll(`.genre-value[data-game-key="${cssEscape(gameKey)}"]`);
-      nodes.forEach((node) => {
-        node.innerHTML = `Genre: ${renderGenreBadges({ Genre: genre })}`;
-      });
-    }
-  });
 }
 
 function updateScoreElements(gameKey, value) {
