@@ -115,3 +115,36 @@ body {
   color: var(--muted);
   margin-top: 20px;
 }
+
+.genre-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 2px 4px 2px 0;
+  border-radius: 999px;
+  font-size: 11px;
+  border: 1px solid #2f4a72;
+  background: #132641;
+  color: #d8e8ff;
+}
+
+.genre-pending { opacity: 0.8; }
+.genre-rpg { background: #3a2166; border-color: #6240a1; }
+.genre-action { background: #572222; border-color: #8e3a3a; }
+.genre-action-adventure { background: #4f2e1f; border-color: #7b4f36; }
+.genre-platformer { background: #224e68; border-color: #3c7598; }
+.genre-shooter { background: #4e2a2a; border-color: #7a4545; }
+.genre-fighting { background: #5d2736; border-color: #8f3b53; }
+.genre-racing { background: #1f4f48; border-color: #337b71; }
+.genre-sports { background: #2d4a1f; border-color: #4f7b34; }
+.genre-simulation { background: #1f3f57; border-color: #3b688b; }
+.genre-strategy { background: #2f3557; border-color: #505b8f; }
+.genre-puzzle { background: #584d1f; border-color: #8a7a36; }
+.genre-survival-horror,
+.genre-horror { background: #3a2020; border-color: #6f3838; }
+.genre-visual-novel { background: #4d2759; border-color: #7b3c92; }
+.genre-rhythm { background: #4b2355; border-color: #7a3b8b; }
+.genre-party { background: #3f2d15; border-color: #6e5229; }
+.genre-adventure { background: #23424f; border-color: #3b6e84; }
+.genre-stealth { background: #2b3241; border-color: #4d5d76; }
+.genre-metroidvania { background: #2b2848; border-color: #4d4a82; }
+.genre-roguelike { background: #3b2d49; border-color: #695084; }
