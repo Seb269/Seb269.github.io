@@ -14,8 +14,12 @@ const METACRITIC_PROXY_API = window.location.hostname === "localhost"
   ? "http://localhost:8787/api/metacritic"
   : "/api/metacritic";
 const METACRITIC_SEARCH_API = "https://www.cheapshark.com/api/1.0/games";
+const WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php";
+
 const scoreCache = new Map();
 const pendingScoreLoads = new Map();
+const genreCache = new Map();
+const pendingGenreLoads = new Map();
 
 const grid = document.getElementById("grid");
 const resultsMeta = document.getElementById("resultsMeta");
@@ -24,6 +28,7 @@ const consoleFilter = document.getElementById("consoleFilter");
 const yearFilter = document.getElementById("yearFilter");
 const regionFilter = document.getElementById("regionFilter");
 const companyFilter = document.getElementById("companyFilter");
+const genreFilter = document.getElementById("genreFilter");
 const sortFilter = document.getElementById("sortFilter");
 
 grid.innerHTML = "<p class='empty'>Loading games...</p>";
@@ -132,6 +137,7 @@ function normalizeRows(rows) {
         Developer: pick(row, ["developer", "company", "studio", "utvecklare"]),
         Publisher: pick(row, ["publisher", "utgivare"]),
         Year: pick(row, ["year", "releaseyear", "release", "ar", "år"]),
+        Genre: pick(row, ["genre", "genres", "typ", "kategori"]),
         Metacritic: pick(row, ["metacritic", "metacriticscore", "metascore", "review", "score"])
       };
 
@@ -178,6 +184,23 @@ function setupCategoryFilters() {
   populateSelect(yearFilter, allGames.map((game) => game.Year), "All Years", sortYearsDesc);
   populateSelect(regionFilter, allGames.map((game) => game.Edition), "All Regions");
   populateSelect(companyFilter, allGames.map((game) => game.Developer), "All Companies");
+  updateGenreFilterOptions();
+}
+
+function updateGenreFilterOptions() {
+  genreFilter.innerHTML = "<option value=\"all\">All Genres</option>";
+  populateSelect(genreFilter, getAllGenreValues(), "All Genres");
+}
+
+function getAllGenreValues() {
+  return allGames.flatMap((game) => splitGenres(game.Genre));
+}
+
+function splitGenres(value) {
+  return normalize(value)
+    .split(/,|\//)
+    .map((entry) => entry.trim())
+    .filter(Boolean);
 }
 
 function populateSelect(selectElement, values, defaultLabel, sortFn = localeSort) {
@@ -199,11 +222,13 @@ function setupFilterEvents() {
   yearFilter.addEventListener("change", applyFilters);
   regionFilter.addEventListener("change", applyFilters);
   companyFilter.addEventListener("change", applyFilters);
+  genreFilter.addEventListener("change", applyFilters);
   sortFilter.addEventListener("change", applyFilters);
 }
 
 function applyFilters() {
   const query = search.value.toLowerCase();
+  const selectedGenre = genreFilter.value;
 
   const filteredGames = allGames.filter((game) => {
     const title = normalize(game.Games).toLowerCase();
@@ -211,20 +236,23 @@ function applyFilters() {
     const developer = normalize(game.Developer).toLowerCase();
     const publisher = normalize(game.Publisher).toLowerCase();
     const region = normalize(game.Edition).toLowerCase();
+    const genre = normalize(game.Genre).toLowerCase();
 
     const matchesSearch =
       title.includes(query) ||
       consoleName.includes(query) ||
       developer.includes(query) ||
       publisher.includes(query) ||
-      region.includes(query);
+      region.includes(query) ||
+      genre.includes(query);
 
     const matchesConsole = consoleFilter.value === "all" || normalize(game.Console) === consoleFilter.value;
     const matchesYear = yearFilter.value === "all" || normalize(game.Year) === yearFilter.value;
     const matchesRegion = regionFilter.value === "all" || normalize(game.Edition) === regionFilter.value;
     const matchesCompany = companyFilter.value === "all" || normalize(game.Developer) === companyFilter.value;
+    const matchesGenre = selectedGenre === "all" || splitGenres(game.Genre).includes(selectedGenre);
 
-    return matchesSearch && matchesConsole && matchesYear && matchesRegion && matchesCompany;
+    return matchesSearch && matchesConsole && matchesYear && matchesRegion && matchesCompany && matchesGenre;
   });
 
   render(sortGames(filteredGames, sortFilter.value), filteredGames.length);
@@ -270,6 +298,7 @@ function render(data, count) {
         <div class="info-bar">
           <div class="game-title">${escapeHtml(game.Games)}</div>
           <div class="game-meta">${escapeHtml(game.Console || "Unknown Console")} • ${escapeHtml(game.Year || "?")}</div>
+          <div class="game-meta genre-value" data-game-key="${escapeHtml(gameKey)}">Genre: ${escapeHtml(game.Genre || "Finding genre...")}</div>
           <div class="game-meta">${escapeHtml(game.Developer || game.Publisher || "Unknown Company")}</div>
           <div class="game-meta">Metacritic: <strong class="meta-score" data-game-key="${escapeHtml(gameKey)}">${escapeHtml(score.score)}</strong> <a href="${escapeHtml(score.link)}" target="_blank" rel="noopener noreferrer">reviews</a></div>
         </div>
@@ -278,6 +307,7 @@ function render(data, count) {
   }).join("");
 
   loadMetacriticScores(data);
+  loadGenresFromWikipedia(data);
 }
 
 function getGameKey(game) {
@@ -288,9 +318,7 @@ function getCurrentScore(game) {
   const key = getGameKey(game);
   const cached = scoreCache.get(key);
 
-  if (cached) {
-    return cached;
-  }
+  if (cached) return cached;
 
   const existing = normalize(game.Metacritic);
   if (existing) {
@@ -317,15 +345,11 @@ async function loadMetacriticScores(games) {
     const key = getGameKey(game);
     const current = scoreCache.get(key);
 
-    if ((current && current.score !== "N/A") || pendingScoreLoads.has(key)) {
-      continue;
-    }
+    if ((current && current.score !== "N/A") || pendingScoreLoads.has(key)) continue;
 
     const promise = fetchMetacriticScore(game)
       .then((value) => {
-        if (!value) {
-          return;
-        }
+        if (!value) return;
 
         scoreCache.set(key, value);
         updateScoreElements(key, value);
@@ -384,6 +408,116 @@ async function fetchScoreFromCheapShark(title) {
     score: rawScore,
     link: best.metacriticLink ? `https://www.metacritic.com${best.metacriticLink}` : buildMetacriticSearchLink(title)
   };
+}
+
+async function loadGenresFromWikipedia(games) {
+  for (const game of games) {
+    if (normalize(game.Genre)) continue;
+
+    const key = normalize(game.Games);
+    if (!key || pendingGenreLoads.has(key) || genreCache.has(key)) continue;
+
+    const promise = fetchGenreFromWikipedia(game.Games)
+      .then((genre) => {
+        if (!genre) return;
+
+        genreCache.set(key, genre);
+        allGames.forEach((entry) => {
+          if (normalize(entry.Games) === key && !normalize(entry.Genre)) {
+            entry.Genre = genre;
+          }
+        });
+
+        updateGenreElements(key, genre);
+        updateGenreFilterOptions();
+      })
+      .finally(() => {
+        pendingGenreLoads.delete(key);
+      });
+
+    pendingGenreLoads.set(key, promise);
+  }
+}
+
+async function fetchGenreFromWikipedia(title) {
+  const searchUrl = new URL(WIKIPEDIA_API);
+  searchUrl.searchParams.set("action", "query");
+  searchUrl.searchParams.set("list", "search");
+  searchUrl.searchParams.set("srsearch", `${title} video game`);
+  searchUrl.searchParams.set("format", "json");
+  searchUrl.searchParams.set("origin", "*");
+
+  const searchResponse = await fetch(searchUrl.toString());
+  if (!searchResponse.ok) return null;
+
+  const searchData = await searchResponse.json();
+  const pageTitle = searchData?.query?.search?.[0]?.title;
+  if (!pageTitle) return null;
+
+  const categoriesUrl = new URL(WIKIPEDIA_API);
+  categoriesUrl.searchParams.set("action", "query");
+  categoriesUrl.searchParams.set("prop", "categories");
+  categoriesUrl.searchParams.set("titles", pageTitle);
+  categoriesUrl.searchParams.set("cllimit", "max");
+  categoriesUrl.searchParams.set("format", "json");
+  categoriesUrl.searchParams.set("origin", "*");
+
+  const categoriesResponse = await fetch(categoriesUrl.toString());
+  if (!categoriesResponse.ok) return null;
+
+  const categoriesData = await categoriesResponse.json();
+  const page = Object.values(categoriesData?.query?.pages || {})[0];
+  const categories = (page?.categories || []).map((item) => String(item.title || "").toLowerCase());
+
+  return findGenreFromCategories(categories);
+}
+
+function findGenreFromCategories(categories) {
+  const genreMap = [
+    ["role-playing", "RPG"],
+    ["action-adventure", "Action-Adventure"],
+    ["action", "Action"],
+    ["platform", "Platformer"],
+    ["first-person shooter", "Shooter"],
+    ["shooter", "Shooter"],
+    ["fighting", "Fighting"],
+    ["racing", "Racing"],
+    ["sports", "Sports"],
+    ["simulation", "Simulation"],
+    ["strategy", "Strategy"],
+    ["puzzle", "Puzzle"],
+    ["survival horror", "Survival Horror"],
+    ["horror", "Horror"],
+    ["visual novel", "Visual Novel"],
+    ["rhythm", "Rhythm"],
+    ["party", "Party"],
+    ["adventure", "Adventure"],
+    ["stealth", "Stealth"],
+    ["metroidvania", "Metroidvania"],
+    ["roguelike", "Roguelike"]
+  ];
+
+  const found = [];
+
+  genreMap.forEach(([keyword, label]) => {
+    if (categories.some((cat) => cat.includes(keyword)) && !found.includes(label)) {
+      found.push(label);
+    }
+  });
+
+  return found.join(", ") || null;
+}
+
+function updateGenreElements(titleKey, genre) {
+  allGames.forEach((game) => {
+    if (normalize(game.Games) === titleKey) {
+      const gameKey = getGameKey(game);
+      const nodes = document.querySelectorAll(`.genre-value[data-game-key="${cssEscape(gameKey)}"]`);
+      nodes.forEach((node) => {
+        node.textContent = `Genre: ${genre}`;
+      });
+    }
+  });
 }
 
 function updateScoreElements(gameKey, value) {
