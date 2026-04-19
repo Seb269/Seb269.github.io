@@ -148,3 +148,5 @@ body {
 .genre-stealth { background: #2b3241; border-color: #4d5d76; }
 .genre-metroidvania { background: #2b2848; border-color: #4d4a82; }
 .genre-roguelike { background: #3b2d49; border-color: #695084; }
+
+.score-source { color: #89a7d9; font-size: 11px; }
