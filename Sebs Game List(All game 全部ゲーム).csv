@@ -1,487 +1,484 @@
-Games,Console,Edition,Developer,Publisher,Year,New,Box,Manual
-"戦国BASARA クロニクルヒーローズ","Playstation Portable","Japanese","CAPCOM","CAPCOM","2009","No","Yes","No"
-"VitaminZ Revolution","Playstation Portable","Japanese","Hune X","D3 Publisher","2010","No","Yes","No"
-"Diabolik Lovers","Playstation Portable","Japanese","Rejet","Idea Factory","2012","No","Yes","Yes"
-"Amnesia crowd","Playstation Portable","Japanese","Desing Factory","Idea Factory","2013","No","Yes","No"
-"金色のコルダ","Playstation Portable","Japanese","Ruby Party","Koei","2009","No","Yes","Yes"
-"遥かなる時空の中で４","Playstation Portable","Japanese","Koei","Koei","2008","No","Yes","Yes"
-"遙かなる時空の中で3","Playstation Portable","Japanese","Koei","Koei","2009","No","Yes","Yes"
-"薄桜鬼","Playstation Portable","Japanese","Design Factory","Idea Factory","2009","No","Yes","Yes"
-"ファンタシースターポータブル","Playstation Portable","Japanese","SEGA","SEGA","2008","Yes","Yes","Yes"
-"つカレっ☆ 恋愛デビュー宣言","Playstation Portable","Japanese","Bridge Co., Ltd","Bridge Co., Ltd","2012","No","Yes","Yes"
-"うたの☆プリンスさまっ♪Repeat LOVE","Playstation Portable","Japanese","Nippon Ichi Software","Brocoli","2011","No","Yes","Yes"
-"うたの☆プリンスさまっ♪All Star","Playstation Portable","Japanese","Nippon Ichi Software","Brocoli","2013","No","Yes","Yes"
-"Starry Sky","Playstation Portable","Japanese","Honeybee","Honeybee","2012","No","Yes","Yes"
-"Amnesiaアムネシア","Playstation Portable","Japanese","Design Factory","Idea Factory","2011","No","Yes","Yes"
-"Square Enix Final Fantasy VII Rebirth","Playstation 5","European","Square Enix","Square Enix","2024","No","Yes","Yes"
-"Spider-Man 2","Playstation 5","European","Insomniac Games","Sony Interactive Entertainment","2023","No","Yes","No"
-"Shin Megami Tensei V: Vengeance","Playstation 5","European","ATLUS","SEGA","2024","No","Yes","No"
-"Resident Evil 4 Remastered","Playstation 5","European","CAPCOM","CAPCOM","2023","No","Yes","No"
-"Puyopuyo Tetris 2","Playstation 5","European","SEGA","SEGA","2020","No","Yes","No"
-"NHL 22","Playstation 5","European","Electronic Arts","Electronic Arts","2021","Yes","Yes","Yes"
-"Metaphor: Rephantazio","Playstation 5","European","ATLUS","SEGA","2024","No","Yes","No"
-"Hogwarts Legacy","Playstation 5","European","Avalanche Software","Warner Bros. Games","2023","No","Yes","Yes"
-"Final Fantasy XVI","Playstation 5","European","Square Enix","Square Enix","2023","No","Yes","Yes"
-"FIFA 22","Playstation 5","European","Electronic Arts","Electronic Arts","2021","Yes","Yes","Yes"
-"Watch Dogs Legion","Playstation 4","European","Ubisoft","Ubisoft","2020","No","Yes","Yes"
-"Uncharted: The Nathan Drake Collection","Playstation 4","European","Naughty Dog","Sony Interactive Entertainment","2018","Yes","Yes","Yes"
-"Titan Quest","Playstation 4","European","Iron Lore Entertainment","Thonordic","2018","No","Yes","No"
-"The Last of Us Part 2","Playstation 4","European","Naughty Dog","Sony Interactive Entertainment","2020","No","Yes","No"
-"Surviving Mars","Playstation 4","European","Haenimont Games","Paradox Interactive","2018","No","Yes","No"
-"Star Wars Jedi Fallen Order","Playstation 4","European","Respawn Entertainment","Electronic Arts","2019","No","Yes","No"
-"Star Wars Battlefront 2","Playstation 4","European","DICE","Electronic Arts","2017","No","Yes","No"
-"Spider-Man Miles Morales","Playstation 4","European","Insomniac Games","Sony Computer Entertainment","2020","No","Yes","No"
-"Skylanders Trap Team","Playstation 4","European","Toys For Bob","Activision","2014","No","Yes","No"
-"Skylanders Superchargers","Playstation 4","European","Toys For Bob","Activision","2015","No","Yes","No"
-"Puyopuyo Tetris","Playstation 4","European","SEGA","SEGA","2014","No","Yes","No"
-"Overwatch","Playstation 4","European","Blizzard Entertainment","Blizzard Entertainment","2016","No","Yes","No"
-"Micro Machines","Playstation 4","European","Codemasters","Electronic Arts","2017","No","Yes","No"
-"Little Big Planet 3","Playstation 4","European","Sumo Digital","Sony Interactive Entertainment","2014","No","Yes","Yes"
-"Lego Jurassic World","Playstation 4","European","TT Games","Warner Bros. Games","2015","No","Yes","Yes"
-"inFamous Second Son","Playstation 4","European","Sucker Punch","Sony Interactive Entertainment","2014","Yes","Yes","Yes"
-"Horizon Zero Dawn","Playstation 4","European","Guerrilla","Sony Interactive Entertainment","2017","No","Yes","No"
-"Gran Turismo Sport","Playstation 4","European","Polyphony Digital","Sony Interactive Entertainment","2017","Yes","Yes","Yes"
-"God of War 3 Remastered","Playstation 4","European","Santa Monica Studio","Sony Interactive Entertainment","2015","No","Yes","Yes"
-"God of War","Playstation 4","European","Santa Monica Studio","Sony Interactive Entertainment","2018","No","Yes","Yes"
-"Final Fantasy XV","Playstation 4","European","Square Enix","Square Enix","2016","No","Yes","Yes"
-"Disney Infinity 3.0","Playstation 4","European","Disney","Disney Interactive Studios","2015","No","Yes","Yes"
-"Disney Infinity 2.0","Playstation 4","European","Disney","Disney Interactive Studios","2014","No","Yes","Yes"
-"Destiny 2","Playstation 4","European","Bungie","Activision","2017","No","Yes","No"
-"Destiny","Playstation 4","European","Bungie","Activision","2013","No","Yes","No"
-"Death Stranding","Playstation 4","European","Kojima Productions","505 Games","2019","Yes","Yes","Yes"
-"Dark Souls Remastered","Playstation 4","European","From Software","From Software","2018","No","Yes","No"
-"Crash Bandicoot N Sane Trilogy","Playstation 4","European","Vicarious","Activision","2017","No","Yes","No"
-"Bloodborne","Playstation 4","European","From Software","Sony Computer Entertainment","2015","No","Yes","No"
-"Assassin's Creed Valhalla","Playstation 4","European","Ubisoft","Ubisoft","2020","No","Yes","Yes"
-"Assassin's Creed Odyssey","Playstation 4","European","Ubisoft","Ubisoft","2018","No","Yes","Yes"
-"Siren Blood Curse","Playstation 3","European","Japan Studio","Sony Interactive Entertainment","2008","No","Yes","Yes"
-"Resident Evil 5","Playstation 3","European","Capcom","Capcom","2009","No","Yes","Yes"
-"Marvel: Ultimate Alliance 2","Playstation 3","European","Vicarious Visions","Activision","2009","No","Yes","Yes"
-"龍が如く５","Playstation 3","Japanese","Ryu Ga Gotoku Studio","SEGA","2012","Yes","Yes","Yes"
-"龍が如く４","Playstation 3","Japanese","Ryu Ga Gotoku Studio","SEGA","2010","No","Yes","Yes"
-"龍が如く３","Playstation 3","Japanese","Ryu Ga Gotoku Studio","SEGA","2009","No","Yes","Yes"
-"真三國無双６","Playstation 3","Japanese","Koei","Koei","2011","No","Yes","Yes"
-"真三國無双 ５","Playstation 3","Japanese","Koei","Koei","2007","No","Yes","Yes"
-"機動戦士ガンダムターゲットインサイト","Playstation 3","Japanese","B.B Studio","Bandai Namco Entertainment","2006","No","Yes","Yes"
-"機動戦士ガンダムエクストリームバーサス","Playstation 3","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","2010","No","Yes","Yes"
-"戦国BASARA4","Playstation 3","Japanese","CAPCOM","CAPCOM","2014","No","Yes","Yes"
-"戦国BASARA 3","Playstation 3","Japanese","CAPCOM","CAPCOM","2010","No","Yes","Yes"
-"実況パワフルプロ野球2013","Playstation 3","Japanese","Konami","Konami","2013","No","Yes","Yes"
-"実況パワフルプロ野球2011","Playstation 3","Japanese","Konami","Konami","2011","No","Yes","Yes"
-"地球防衛軍４","Playstation 3","Japanese","Sandlot","D3 Publisher","2013","No","Yes","Yes"
-"北斗無双","Playstation 3","Japanese","Koei Tecmo","Koei Tecmo","2010","No","Yes","Yes"
-"ワンピース海賊無双３","Playstation 3","Japanese","Omega Force","Bandai Namco Entertainment","2015","No","Yes","Yes"
-"ワンピース海賊無双 2","Playstation 3","Japanese","Omega Force","Bandai Namco Entertainment","2013","No","Yes","Yes"
-"ワンピース海賊無双","Playstation 3","Japanese","Omega Force","Bandai Namco Entertainment","2012","No","Yes","Yes"
-"ワールドサッカーウイニングイレブン2012","Playstation 3","Japanese","Konami","Konami","2011","No","Yes","Yes"
-"ワールドサッカー ウイニングイレブン 2010","Playstation 3","Japanese","Konami","Konami","2009","No","Yes","Yes"
-"ファイナルファンタジーXIII-2","Playstation 3","Japanese","Square Enix","Square Enix","2011","No","Yes","Yes"
-"ファイナルファンタジーXIII","Playstation 3","Japanese","Square Enix","Square Enix","2009","No","Yes","Yes"
-"トルネ","Playstation 3","Japanese","Sony Computer Entertainment","Sony Interactive Entertainment","2010","No","Yes","Yes"
-"デビルメイクライ4","Playstation 3","Japanese","CAPCOM","CAPCOM","2008","No","Yes","Yes"
-"デッドライジング 2 オフ・ザ・レコード","Playstation 3","Japanese","CAPCOM","CAPCOM","2011","No","Yes","Yes"
-"デッドライジング 2","Playstation 3","Japanese","CAPCOM","CAPCOM","2010","No","Yes","Yes"
-"テイルズ オブ ベルセリア","Playstation 3","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","2016","No","Yes","Yes"
-"コールオブデューティ4 モダンウォーフェア","Playstation 3","Japanese","Infinity Ward","Activision","2007","No","Yes","Yes"
-"コールオブデューティ モダンウォーフェア 3","Playstation 3","Japanese","Infinity Ward","Activision","2011","No","Yes","Yes"
-"コールオブデューティ モダンウォーフェア ２","Playstation 3","Japanese","Infinity Ward","Activision","2009","No","Yes","Yes"
-"コールオブデューティ ブラックオプス２","Playstation 3","Japanese","Treyarch","Activision","2012","No","Yes","Yes"
-"コールオブデューティ ブラックオプス","Playstation 3","Japanese","Treyarch","Activision","2010","No","Yes","Yes"
-"コールオブデューティ ゴースト","Playstation 3","Japanese","Infinity Ward","Activision","2013","No","Yes","Yes"
-"グランドセフトオート５","Playstation 3","Japanese","Rockstar","Rockstar Games","2013","No","Yes","Yes"
-"グランドセフトオート 4","Playstation 3","Japanese","Rockstar","Rockstar Games","2008","No","Yes","Yes"
-"ガンダム無双 2","Playstation 3","Japanese","Omega Force","Koei","2008","No","Yes","Yes"
-"ガンダム無双","Playstation 3","Japanese","Omega Force","Koei","2007","No","Yes","Yes"
-"ガンダムブレイカー２","Playstation 3","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","2014","No","Yes","Yes"
-"エースコンバットアサルトホライゾン","Playstation 3","Japanese","Project Aces","Bandai Namco Entertainment","2011","No","Yes","Yes"
-"Worms Collection","Playstation 3","European","Ubisoft","Ubisoft","2012","No","Yes","Yes"
-"Uncharted Drake's Fortune","Playstation 3","European","Naughty Dog","Sony Computer Entertainment","2007","No","Yes","Yes"
-"UFC Undisputed 2010","Playstation 3","European","Yuke's","THQ","2010","No","Yes","Yes"
-"Toy Story 3","Playstation 3","European","Avalanche Software","Disney Interactive Studios","2010","No","Yes","Yes"
-"The Evil Within","Playstation 3","European","Tango Gameworks","Bethesda Softworks","2014","No","Yes","Yes"
-"Star Wars The Force Unleashed","Playstation 3","European","LucasArts","LucasArts","2008","No","Yes","Yes"
-"South Park The Stick Of The Truth","Playstation 3","European","South Park Digital Studios","Ubisoft","2014","No","Yes","Yes"
-"Sonic All Stars Racing Transformed","Playstation 3","European","SEGA","SEGA","2010","No","Yes","Yes"
-"Sly Cooper Thieves in Time","Playstation 3","European","Sanzaru Games","Sony Interactive Entertainment","2013","No","Yes","Yes"
-"SEGA Superstars Tennis","Playstation 3","European","SEGA","SEGA","2008","No","Yes","Yes"
-"Resistance 3","Playstation 3","European","Insomniac Games","Sony Interactive Entertainment","2011","No","Yes","Yes"
-"Resident Evil 6","Playstation 3","European","CAPCOM","CAPCOM","2012","No","Yes","Yes"
-"Rayman Origins","Playstation 3","European","Ubisoft","Ubisoft","2011","No","Yes","Yes"
-"Rayman Legends","Playstation 3","European","Ubisoft","Ubisoft","2013","No","Yes","Yes"
-"Race Driver Grid","Playstation 3","European","Codemasters","Codemasters","2008","No","Yes","Yes"
-"Prince of Persia","Playstation 3","European","Ubisoft","Ubisoft","2008","No","Yes","Yes"
-"Persona 4 Arena Ultimax Limited Edition","Playstation 3","Japanese","Atlus","Atlus","2013","No","Yes","Yes"
-"Order Up","Playstation 3","European","SuperVillain Studios","IndiePub","2008","No","Yes","Yes"
-"Ninja Gaiden 3","Playstation 3","European","Team Ninja","Tecmo Koei","2012","No","Yes","Yes"
-"NARUTO-ナルト- 疾風伝 ナルティメットストーム3","Playstation 3","Japanese","CyberConnect2","Bandai Namco Entertainment","2013","No","Yes","Yes"
-"Little Big Planet 2","Playstation 3","European","Media Molecule","Sony Computer Entertainment","2011","No","Yes","Yes"
-"Little Big Planet Karting","Playstation 3","European","Sumo Digital","Sony Interactive Entertainment","2012","No","Yes","Yes"
-"Little Big Planet","Playstation 3","European","Media Molecule","Media Molecule","2008","No","Yes","Yes"
-"Lightning Returns: Final Fantasy XIII","Playstation 3","European","Square Enix","Square Enix","2014","No","Yes","Yes"
-"Lego Indiana Jones 2","Playstation 3","European","TT Games","LucasArts","2009","No","Yes","Yes"
-"H.A.W.X","Playstation 3","Japanese","Ubisoft","Ubisoft","2009","No","Yes","Yes"
-"Grand Theft Auto Episodes From Liberty City","Playstation 3","European","Rockstar","Rockstar Games","2009","No","Yes","Yes"
-"Gran Turismo 5","Playstation 3","European","Polyphony Digital","Sony Computer Entertainment","2010","No","Yes","Yes"
-"Final Fantasy XIV: A Realm Reborn","Playstation 3","European","Square Enix","Square Enix","2010","No","Yes","Yes"
-"FIFA 15","Playstation 3","European","Electronic Arts","Electronic Arts","2014","No","No","No"
-"FIFA 12","Playstation 3","European","Electronic Arts","Electronic Arts","2011","No","Yes","Yes"
-"DuckTales: Remastered","Playstation 3","European","WayForward Technologies","CAPCOM","2013","No","Yes","Yes"
-"DmC Devil May Cry","Playstation 3","European","Ninja Theory","CAPCOM","2013","No","Yes","Yes"
-"Disney Universe","Playstation 3","European","Eurocom","Disney Interactive Studios","2011","No","Yes","Yes"
-"Disney Epic Mickey 2","Playstation 3","European","Junction Point Studios","Disney Interactive Studios","2012","No","Yes","Yes"
-"Diggs Nightcrawler","Playstation 3","European","London Studio","Sony Interactive Entertainment","2013","No","Yes","Yes"
-"Dead Space 3","Playstation 3","European","Visceral Games","Electronic Arts","2013","No","Yes","No"
-"Dead Space 2","Playstation 3","European","Visceral Games","Electronic Arts","2011","No","Yes","Yes"
-"Dead Space","Playstation 3","European","Visceral Games","Electronic Arts","2008","No","Yes","Yes"
-"Biohazard 5","Playstation 3","Japanese","CAPCOM","CAPCOM","2009","No","Yes","Yes"
-"Bejeweled 3","Playstation 3","European","PopCap","Electronic Arts","2010","No","Yes","No"
-"Batman: Arkham Asylum Platinum","Playstation 3","European","Rocksteady Studios","Eidos Interactive","2009","No","Yes","Yes"
-"Batman Arkham City Game of the Year Edition","Playstation 3","European","Rocksteady Studios","Warner Bros","2011","No","Yes","Yes"
-"Angry Birds Star Wars","Playstation 3","European","Rovio","Activision","2012","No","Yes","No"
-"UEFA Euro 2004","Playstation 2","European","Electronic Arts","Electronic Arts","2004","No","Yes","Yes"
-"Tony Hawk's Proving Ground","Playstation 2","European","Neversoft","Activision","2007","No","Yes","Yes"
-"TOCA Race Driver 2","Playstation 2","European","Codemasters","Codemasters","2004","No","No","Yes"
-"Tiger Woods PGA Tour 2004 Platinum Edition","Playstation 2","European","Electronic Arts","Electronic Arts","2003","No","Yes","Yes"
-"Star Wars: Episode III – Revenge of the Sith","Playstation 2","European","The Collective","LucasArts","2005","No","Yes","Yes"
-"Spider-Man 2","Playstation 2","European","Vicarious Visions","Activision","2004","No","No","Yes"
-"Socom II: U.S. Navy Seals Platinum","Playstation 2","European","Zipper Interactive","Sony Computer Entertainment","2003","No","No","Yes"
-"NHL 2004","Playstation 2","European","Electronic Arts","Electronic Arts","2003","No","Yes","Yes"
-"NHL 2002","Playstation 2","European","Electronic Arts","Electronic Arts","2001","No","Yes","Yes"
-"NHL 07","Playstation 2","European","Electronic Arts","Electronic Arts","2006","No","Yes","Yes"
-"Need for Speed: Underground","Playstation 2","European","Electronic Arts","Electronic Arts","2003","No","Yes","Yes"
-"Need for Speed: Hot Pursuit 2","Playstation 2","European","Electronic Arts","Electronic Arts","2002","No","Yes","Yes"
-"Medal of Honor: Frontline","Playstation 2","European","Electronic Arts","Electronic Arts","2002","No","No","Yes"
-"James Bond 007: Everything or Nothing","Playstation 2","European","Electronic Arts","Electronic Arts","2004","No","Yes","Yes"
-"Heatseeker","Playstation 2","European","Red Mile Entertainment","Codemasters","2007","No","Yes","Yes"
-"Ford vs Chevy","Playstation 2","European","Eutechnyx","2K Games","2005","No","No","Yes"
-"FIFA 2005","Playstation 2","European","Electronic Arts","Electronic Arts","2004","No","No","Yes"
-"FIFA 12","Playstation 2","European","Electronic Arts","Electronic Arts","2011","No","Yes","Yes"
-"EyeToy Play Sports","Playstation 2","European","London Studio","Sony Computer Entertainment","2003","No","Yes","Yes"
-"EyeToy Play 3 Platinum","Playstation 2","European","London Studio","Sony Computer Entertainment","2005","No","Yes","Yes"
-"Commandos Strike Force","Playstation 2","European","Pyro Studios","Eidos Interactive","2006","No","No","Yes"
-"Casper And The Ghostly Trio","Playstation 2","European","Data Design Interactive","Mastertronic Group","2006","No","Yes","Yes"
-"Cabela's Dangerous Adventures","Playstation 2","European","Fun Labs","Activision","2003","No","Yes","Yes"
-"Brothers in Arms: Road to Hill 30","Playstation 2","European","Gearbox Software","Ubisoft","2005","No","No","Yes"
-"Brothers In Arms Earned In Blood","Playstation 2","European","Gearbox Software","Ubisoft","2005","No","Yes","Yes"
-"Battlefield 2: Modern Combat","Playstation 2","European","Digital Illusions","Electronic Arts","2005","No","Yes","Yes"
-"龍が如く２","Playstation 2","Japanese","Ryu Ga Gotoku Studio","SEGA","2006","No","Yes","Yes"
-"鬼武者","Playstation 2","Japanese","CAPCOM","CAPCOM","2001","No","Yes","Yes"
-"真女神転生３ノクターン","Playstation 2","Japanese","Atlus","Atlus","2003","No","Yes","Yes"
-"真・三國無双３","Playstation 2","Japanese","Omega Force","Koei","2003","No","Yes","No"
-"真・三國無双２","Playstation 2","Japanese","Omega Force","Koei","2001","No","Yes","Yes"
-"真・三國無双","Playstation 2","Japanese","Omega Force","Koei","2000","No","Yes","Yes"
-"決戦","Playstation 2","Japanese","Koei","Koei","2000","No","Yes","Yes"
-"桃太郎電鉄11 ブラックボンビー出現!の巻","Playstation 2","Japanese","Hudson Soft","Hudson Soft","2002","No","Yes","Yes"
-"戦国BASARA2英雄外伝","Playstation 2","Japanese","CAPCOM","CAPCOM","2006","No","Yes","Yes"
-"実践パチンコ必勝法! 鬼武者","Playstation 2","Japanese","Paon Corporation","Tecmo","2003","No","Yes","Yes"
-"実況パワフルプロ野球2009","Playstation 2","Japanese","Konami","Konami","2009","No","Yes","Yes"
-"実況パワフルプロ野球14","Playstation 2","Japanese","Konami","Konami","2007","No","Yes","No"
-"実戦パチンコ必勝法北斗の拳","Playstation 2","Japanese","Paon Corporation","Tecmo","2003","No","Yes","Yes"
-"塊魂","Playstation 2","Japanese","Namco","Namco","2004","No","Yes","Yes"
-"劇空間プロ野球","Playstation 2","Japanese","Square","Square","2000","No","Yes","Yes"
-"信長の野望 嵐世記","Playstation 2","Japanese","Koei","Koei","2001","No","Yes","Yes"
-"三國志VIII","Playstation 2","Japanese","Koei","Koei","2001","No","Yes","Yes"
-"ワールドサッカーウイニングイレブン6","Playstation 2","Japanese","Konami","Konami","2002","No","Yes","No"
-"ロマンシングサガ ミンストレルソング","Playstation 2","Japanese","Square Enix","Square Enix","2005","No","Yes","Yes"
-"みんなのテニス","Playstation 2","Japanese","Clap Hanz","Sony Computer Entertainment","2006","No","Yes","Yes"
-"みんなのGOLF3","Playstation 2","Japanese","Clap Hanz","Sony Computer Entertainment","2001","No","Yes","Yes"
-"みんなのGOLF4","Playstation 2","Japanese","Clap Hanz","Sony Computer Entertainment","2003","No","Yes","Yes"
-"ぼくのなつやすみ2","Playstation 2","Japanese","Millennium Kitchen","Sony Computer Entertainment","2002","No","Yes","Yes"
-"プロ野球スピリッツ2","Playstation 2","Japanese","Konami","Konami","2005","No","Yes","Yes"
-"ファンタビジョン","Playstation 2","Japanese","Sony Computer Entertainment Japan","Sony Computer Entertainment","2000","No","Yes","Yes"
-"ファイナルファンタジーXII","Playstation 2","Japanese","Square Enix","Square Enix","2006","No","Yes","Yes"
-"ファイナルファンタジーX","Playstation 2","Japanese","Square Enix","Square Enix","2001","No","Yes","Yes"
-"ドラゴンクエストVIII 空と海と大地と呪われし姫君","Playstation 2","Japanese","Armour Project","Square Enix","2004","No","Yes","Yes"
-"ドラゴンクエストV 天空の花嫁","Playstation 2","Japanese","ArtePiazza","Square Enix","2004","No","Yes","No"
-"セイレン","Playstation 2","Japanese","Japan Studio","Sony Computer Entertainment","2003","No","Yes","Yes"
-"クラナド","Playstation 2","Japanese","Studio Key","Studio Key","2006","No","Yes","Yes"
-"ウイニングポスト5","Playstation 2","Japanese","Koei","Koei","2000","No","Yes","Yes"
-"World Rally Championship","Playstation 2","European","Evolution Studios","Bam! Entertainment","2001","No","Yes","No"
-"Virtua Tennis 2","Playstation 2","European","SEGA","SEGA","2001","No","No","No"
-"Unreal Tournament","Playstation 2","European","Epic Games","Epic Games","2001","No","Yes","Yes"
-"Time Crisis II","Playstation 2","European","Namco","Sony","2001","No","No","No"
-"Theme Park World","Playstation 2","European","Bullfrog Productions","Electronic Arts","2000","No","Yes","Yes"
-"SSX","Playstation 2","European","Electronic Arts","Electronic Arts","2000","No","Yes","Yes"
-"Snowboard Racer 2","Playstation 2","European","Atelier Double","Midas Interactive Entertainment","2003","No","Yes","Yes"
-"Sled Storm","Playstation 2","European","Electronic Arts","Electronic Arts","2002","No","Yes","No"
-"Return to Castle Wolfenstein: Operation Resurrection","Playstation 2","European","id Software","Activision","2001","No","Yes","Yes"
-"Red Faction","Playstation 2","European","Volition Inc","THQ","2001","No","Yes","No"
-"Rayman Revolution","Playstation 2","European","Ubisoft","Ubisoft","2000","No","Yes","Yes"
-"Play It Pinball","Playstation 2","European","Astroll","Play It","2003","No","Yes","No"
-"Onimusha: Warlords","Playstation 2","European","CAPCOM","CAPCOM","2001","No","Yes","Yes"
-"Neowave The King of Fighters","Playstation 2","European","SNK Corporation","SNK Corporation","2004","No","No","No"
-"Need For Speed Underground 2","Playstation 2","European","Electronic Arts","Electronic Arts","2004","No","Yes","Yes"
-"Need For Speed Most Wanted","Playstation 2","European","Electronic Arts","Electronic Arts","2005","No","Yes","Yes"
-"Nascar 09","Playstation 2","European","Electronic Arts","Electronic Arts","2008","No","Yes","No"
-"MX vs. ATV Unleashed","Playstation 2","European","Rainbow Studios","THQ","2005","No","Yes","Yes"
-"Midway Arcade Treasures","Playstation 2","European","Midway Games","Midway Games","2003","No","Yes","No"
-"Metal Gear Solid 2: Sons of Liberty","Playstation 2","European","Konami","Konami","2001","No","Yes","Yes"
-"Kingdom Hearts Platinum","Playstation 2","European","Square","Square","2002","No","Yes","No"
-"Hitman 2: Silent Assassin","Playstation 2","European","IO Interactive","IO Interactive","2002","No","Yes","Yes"
-"Grand Theft Auto Liberty City Stories","Playstation 2","European","Rockstar","Rockstar Games","2005","No","Yes","No"
-"Gran Turismo 4","Playstation 2","European","Polyphony Digital","Sony Computer Entertainment","2004","No","Yes","Yes"
-"Gran Turismo 3 A-Spec Platinum","Playstation 2","European","Polyphony Digital","Sony Computer Entertainment","2001","No","Yes","Yes"
-"Gran Turismo 3 A-Spec","Playstation 2","European","Polyphony Digital","Sony Computer Entertainment","2001","No","Yes","Yes"
-"Gran Turismo 3 Prologue","Playstation 2","European","Polyphony Digital","Sony Computer Entertainment","2003","No","Yes","No"
-"Formula One 06","Playstation 2","European","SCE Studio","Sony Computer Entertainment","2006","No","Yes","Yes"
-"Final Fantasy XII Zodiac Age","Playstation 2","European","Square Enix","Square Enix","2007","No","Yes","Yes"
-"Final Fantasy X-2","Playstation 2","European","Square Enix","Square Enix","2004","No","Yes","Yes"
-"Final Fantasy X","Playstation 2","European","Square Enix","Square Enix","2002","No","Yes","Yes"
-"闘神伝","Playstation","Japanese","Tamsoft","Takara","1995","No","Yes","Yes"
-"鉄拳3","Playstation","Japanese","Namco","Namco","1997","No","Yes","No"
-"遊☆戯☆王 モンスターカプセル ブリード＆バトル","Playstation","Japanese","Konami Computer Entertainment Shinjuku","Konami","1998","No","Yes","Yes"
-"牌神","Playstation","Japanese","Aques","Aques","1997","No","Yes","Yes"
-"実況パワプロ野球99","Playstation","Japanese","Konami","Konami","1999","No","Yes","Yes"
-"信長の野望 天翔記","Playstation","Japanese","Koei","Koei","1994","No","Yes","Yes"
-"ワールドスタジアム2","Playstation","Japanese","Namco","Namco","1998","No","Yes","Yes"
-"ワールドサッカー実況ウイニングイレブン3","Playstation","Japanese","Konami","Konami","1998","No","Yes","Yes"
-"ポケットムームー","Playstation","Japanese","Sugar & Rockets","Sony Computer Entertainment","1999","No","Yes","No"
-"フロントミッション セカンド","Playstation","Japanese","Square","Square","1997","No","Yes","No"
-"ファイナルファンタジーVIII","Playstation","Japanese","Square Enix","Square Enix","1999","No","Yes","Yes"
-"ファイナルファンタジー タクティクス","Playstation","Japanese","Square","Square","1997","No","Yes","No"
-"ドラゴンクエストVII","Playstation","Japanese","Enix","Enix","2001","No","Yes","Yes"
-"テトリスX","Playstation","Japanese","Bullet-Proof Software","Bullet-Proof Software","1996","No","Yes","Yes"
-"テイルズ オブ ファンタジア","Playstation","Japanese","Namco Tales Studio","Namco","1998","No","Yes","Yes"
-"テイルズ オブ デスティニー","Playstation","Japanese","Namco Tales Studio","Namco","1997","No","Yes","Yes"
-"サガ フロンティア","Playstation","Japanese","Square","Square","1997","No","Yes","Yes"
-"サガ フロンティア2","Playstation","Japanese","Square","Square","1999","No","Yes","Yes"
-"グランツーリスモ","Playstation","Japanese","Polyphony Digital","Sony Computer Entertainment","1997","No","Yes","Yes"
-"クラッシュ・バンディクー","Playstation","Japanese","Naughty Dog","Sony Computer Entertainment","1996","No","Yes","No"
-"クラッシュ・バンディクー2","Playstation","Japanese","Naughty Dog","Sony Computer Entertainment","1997","No","Yes","No"
-"ファイナルファンタジーVII","Playstation","Japanese","Square Enix","Square Enix","1997","No","Yes","Yes"
-"ファイナルファンタジーIX","Playstation","Japanese","Square Enix","Square Enix","2000","No","Yes","Yes"
-"どこでもいっしょ","Playstation","Japanese","BeXide","Sony Computer Entertainment","1999","No","Yes","Yes"
-"ダービースタリオン","Playstation","Japanese","ParityBit","ASCII","1997","No","Yes","Yes"
-"Tony Hawk's Pro Skater","Playstation","European","Neversoft","Activision","1999","No","Yes","No"
-"Tony Hawk's Pro Skater 2","Playstation","European","Neversoft","Activision","2000","No","Yes","No"
-"Tony Hawk's Pro Skater 3","Playstation","European","Neversoft","Activision","2001","No","Yes","No"
-"The Simpsons Wrestling","Playstation","European","Electronic Arts","Electronic Arts","2001","No","Yes","Yes"
-"Tekken 3","Playstation","European","Namco","Namco","1997","No","Yes","Yes"
-"Gran Turismo","Playstation","European","Polyphony Digital","Sony Computer Entertainment","1997","No","Yes","Yes"
-"Crash Bandicoot","Playstation","European","Naughty Dog","Sony Computer Entertainment","1996","No","Yes","No"
-"Crash Bandicoot 2 Cortex Strikes Back","Playstation","European","Naughty Dog","Sony Computer Entertainment","1997","No","Yes","Yes"
-"Crash Bandicoot 3 Warped","Playstation","European","Naughty Dog","Sony Computer Entertainment","1998","No","Yes","Yes"
-"FIFA Road to World Cup 98","Playstation","European","Electronic Arts","Electronic Arts","1997","No","Yes","Yes"
-"Final Fantasy VIII","PC","European","Squaresoft","Eidos Interactive","2000","No","Yes","Yes"
-"X-Men: Destiny","Nintendo Wii","European","Silicon Knights","Activision","2011","No","Yes","Yes"
-"Wii Sports Resort","Nintendo Wii","European","Nintendo","Nintendo","2009","No","Yes","Yes"
-"Wii Fit Plus","Nintendo Wii","European","Nintendo EAD","Nintendo","2009","No","Yes","Yes"
-"Wii Console Black: Wii Sports + Wii Sports Resort Edition","Nintendo Wii","European","Nintendo","Nintendo","2009","No","No","No"
-"Virtua Tennis 2009","Nintendo Wii","European","Sumo Digital","SEGA","2009","No","Yes","Yes"
-"Trauma Center Second Opinion","Nintendo Wii","European","ATLUS","Nintendo","2006","No","Yes","Yes"
-"Top Spin 4","Nintendo Wii","European","2K Games","2K Sports","2011","No","Yes","Yes"
-"Tomb Raider: Underworld","Nintendo Wii","European","Crystal Dynamics","Eidos Interactive","2008","No","Yes","Yes"
-"Star Wars The Clone Wars: Republic Heroes","Nintendo Wii","European","Krome Studios","LucasArts","2009","No","Yes","Yes"
-"Sonic and the Black Knight","Nintendo Wii","European","Sonic Team","SEGA","2009","No","Yes","Yes"
-"Skylanders Giants","Nintendo Wii","European","Toys for Bob","Activision","2012","No","Yes","Yes"
-"The Legend of Zelda: Twilight Princess","Nintendo Wii","European","Nintendo EAD","Nintendo","2006","No","Yes","Yes"
-"Call of Duty: World at War","Nintendo Wii","European","Exakt Entertainment","Activision","2008","No","Yes","Yes"
-"Animal Crossing: Let's Go to the City","Nintendo Wii","European","Nintendo","Nintendo","2008","No","Yes","Yes"
-"Xenoblade Chronicles 3","Nintendo Switch","European","Monolith Soft","Nintendo","2022","No","Yes","Yes"
-"Super Smash Bros. Ultimate","Nintendo Switch","European","Bandai Namco","Nintendo","2018","No","Yes","Yes"
-"Super Mario RPG","Nintendo Switch","European","Nintendo","Nintendo","2023","No","Yes","Yes"
-"Splatoon 3","Nintendo Switch","European","Nintendo","Nintendo","2022","No","Yes","Yes"
-"Pokemon Brilliant Diamond","Nintendo Switch","European","ILCA","Nintendo","2021","No","Yes","Yes"
-"Pokemon Shining Pearl","Nintendo Switch","European","ILCA","Nintendo","2021","No","Yes","Yes"
-"Mario Kart 8 Deluxe","Nintendo Switch","European","Nintendo","Nintendo","2017","No","Yes","Yes"
-"Legend of Zelda: Tears of the Kingdom","Nintendo Switch","European","Nintendo","Nintendo","2023","No","Yes","Yes"
-"Super Mario Sunshine","Nintendo GameCube","European","Nintendo","Nintendo","2002","No","Yes","Yes"
-"Resident Evil 4","Nintendo GameCube","USA","Capcom","Capcom","2005","No","Yes","Yes"
-"Super Mario Land 2","Nintendo Game Boy","European","Nintendo","Nintendo","1992","No","No","Yes"
-"Super Mario 64","Nintendo 64","European","Nintendo","Nintendo","1996","No","Yes","Yes"
-"Legend of Zelda: Ocarina of Time","Nintendo 64","European","Nintendo","Nintendo","1998","No","Yes","Yes"
-"Super Mario Bros","NES","European","Nintendo","Nintendo","1985","No","No","No"
-"Destiny 2","Xbox One","European","Bungie","Activision","2017","No","Yes","Yes"
-"Gears of War 3","Xbox 360","European","Epic Games","Microsoft","2011","No","Yes","Yes"
-"FIFA 08","Xbox 360","European","Electronic Arts","Electronic Arts","2007","No","Yes","Yes"
-Games,Console,Edition,Developer,Publisher,Year,New,Box,Manual
-"European Tennis Pro","Playstation 2","European","Magical Company","Pheonix Games","2003","No","Yes","Yes"
-"Devil May Cry","Playstation 2","European","CAPCOM","CAPCOM","2001","No","Yes","No"
-"Crashed","Playstation 2","European","Rage Software","Rage Software","2002","No","Yes","Yes"
-"Colin McRae Rally 3","Playstation 2","European","Codemasters","Codemasters","2003","No","Yes","Yes"
-"Colin McRae Rally 2005 platinum","Playstation 2","European","Codemasters","Codemasters","2004","No","Yes","Yes"
-"Colin McRae Rally 2005","Playstation 2","European","Codemasters","Codemasters","2004","No","Yes","Yes"
-"Burnout Revenge","Playstation 2","European","Electronic Arts","Electronic Arts","2005","No","Yes","Yes"
-"Bomberman Kart","Playstation 2","European","Racejin","Hudson Studios","2001","No","No","No"
-".Hack //感染拡大","Playstation 2","Japanese","CyberConnect2","Bandai Namco","2002","No","Yes","Yes"
-"パチンコアルゼ王国","Playstation","Japanese","Universal Entertainment","Universal Entertainment","1999","No","Yes","No"
-"ドミノ君をトメナイデ","Playstation","Japanese","Artdink","Artdink","1998","No","Yes","No"
-"チョコボの不思議なダンジョン","Playstation","Japanese","Square","Square","1997","No","Yes","No"
-"ザ・キング・オブ・ファイターズ '95","Playstation","Japanese","SNK","SNK","1996","No","Yes","No"
-"THEブロックくずし","Playstation","Japanese","TAMSOFT","D3 Publisher","1999","No","Yes","No"
-"THEビリヤード","Playstation","Japanese","アジェンダ","D3 Publisher","1999","No","Yes","No"
-"ONE PIECE とびだせ海賊団!","Playstation","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","2001","No","Yes","Yes"
-"ONE PIECE グランドバトル! 2","Playstation","Japanese","Ganbarin","Bandai Namco Entertainment","2002","No","Yes","No"
-"I.Q.: Intelligent Qube","Playstation","Japanese","G-Artists","Sony Interactive Entertainment","1997","No","Yes","Yes"
-"Duke Nukem: Time to Kill","Playstation","European","n-Space","GT Interactive","1998","No","Yes","Yes"
-"Dino Crises","Playstation","Japanese","CAPCOM","CAPCOM","1999","No","Yes","Yes"
-"BASTARD!! -虚ろなる神々の器-","Playstation","Japanese","SETA Corporation","SETA Corporation","1996","No","Yes","No"
-"闘神伝２PLUS","Playstation","Japanese","Aques","Aques","1996","No","Yes","No"
-"金沢将棋９５","Playstation","Japanese","SETA","SETA","1995","No","Yes","No"
-"聖剣伝説","Playstation","Japanese","Square","Square","1999","No","Yes","Yes"
-"桃太郎電鉄７","Playstation","Japanese","Hudson Soft","Hudson Soft","1997","No","Yes","No"
-"柿木商議","Playstation","Japanese","ASCII","ASCII","1994","No","Yes","No"
-"東京魔人學園朧綺譚","Playstation","Japanese","Asmik Ace Entertainment","Asmik Ace Entertainment","1999","No","Yes","Yes"
-"大戦略 Playstation the Best","Playstation","Japanese","SystemSoft","SystemSoft","1996","No","Yes","Yes"
-"信長の野望烈婦伝","Playstation","Japanese","Koei","Koei","1999","No","Yes","Yes"
-"レッジレーサー","Playstation","Japanese","Namco","Namco","1994","No","Yes","No"
-"レイストーム","Playstation","Japanese","Taito","Working Designes","1996","No","Yes","No"
-"レイジレーサー","Playstation","Japanese","Namco","Namco","1996","No","Yes","Yes"
-"リッジレーサー","Playstation","Japanese","Namco","Namco","1995","No","Yes","Yes"
-"みんなのGOLF","Playstation","Japanese","Camelot Software Planning","Sony Computer Entertainment","1997","No","Yes","No"
-"ペルソナ２悲 Playstation the Best","Playstation","Japanese","Atlus","Atlus","1999","No","Yes","Yes"
-"ブレイスタジアム","Playstation","Japanese","Banpresto","Banpresto","1996","No","Yes","Yes"
-"ダンシングステージ フューチャリング","Playstation","Japanese","Konami","Konami","1999","No","Yes","Yes"
-"ダービースタリオン９９","Playstation","Japanese","ASCII","ASCII","1999","No","Yes","Yes"
-"こねこもいっしょ","Playstation","Japanese","Bomber Express","Sony Computer Entertainment","2000","No","Yes","Yes"
-"クラッシュ・バンディクー3 ブッとび!世界一周","Playstation","Japanese","Naughty Dog","Vivendi Games","1998","No","Yes","Yes"
-"ククロセアトロ〜悠久の瞳","Playstation","Japanese","SUNCORPORATION","Crave Entertainment","1999","No","Yes","Yes"
-"がんばれ森川君2号","Playstation","Japanese","Sony Interactive Entertainment","Sony Interactive Entertainment","1997","No","Yes","Yes"
-"アンジェリークSpecial","Playstation","Japanese","Ruby party","Koei","1996","No","Yes","Yes"
-"アークザラッドII","Playstation","Japanese","Sony Interactive Entertainment","Sony Interactive Entertainment","1996","No","Yes","Yes"
-"アークザラッド２","Playstation","Japanese","Working Designes","Working Designes","1996","No","Yes","Yes"
-"THE スノーボード","Playstation","Japanese","Atelier Double","D3 Publisher","1999","No","Yes","Yes"
-"Tekken Tag Tournament","Playstation","European","Namco","Sony Computer Entertainment","1999","No","Yes","No"
-"Street Skater","Playstation","European","Atelier Double","Electronic Arts","1998","No","Yes","Yes"
-"Sled Storm","Playstation","European","Electronic Arts","Electronic Arts","1999","No","Yes","Yes"
-"SDガンダムじっじエネルーション","Playstation","Japanese","Tom Create","Bandai","1998","No","Yes","No"
-"RPG ツクール３","Playstation","Japanese","Enterbrain","Enterbrain","1997","No","Yes","No"
-"R4: Ridge Racer Type 4","Playstation","Japanese","Namco","Namco","1998","No","Yes","Yes"
-"PGA Tour 96","Playstation","European","Hitmen Productions","Black Pearl Software","1995","No","Yes","No"
-"No Fear Downhill Mountain Biking","Playstation","European","Unique Development Studios","ASCII","1999","No","Yes","No"
-"NHL 98","Playstation","European","EA sports","Electronic Arts","1997","No","Yes","Yes"
-"Mat Hoffman's Pro BMX","Playstation","European","Hotgen","Activision","2001","No","Yes","No"
-"Knockout Kings 99","Playstation","European","EA sports","Electronic Arts","1998","No","Yes","Yes"
-"Kileak the Blood","Playstation","Japanese","Genki","Sony Interactive Entertainment","1995","No","Yes","Yes"
-"jリーグ 実況ウイニングイレブン２０００2nd","Playstation","Japanese","Konami","Konami","2000","No","Yes","Yes"
-"Dの食卓 コンプリートグラフィックス","Playstation","Japanese","From Yellow To Orange","Aclaim Entertainment","1995","No","Yes","Yes"
-"Virtua Tennis 2009","Nintendo Wii","European","Sumo Digital","Sega","2009","No","Yes","Yes"
-"Sims 2: Pets","Nintendo Wii","European","Maxis","Electronic Arts","2006","No","Yes","Yes"
-"Shaun White Snowboarding: Road Trip","Nintendo Wii","European","Ubisoft Montreal","Ubisoft","2008","No","Yes","Yes"
-"Samba de Amigo","Nintendo Wii","European","Sega","Sega","2008","No","Yes","Yes"
-"Rockstar Games presents Table Tennis","Nintendo Wii","European","Rockstar San Diego","Rockstar Games","2006","No","Yes","Yes"
-"Rayman Raving Rabbids: TV Party","Nintendo Wii","European","Ubisoft","Ubisoft","2008","No","Yes","Yes"
-"Need for Speed: Undercover","Nintendo Wii","European","Exient Entertainment","Electronic Arts","2008","No","Yes","Yes"
-"My Fitness Coach: Get In Shape","Nintendo Wii","European","Ubisoft","Ubisoft Entertainment","2008","No","Yes","Yes"
-"Michael Jackson The Experience","Nintendo Wii","European","Ubisoft Paris, Ubisoft Montpellier","Ubisoft","2010","No","Yes","Yes"
-"LEGO Star Wars III: The Clone Wars","Nintendo Wii","European","Traveller's Tales Ltd.","LucasArts Entertainment Company LLC","2011","No","Yes","Yes"
-"Klonoa","Nintendo Wii","European","Namco","Namco","2008","No","Yes","Yes"
-"Heatseeker","Nintendo Wii","European","IR Gurus","Codemasters","2007","No","Yes","Yes"
-"Game Party","Nintendo Wii","European","Midway Games","Midway Games","2008","No","Yes","Yes"
-"FIFA 13","Nintendo Wii","European","EA Canada","EA Sports","2012","No","Yes","Yes"
-"FIFA 08","Nintendo Wii","European","EA Canada","EA Sports","2007","No","Yes","Yes"
-"Disney Phineas and Ferb: Across the 2nd Dimension","Nintendo Wii","European","High Impact Games","Disney Interactive Studios","2011","No","Yes","Yes"
-"Dewy's Adventure","Nintendo Wii","European","Konami","Konami","2007","No","Yes","Yes"
-"Death Jr.: Root of Evil","Nintendo Wii","European","Backbone Entertainment","Eidos Interactive","2006","No","Yes","Yes"
-"Boogie Superstar","Nintendo Wii","European","EA Montreal","Electronic Arts","2008","No","Yes","Yes"
-"Ben 10: Alien Force","Nintendo Wii","European","Monkey Bar Games","D3 Publisher Inc.","2008","No","Yes","Yes"
-"Bakugan: Battle Brawlers","Nintendo Wii","European","NOW Production","Activision","2008","No","Yes","Yes"
-"Unicorn Overlord","Nintendo Switch","European","Vanillaware","Atlus","2024","No","Yes","Yes"
-"Toki","Nintendo Switch","European","Microids","Missing Field","2019","No","Yes","Yes"
-"The Legend of Zela Breath of the Wild","Nintendo Switch","European","Nintendo","Nintendo","2017","No","Yes","No"
-"Super Monkey Ball: Banana Blitz HD","Nintendo Switch","European","Missing Field","Sega","2019","No","Yes","Yes"
-"Super Mario Maker 2","Nintendo Switch","European","Nintendo","Nintendo","2019","No","Yes","Yes"
-"Super Mario 3D World + Bowser's Fury","Nintendo Switch","European","Nintendo EAD Tokyo","Nintendo","2021","No","Yes","Yes"
-"Super Mario 3D All-Stars","Nintendo Switch","European","Nintendo","Nintendo","2020","No","Yes","Yes"
-"Persona 5 Tactica","Nintendo Switch","European","Atlus","Atlus","2023","No","Yes","Yes"
-"Octopath Traveler II","Nintendo Switch","European","Square Enix","Square Enix","2023","No","Yes","Yes"
-"Nintendo Switch Sports","Nintendo Switch","Japanese","Nintendo EPD","Nintendo","2022","No","Yes","Yes"
-"NieR: Automata - The End of YoRHa Edition","Nintendo Switch","European","PlatinumGames, Virtuos","Square Enix","2022","No","Yes","Yes"
-"Monster Hunter Rise","Nintendo Switch","European","Capcom","Capcom","2021","No","Yes","Yes"
-"Mario Party Superstars","Nintendo Switch","European","NDCube","Nintendo","2021","No","Yes","Yes"
-"Luigi's Mansion 3","Nintendo Switch","European","Next Level Games","Nintendo","2019","No","Yes","Yes"
-"Legend of Zelda: Link's Awakening","Nintendo Switch","European","Grezzo","Nintendo","2019","No","Yes","Yes"
-"Hyrule Warriors: Age of Calamity","Nintendo Switch","European","Koei Tecmo, Omega Force","Nintendo","2020","No","Yes","Yes"
-"Fire Emblem: Three Houses","Nintendo Switch","European","Intelligent Systems","Nintendo","2019","No","Yes","Yes"
-"Fire Emblem Warriors: Three Hopes","Nintendo Switch","European","Koei Tecmo","Nintendo","2022","No","Yes","Yes"
-"Fire Emblem Engage","Nintendo Switch","European","Intelligent Systems","Nintendo","2023","No","Yes","Yes"
-"ARMS","Nintendo Switch","European","Nintendo","Nintendo","2017","No","Yes","Yes"
-"銀玉親方の実戦パチンコ必勝法","Nintendo Super Famicom","Japanese","Sammy","Sammy","1995","No","No","No"
-"聖剣伝説２","Nintendo Super Famicom","Japanese","Square","Square","1993","No","No","No"
-"炎の闘球児 ドッジ弾平","Nintendo Super Famicom","Japanese","Sunsoft","Sunsoft","1992","No","No","No"
-"機動戦士ガンダムF91 フォーミュラー戦記0122","Nintendo Super Famicom","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","1991","No","No","No"
-"機動戦士ガンダム CROSS DIMENSION 0079","Nintendo Super Famicom","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","1995","No","No","No"
-"新桃太郎伝説","Nintendo Super Famicom","Japanese","Hudson Soft","Hudson Studios","1993","No","No","No"
-"ロマンシングサガ３","Nintendo Super Famicom","Japanese","Square","Square","1995","No","No","No"
-"ミニ四駆 シャイニングスコーピオン レッツ＆ゴー!!","Nintendo Super Famicom","Japanese","KID","ASCII","1996","No","No","No"
-"ファイナルファンタジーVI","Nintendo Super Famicom","Japanese","Square","Square","1994","No","No","No"
-"ファイナルファンタジーVI","Nintendo Super Famicom","Japanese","Square","Square","1995","No","Yes","Yes"
-"ファイナルファンタジーV","Nintendo Super Famicom","Japanese","Square","Square","1992","No","No","No"
-"ファイナルファンタジーIV","Nintendo Super Famicom","Japanese","Square","Square","1991","Yes","Yes","Yes"
-"ファイアーエムブレム 紋章の謎,","Nintendo Super Famicom","Japanese","Intelligent Systems","Nintendo","1994","No","No","No"
-"ドラゴンクエストV 天空の花嫁","Nintendo Super Famicom","Japanese","Enix","Enix","1992","No","No","No"
-"ドラゴンクエストIII そして伝説へ","Nintendo Super Famicom","Japanese","Enix","Square","1996","No","No","No"
-"ゼロヨンチャンプ ダブルアール","Nintendo Super Famicom","Japanese","Media Rings","Media Rings","1994","No","No","No"
-"スターフォックス","Nintendo Super Famicom","Japanese","Argonaut Games","Nintendo","1993","No","No","No"
-"スーパー麻雀大会","Nintendo Super Famicom","Japanese","Koei","Koei","1992","No","No","No"
-"スーパー究極ハリキリスタジアム","Nintendo Super Famicom","Japanese","SETA","SETA","1994","No","No","No"
-"スーパー桃太郎電鉄III","Nintendo Super Famicom","Japanese","Hudson Soft","Hudson Soft","1994","No","No","No"
-"スーパー将棋","Nintendo Super Famicom","Japanese","I'MAX","I'MAX","1992","No","No","No"
-"スーパー三国志","Nintendo Super Famicom","Japanese","Koei","Koei","1992","No","No","No"
-"スーパーマリオワールド","Nintendo Super Famicom","Japanese","Nintendo","Nintendo","1990","No","No","No"
-"スーパーマリオコレクション","Nintendo Super Famicom","Japanese","Nintendo EAD","Nintendo","1993","No","No","No"
-"スーパーマリオカート","Nintendo Super Famicom","Japanese","Nintendo EAD","Nintendo","1992","No","No","No"
-"スーパーブラックバス","Nintendo Super Famicom","Japanese","Hot-B","Hot-B","1992","No","No","No"
-"スーパーファミスタ５","Nintendo Super Famicom","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","1996","No","No","No"
-"スーパーファミスタ3","Nintendo Super Famicom","Japanese","Namco","Namco","1994","No","No","No"
-"スーパードンキーコング","Nintendo Super Famicom","Japanese","Rare","Nintendo","1994","No","No","No"
-"スーパースラムダンク","Nintendo Super Famicom","Japanese","Park Place Productions","Virgin Interactive","1993","No","No","No"
-"スーパースコープ６","Nintendo Super Famicom","Japanese","Nintendo Research & Development 1","Nintendo","1992","No","No","No"
-"クロノ・トリガー","Nintendo Super Famicom","Japanese","Square Enix","Square Enix","1995","No","Yes","Yes"
-"がんばれゴエモン3 獅子重禄兵衛のからくり卍固め","Nintendo Super Famicom","Japanese","Konami","Konami","1994","No","No","No"
-"Street Fighter II","Nintendo Super Famicom","Japanese","CAPCOM","CAPCOM","1991","No","No","No"
-"SDガンダムGX","Nintendo Super Famicom","Japanese","Bandai Namco Entertainment","Bandai Namco Entertainment","1994","No","No","No"
-"Jリーグ エキサイトステージ'94","Nintendo Super Famicom","Japanese","A-Max","Epoch","1994","No","No","No"
-"j.リーグエキサイトステージ９５","Nintendo Super Famicom","Japanese","A-Max","Epoch","1995","No","No","No"
-"武田修宏のスーパーカップサッカー","Nintendo Super Famicom","Japanese","AIM","Jaleco","1993","No","No","No"
-"幽☆遊☆白書","Nintendo Super Famicom","Japanese","Bandai Namco Entertainment","Namco","1993","No","Yes","Yes"
-"常勝麻雀 天牌","Nintendo Super Famicom","Japanese","Game Arts","Enix","1995","No","Yes","Yes"
-"ラゴンクエストVI 幻の大地","Nintendo Super Famicom","Japanese","Enix","Enix","1995","No","No","No"
-"スーパー人生ゲーム","Nintendo Super Famicom","Japanese","Geo Factory","Takara","1994","No","No","No"
-"スーパーボンバーマン ぱにっくボンバーW","Nintendo Super Famicom","Japanese","Rising Production","Hudson Soft","1995","No","No","No"
-"すーぱーぷよぷよ","Nintendo Super Famicom","Japanese","Compile Corporation","Banpresto","1993","No","Yes","Yes"
-"Super Monkey Ball 2","Nintendo GameCube","European","Amusement Vision, Ltd.","Sega","2002","No","Yes","Yes"
-"Super Mario Sunshine [Player's Choice]","Nintendo GameCube","European","Nintendo","Nintendo","2002","No","Yes","Yes"
-"Super Mario Strikers","Nintendo GameCube","United States of America","Next Level Games","Nintendo","2005","No","Yes","Yes"
-"Resident Evil 0","Nintendo GameCube","United States of America","Capcom","Capcom","2002","No","Yes","Yes"
-"Mario Power Tennis","Nintendo GameCube","United States of America","Camelot Software Planning","Nintendo","2004","No","Yes","Yes"
-"Legend of Zelda: The Wind Waker [Limited Edition]","Nintendo GameCube","European","Nintendo EAD","Nintendo","2002","No","Yes","Yes"
-"Harvest Moon: A Wonderful Life [Player's Choice]","Nintendo GameCube","European","Tose","Natsume","2003","No","Yes","Yes"
-"Final Fantasy: Crystal Chronicles","Nintendo GameCube","Japanese","Square Enix","Nintendo","2003","No","Yes","Yes"
-"Donkey Konga","Nintendo GameCube","United States of America","Nintendo","Nintendo","2003","No","Yes","Yes"
-"Dancing Stage Mario Mix","Nintendo GameCube","European","Konami","Nintendo","2005","No","Yes","Yes"
-"ドラゴンクエストモンスターズ","Nintendo Game Boy Color","Japanese","Tose","Enix","1998","No","No","No"
-"ドラゴンクエストII 悪霊の神々","Nintendo Game Boy Color","Japanese","Tose","Enix","1999","No","No","No"
-"幽☆遊☆白書 第2弾 暗黒武術会編","Nintendo Game Boy","Japanese","Tose","Tomy Coporation","1994","No","No","No"
-"全日本プロレスジェット","Nintendo Game Boy","Japanese","Geo Factory","Masaya","1994","No","No","No"
-"スーパーブラックバスポケット2","Nintendo Game Boy","Japanese","Starfish","Starfish","1997","No","No","No"
-"Mickey's Dangerous Chase","Nintendo Game Boy","European","Now Production","CAPCOM","1991","No","No","Yes"
-"Kirby's Block Ball","Nintendo Game Boy","European","HAL Laboratory","Nintendo","1996","No","No","No"
-"幽☆遊☆白書 第4弾 魔界統一編","Nintendo Game Boy","Japanese","Tose","Tomy Coporation","1994","No","No","No"
-"大戦略","Nintendo Game Boy","Japanese","Tose","Jaleco","1991","No","No","No"
-"人生ゲーム","Nintendo Game Boy","Japanese","Electronics Application","Takara","1995","No","No","No"
-"ベースボールキッズ","Nintendo Game Boy","Japanese","Tose","Jaleco","1990","No","No","No"
-"ころダイス","Nintendo Game Boy","Japanese","King Records","King Records","1990","No","No","No"
-"Yakuman","Nintendo Game Boy","Japanese","Inteligent Systems","Nintendo","1989","No","No","No"
-"Baseball","Nintendo Game Boy","European","Nintendo","Nintendo","1989","No","No","No"
-"Amazing Spiderman","Nintendo Game Boy","European","Missing Field","Missing Field","1990","No","No","No"
-"忍者ハットリくん","Nintendo Famicom","Japanese","Hudson","Hudson","1986","No","No","No"
-"シャーロック・ホームズ 伯爵令嬢誘拐事件","Nintendo Famicom","Japanese","Towa Chiki","Towa Chiki","1986","No","Yes","Yes"
-"Mahjong","Nintendo Famicom","Japanese","Nintendo","Nintendo","1983","No","No","No"
-"聖剣伝説DS チルドレン オブ マナ","Nintendo DS","Japanese","Nex Entertainment","Square Enix","2006","No","Yes","Yes"
-"ファイナルファンタジータクティクス Ａ２ 封穴のグリモア","Nintendo DS","Japanese","Square Enix","Square Enix","2007","No","Yes","Yes"
-"超空間ナイター プロ野球キング","Nintendo 64","Japanese","Genki","Imagineer Co., Ltd.","1996","No","No","No"
-"マリオテニス６４","Nintendo 64","Japanese","Camelot Software Planning","Nintendo","2000","No","No","No"
-"マリオゴルフ６４","Nintendo 64","Japanese","Camelot Software Planning","Nintendo","1999","No","No","No"
-"マリオカート６４","Nintendo 64","Japanese","Nintendo EAD","Nintendo","1996","No","No","No"
-"ポケモンスタジアム２","Nintendo 64","Japanese","HAL Laboratory, Inc.","Nintendo","2000","No","No","No"
-"ドンキーコング64","Nintendo 64","Japanese","Rare","Nintendo","1999","No","Yes","Yes"
-"真・女神転生IV","Nintendo 3DS","Japanese","Atlus","Atlus","2013","No","Yes","Yes"
-"モンスターハンター４","Nintendo 3DS","Japanese","CAPCOM","CAPCOM","2013","No","Yes","Yes"
-"ブレイブリーデフォルト","Nintendo 3DS","Japanese","Square Enix","Square Enix","2012","No","Yes","Yes"
-"ファイアーエムブレムif","Nintendo 3DS","Japanese","Inteligent Systems","Nintendo","2015","No","Yes","Yes"
-"とびだせどうぶつの森","Nintendo 3DS","Japanese","Nintendo","Nintendo","2012","No","Yes","Yes"
-"シアトリズム ファイナルファンタジーカーテンコール","Nintendo 3DS","Japanese","Indeoszero","Square Enix","2014","No","Yes","Yes"
-"Skylanders spyro's adventure","Nintendo 3DS","European","Toys for Bob","Activision","2011","No","Yes","Yes"
-
-
+Games,Console,Edition,Developer,Publisher,Year,New,Box,Manual,Genre,
+戦国BASARA クロニクルヒーローズ,Playstation Portable,Japanese,CAPCOM,CAPCOM,2009,No,Yes,No,Action / Hack and Slash,
+VitaminZ Revolution,Playstation Portable,Japanese,Hune X,D3 Publisher,2010,No,Yes,No,Visual Novel / Otome,
+Diabolik Lovers,Playstation Portable,Japanese,Rejet,Idea Factory,2012,No,Yes,Yes,Visual Novel / Otome,
+Amnesia crowd,Playstation Portable,Japanese,Desing Factory,Idea Factory,2013,No,Yes,No,Visual Novel / Otome,
+金色のコルダ,Playstation Portable,Japanese,Ruby Party,Koei,2009,No,Yes,Yes,Visual Novel / Otome,
+遥かなる時空の中で４,Playstation Portable,Japanese,Koei,Koei,2008,No,Yes,Yes,Visual Novel / Otome,
+遙かなる時空の中で3,Playstation Portable,Japanese,Koei,Koei,2009,No,Yes,Yes,Visual Novel / Otome,
+薄桜鬼,Playstation Portable,Japanese,Design Factory,Idea Factory,2009,No,Yes,Yes,Visual Novel / Otome,
+ファンタシースターポータブル,Playstation Portable,Japanese,SEGA,SEGA,2008,Yes,Yes,Yes,Action RPG,
+つカレっ☆ 恋愛デビュー宣言,Playstation Portable,Japanese,"Bridge Co., Ltd","Bridge Co., Ltd",2012,No,Yes,Yes,Visual Novel / Otome,
+うたの☆プリンスさまっ♪Repeat LOVE,Playstation Portable,Japanese,Nippon Ichi Software,Brocoli,2011,No,Yes,Yes,Visual Novel / Otome,
+うたの☆プリンスさまっ♪All Star,Playstation Portable,Japanese,Nippon Ichi Software,Brocoli,2013,No,Yes,Yes,Visual Novel / Otome,
+Starry Sky,Playstation Portable,Japanese,Honeybee,Honeybee,2012,No,Yes,Yes,Visual Novel / Otome,
+Amnesiaアムネシア,Playstation Portable,Japanese,Design Factory,Idea Factory,2011,No,Yes,Yes,Visual Novel / Otome,
+Square Enix Final Fantasy VII Rebirth,Playstation 5,European,Square Enix,Square Enix,2024,No,Yes,Yes,Action RPG,
+Spider-Man 2,Playstation 5,European,Insomniac Games,Sony Interactive Entertainment,2023,No,Yes,No,Action-Adventure,
+Shin Megami Tensei V: Vengeance,Playstation 5,European,ATLUS,SEGA,2024,No,Yes,No,JRPG,
+Resident Evil 4 Remastered,Playstation 5,European,CAPCOM,CAPCOM,2023,No,Yes,No,Survival Horror / Third-Person Shooter,
+Puyopuyo Tetris 2,Playstation 5,European,SEGA,SEGA,2020,No,Yes,No,Puzzle,
+NHL 22,Playstation 5,European,Electronic Arts,Electronic Arts,2021,Yes,Yes,Yes,Sports (Ice Hockey),
+Metaphor: Rephantazio,Playstation 5,European,ATLUS,SEGA,2024,No,Yes,No,JRPG,
+Hogwarts Legacy,Playstation 5,European,Avalanche Software,Warner Bros. Games,2023,No,Yes,Yes,Action RPG,
+Final Fantasy XVI,Playstation 5,European,Square Enix,Square Enix,2023,No,Yes,Yes,Action RPG,
+FIFA 22,Playstation 5,European,Electronic Arts,Electronic Arts,2021,Yes,Yes,Yes,Sports (Football),
+Watch Dogs Legion,Playstation 4,European,Ubisoft,Ubisoft,2020,No,Yes,Yes,Action-Adventure / Open World,
+Uncharted: The Nathan Drake Collection,Playstation 4,European,Naughty Dog,Sony Interactive Entertainment,2018,Yes,Yes,Yes,Action-Adventure / Third-Person Shooter,
+Titan Quest,Playstation 4,European,Iron Lore Entertainment,Thonordic,2018,No,Yes,No,Action RPG,
+The Last of Us Part 2,Playstation 4,European,Naughty Dog,Sony Interactive Entertainment,2020,No,Yes,No,Action-Adventure / Survival Horror,
+Surviving Mars,Playstation 4,European,Haenimont Games,Paradox Interactive,2018,No,Yes,No,City-Building / Strategy,
+Star Wars Jedi Fallen Order,Playstation 4,European,Respawn Entertainment,Electronic Arts,2019,No,Yes,No,Action-Adventure,
+Star Wars Battlefront 2,Playstation 4,European,DICE,Electronic Arts,2017,No,Yes,No,Action Shooter,
+Spider-Man Miles Morales,Playstation 4,European,Insomniac Games,Sony Computer Entertainment,2020,No,Yes,No,Action-Adventure,
+Skylanders Trap Team,Playstation 4,European,Toys For Bob,Activision,2014,No,Yes,No,Action-Adventure / Toys-to-Life,
+Skylanders Superchargers,Playstation 4,European,Toys For Bob,Activision,2015,No,Yes,No,Action-Adventure / Racing / Toys-to-Life,
+Puyopuyo Tetris,Playstation 4,European,SEGA,SEGA,2014,No,Yes,No,Puzzle,
+Overwatch,Playstation 4,European,Blizzard Entertainment,Blizzard Entertainment,2016,No,Yes,No,Hero Shooter,
+Micro Machines,Playstation 4,European,Codemasters,Electronic Arts,2017,No,Yes,No,Racing,
+Little Big Planet 3,Playstation 4,European,Sumo Digital,Sony Interactive Entertainment,2014,No,Yes,Yes,Platformer / Puzzle,
+Lego Jurassic World,Playstation 4,European,TT Games,Warner Bros. Games,2015,No,Yes,Yes,Action-Adventure,
+inFamous Second Son,Playstation 4,European,Sucker Punch,Sony Interactive Entertainment,2014,Yes,Yes,Yes,Action-Adventure,
+Horizon Zero Dawn,Playstation 4,European,Guerrilla,Sony Interactive Entertainment,2017,No,Yes,No,Action RPG,
+Gran Turismo Sport,Playstation 4,European,Polyphony Digital,Sony Interactive Entertainment,2017,Yes,Yes,Yes,Racing / Simulation,
+God of War 3 Remastered,Playstation 4,European,Santa Monica Studio,Sony Interactive Entertainment,2015,No,Yes,Yes,Action / Hack and Slash,
+God of War,Playstation 4,European,Santa Monica Studio,Sony Interactive Entertainment,2018,No,Yes,Yes,Action-Adventure,
+Final Fantasy XV,Playstation 4,European,Square Enix,Square Enix,2016,No,Yes,Yes,Action RPG,
+Disney Infinity 3.0,Playstation 4,European,Disney,Disney Interactive Studios,2015,No,Yes,Yes,Action-Adventure / Toys-to-Life,
+Disney Infinity 2.0,Playstation 4,European,Disney,Disney Interactive Studios,2014,No,Yes,Yes,Action-Adventure / Toys-to-Life,
+Destiny 2,Playstation 4,European,Bungie,Activision,2017,No,Yes,No,First-Person Shooter / MMO,
+Destiny,Playstation 4,European,Bungie,Activision,2013,No,Yes,No,Action Shooter / MMO,
+Death Stranding,Playstation 4,European,Kojima Productions,505 Games,2019,Yes,Yes,Yes,Action-Adventure,
+Dark Souls Remastered,Playstation 4,European,From Software,From Software,2018,No,Yes,No,Action RPG,
+Crash Bandicoot N Sane Trilogy,Playstation 4,European,Vicarious,Activision,2017,No,Yes,No,Platformer,
+Bloodborne,Playstation 4,European,From Software,Sony Computer Entertainment,2015,No,Yes,No,Action RPG,
+Assassin's Creed Valhalla,Playstation 4,European,Ubisoft,Ubisoft,2020,No,Yes,Yes,Action RPG / Open World,
+Assassin's Creed Odyssey,Playstation 4,European,Ubisoft,Ubisoft,2018,No,Yes,Yes,Action RPG / Open World,
+Siren Blood Curse,Playstation 3,European,Japan Studio,Sony Interactive Entertainment,2008,No,Yes,Yes,Survival Horror,
+Resident Evil 5,Playstation 3,European,Capcom,Capcom,2009,No,Yes,Yes,Survival Horror / Third-Person Shooter,
+Marvel: Ultimate Alliance 2,Playstation 3,European,Vicarious Visions,Activision,2009,No,Yes,Yes,Action RPG,
+龍が如く５,Playstation 3,Japanese,Ryu Ga Gotoku Studio,SEGA,2012,Yes,Yes,Yes,Action-Adventure,
+龍が如く４,Playstation 3,Japanese,Ryu Ga Gotoku Studio,SEGA,2010,No,Yes,Yes,Action-Adventure,
+龍が如く３,Playstation 3,Japanese,Ryu Ga Gotoku Studio,SEGA,2009,No,Yes,Yes,Action-Adventure,
+真三國無双６,Playstation 3,Japanese,Koei,Koei,2011,No,Yes,Yes,Action / Hack and Slash,
+真三國無双 ５,Playstation 3,Japanese,Koei,Koei,2007,No,Yes,Yes,Action / Hack and Slash,
+機動戦士ガンダムターゲットインサイト,Playstation 3,Japanese,B.B Studio,Bandai Namco Entertainment,2006,No,Yes,Yes,Action / Third-Person Shooter,
+機動戦士ガンダムエクストリームバーサス,Playstation 3,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,2010,No,Yes,Yes,Fighting,
+戦国BASARA4,Playstation 3,Japanese,CAPCOM,CAPCOM,2014,No,Yes,Yes,Action / Hack and Slash,
+戦国BASARA 3,Playstation 3,Japanese,CAPCOM,CAPCOM,2010,No,Yes,Yes,Action / Hack and Slash,
+実況パワフルプロ野球2013,Playstation 3,Japanese,Konami,Konami,2013,No,Yes,Yes,Sports (Baseball),
+実況パワフルプロ野球2011,Playstation 3,Japanese,Konami,Konami,2011,No,Yes,Yes,Sports (Baseball),
+地球防衛軍４,Playstation 3,Japanese,Sandlot,D3 Publisher,2013,No,Yes,Yes,Third-Person Shooter,
+北斗無双,Playstation 3,Japanese,Koei Tecmo,Koei Tecmo,2010,No,Yes,Yes,Action / Hack and Slash,
+ワンピース海賊無双３,Playstation 3,Japanese,Omega Force,Bandai Namco Entertainment,2015,No,Yes,Yes,Action / Hack and Slash,
+ワンピース海賊無双 2,Playstation 3,Japanese,Omega Force,Bandai Namco Entertainment,2013,No,Yes,Yes,Action / Hack and Slash,
+ワンピース海賊無双,Playstation 3,Japanese,Omega Force,Bandai Namco Entertainment,2012,No,Yes,Yes,Action / Hack and Slash,
+ワールドサッカーウイニングイレブン2012,Playstation 3,Japanese,Konami,Konami,2011,No,Yes,Yes,Sports (Football),
+ワールドサッカー ウイニングイレブン 2010,Playstation 3,Japanese,Konami,Konami,2009,No,Yes,Yes,Sports (Football),
+ファイナルファンタジーXIII-2,Playstation 3,Japanese,Square Enix,Square Enix,2011,No,Yes,Yes,JRPG,
+ファイナルファンタジーXIII,Playstation 3,Japanese,Square Enix,Square Enix,2009,No,Yes,Yes,JRPG,
+トルネ,Playstation 3,Japanese,Sony Computer Entertainment,Sony Interactive Entertainment,2010,No,Yes,Yes,Utility / DVR,
+デビルメイクライ4,Playstation 3,Japanese,CAPCOM,CAPCOM,2008,No,Yes,Yes,Action / Hack and Slash,
+デッドライジング 2 オフ・ザ・レコード,Playstation 3,Japanese,CAPCOM,CAPCOM,2011,No,Yes,Yes,Action-Adventure / Survival Horror,
+デッドライジング 2,Playstation 3,Japanese,CAPCOM,CAPCOM,2010,No,Yes,Yes,Action-Adventure / Survival Horror,
+テイルズ オブ ベルセリア,Playstation 3,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,2016,No,Yes,Yes,Action RPG,
+コールオブデューティ4 モダンウォーフェア,Playstation 3,Japanese,Infinity Ward,Activision,2007,No,Yes,Yes,First-Person Shooter,
+コールオブデューティ モダンウォーフェア 3,Playstation 3,Japanese,Infinity Ward,Activision,2011,No,Yes,Yes,First-Person Shooter,
+コールオブデューティ モダンウォーフェア ２,Playstation 3,Japanese,Infinity Ward,Activision,2009,No,Yes,Yes,First-Person Shooter,
+コールオブデューティ ブラックオプス２,Playstation 3,Japanese,Treyarch,Activision,2012,No,Yes,Yes,First-Person Shooter,
+コールオブデューティ ブラックオプス,Playstation 3,Japanese,Treyarch,Activision,2010,No,Yes,Yes,First-Person Shooter,
+コールオブデューティ ゴースト,Playstation 3,Japanese,Infinity Ward,Activision,2013,No,Yes,Yes,First-Person Shooter,
+グランドセフトオート５,Playstation 3,Japanese,Rockstar,Rockstar Games,2013,No,Yes,Yes,Action-Adventure / Open World,
+グランドセフトオート 4,Playstation 3,Japanese,Rockstar,Rockstar Games,2008,No,Yes,Yes,Action-Adventure / Open World,
+ガンダム無双 2,Playstation 3,Japanese,Omega Force,Koei,2008,No,Yes,Yes,Action / Hack and Slash,
+ガンダム無双,Playstation 3,Japanese,Omega Force,Koei,2007,No,Yes,Yes,Action / Hack and Slash,
+ガンダムブレイカー２,Playstation 3,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,2014,No,Yes,Yes,Action RPG,
+エースコンバットアサルトホライゾン,Playstation 3,Japanese,Project Aces,Bandai Namco Entertainment,2011,No,Yes,Yes,Combat Flight Simulator,
+Worms Collection,Playstation 3,European,Ubisoft,Ubisoft,2012,No,Yes,Yes,Artillery / Strategy,
+Uncharted Drake's Fortune,Playstation 3,European,Naughty Dog,Sony Computer Entertainment,2007,No,Yes,Yes,Action-Adventure / Third-Person Shooter,
+UFC Undisputed 2010,Playstation 3,European,Yuke's,THQ,2010,No,Yes,Yes,Sports (MMA),
+Toy Story 3,Playstation 3,European,Avalanche Software,Disney Interactive Studios,2010,No,Yes,Yes,Action-Adventure,
+The Evil Within,Playstation 3,European,Tango Gameworks,Bethesda Softworks,2014,No,Yes,Yes,Survival Horror,
+Star Wars The Force Unleashed,Playstation 3,European,LucasArts,LucasArts,2008,No,Yes,Yes,Action-Adventure,
+South Park The Stick Of The Truth,Playstation 3,European,South Park Digital Studios,Ubisoft,2014,No,Yes,Yes,Role-Playing,
+Sonic All Stars Racing Transformed,Playstation 3,European,SEGA,SEGA,2010,No,Yes,Yes,Kart Racing,
+Sly Cooper Thieves in Time,Playstation 3,European,Sanzaru Games,Sony Interactive Entertainment,2013,No,Yes,Yes,Platformer / Stealth,
+SEGA Superstars Tennis,Playstation 3,European,SEGA,SEGA,2008,No,Yes,Yes,Sports (Tennis),
+Resistance 3,Playstation 3,European,Insomniac Games,Sony Interactive Entertainment,2011,No,Yes,Yes,First-Person Shooter,
+Resident Evil 6,Playstation 3,European,CAPCOM,CAPCOM,2012,No,Yes,Yes,Survival Horror / Third-Person Shooter,
+Rayman Origins,Playstation 3,European,Ubisoft,Ubisoft,2011,No,Yes,Yes,Platformer,
+Rayman Legends,Playstation 3,European,Ubisoft,Ubisoft,2013,No,Yes,Yes,Platformer,
+Race Driver Grid,Playstation 3,European,Codemasters,Codemasters,2008,No,Yes,Yes,Racing,
+Prince of Persia,Playstation 3,European,Ubisoft,Ubisoft,2008,No,Yes,Yes,Action-Adventure / Platformer,
+Persona 4 Arena Ultimax Limited Edition,Playstation 3,Japanese,Atlus,Atlus,2013,No,Yes,Yes,Fighting,
+Order Up,Playstation 3,European,SuperVillain Studios,IndiePub,2008,No,Yes,Yes,Simulation,
+Ninja Gaiden 3,Playstation 3,European,Team Ninja,Tecmo Koei,2012,No,Yes,Yes,Action / Hack and Slash,
+NARUTO-ナルト- 疾風伝 ナルティメットストーム3,Playstation 3,Japanese,CyberConnect2,Bandai Namco Entertainment,2013,No,Yes,Yes,Fighting / Arena Fighter,
+Little Big Planet 2,Playstation 3,European,Media Molecule,Sony Computer Entertainment,2011,No,Yes,Yes,Platformer / Puzzle,
+Little Big Planet Karting,Playstation 3,European,Sumo Digital,Sony Interactive Entertainment,2012,No,Yes,Yes,Kart Racing,
+Little Big Planet,Playstation 3,European,Media Molecule,Media Molecule,2008,No,Yes,Yes,Platformer / Puzzle,
+Lightning Returns: Final Fantasy XIII,Playstation 3,European,Square Enix,Square Enix,2014,No,Yes,Yes,Action RPG,
+Lego Indiana Jones 2,Playstation 3,European,TT Games,LucasArts,2009,No,Yes,Yes,Action-Adventure,
+H.A.W.X,Playstation 3,Japanese,Ubisoft,Ubisoft,2009,No,Yes,Yes,Combat Flight Simulator,
+Grand Theft Auto Episodes From Liberty City,Playstation 3,European,Rockstar,Rockstar Games,2009,No,Yes,Yes,Action-Adventure / Open World,
+Gran Turismo 5,Playstation 3,European,Polyphony Digital,Sony Computer Entertainment,2010,No,Yes,Yes,Racing / Simulation,
+Final Fantasy XIV: A Realm Reborn,Playstation 3,European,Square Enix,Square Enix,2010,No,Yes,Yes,MMORPG,
+FIFA 15,Playstation 3,European,Electronic Arts,Electronic Arts,2014,No,No,No,Sports (Football),
+FIFA 12,Playstation 3,European,Electronic Arts,Electronic Arts,2011,No,Yes,Yes,Sports (Football),
+DuckTales: Remastered,Playstation 3,European,WayForward Technologies,CAPCOM,2013,No,Yes,Yes,Platformer,
+DmC Devil May Cry,Playstation 3,European,Ninja Theory,CAPCOM,2013,No,Yes,Yes,Action / Hack and Slash,
+Disney Universe,Playstation 3,European,Eurocom,Disney Interactive Studios,2011,No,Yes,Yes,Action-Adventure,
+Disney Epic Mickey 2,Playstation 3,European,Junction Point Studios,Disney Interactive Studios,2012,No,Yes,Yes,Action-Adventure / Platformer,
+Diggs Nightcrawler,Playstation 3,European,London Studio,Sony Interactive Entertainment,2013,No,Yes,Yes,Interactive Movie / Adventure,
+Dead Space 3,Playstation 3,European,Visceral Games,Electronic Arts,2013,No,Yes,No,Survival Horror / Third-Person Shooter,
+Dead Space 2,Playstation 3,European,Visceral Games,Electronic Arts,2011,No,Yes,Yes,Survival Horror / Third-Person Shooter,
+Dead Space,Playstation 3,European,Visceral Games,Electronic Arts,2008,No,Yes,Yes,Survival Horror / Third-Person Shooter,
+Biohazard 5,Playstation 3,Japanese,CAPCOM,CAPCOM,2009,No,Yes,Yes,Survival Horror / Third-Person Shooter,
+Bejeweled 3,Playstation 3,European,PopCap,Electronic Arts,2010,No,Yes,No,Puzzle,
+Batman: Arkham Asylum Platinum,Playstation 3,European,Rocksteady Studios,Eidos Interactive,2009,No,Yes,Yes,Action-Adventure,
+Batman Arkham City Game of the Year Edition,Playstation 3,European,Rocksteady Studios,Warner Bros,2011,No,Yes,Yes,Action-Adventure,
+Angry Birds Star Wars,Playstation 3,European,Rovio,Activision,2012,No,Yes,No,Puzzle,
+UEFA Euro 2004,Playstation 2,European,Electronic Arts,Electronic Arts,2004,No,Yes,Yes,Sports (Football),
+Tony Hawk's Proving Ground,Playstation 2,European,Neversoft,Activision,2007,No,Yes,Yes,Sports (Skateboarding),
+TOCA Race Driver 2,Playstation 2,European,Codemasters,Codemasters,2004,No,No,Yes,Racing,
+Tiger Woods PGA Tour 2004 Platinum Edition,Playstation 2,European,Electronic Arts,Electronic Arts,2003,No,Yes,Yes,Sports (Golf),
+Star Wars: Episode III – Revenge of the Sith,Playstation 2,European,The Collective,LucasArts,2005,No,Yes,Yes,Action-Adventure / Beat 'em Up,
+Spider-Man 2,Playstation 2,European,Vicarious Visions,Activision,2004,No,No,Yes,Action-Adventure,
+Socom II: U.S. Navy Seals Platinum,Playstation 2,European,Zipper Interactive,Sony Computer Entertainment,2003,No,No,Yes,Tactical Shooter,
+NHL 2004,Playstation 2,European,Electronic Arts,Electronic Arts,2003,No,Yes,Yes,Sports (Ice Hockey),
+NHL 2002,Playstation 2,European,Electronic Arts,Electronic Arts,2001,No,Yes,Yes,Sports (Ice Hockey),
+NHL 07,Playstation 2,European,Electronic Arts,Electronic Arts,2006,No,Yes,Yes,Sports (Ice Hockey),
+Need for Speed: Underground,Playstation 2,European,Electronic Arts,Electronic Arts,2003,No,Yes,Yes,Racing,
+Need for Speed: Hot Pursuit 2,Playstation 2,European,Electronic Arts,Electronic Arts,2002,No,Yes,Yes,Racing,
+Medal of Honor: Frontline,Playstation 2,European,Electronic Arts,Electronic Arts,2002,No,No,Yes,First-Person Shooter,
+James Bond 007: Everything or Nothing,Playstation 2,European,Electronic Arts,Electronic Arts,2004,No,Yes,Yes,Third-Person Shooter / Action-Adventure,
+Heatseeker,Playstation 2,European,Red Mile Entertainment,Codemasters,2007,No,Yes,Yes,Combat Flight Simulator,
+Ford vs Chevy,Playstation 2,European,Eutechnyx,2K Games,2005,No,No,Yes,Racing,
+FIFA 2005,Playstation 2,European,Electronic Arts,Electronic Arts,2004,No,No,Yes,Sports (Football),
+FIFA 12,Playstation 2,European,Electronic Arts,Electronic Arts,2011,No,Yes,Yes,Sports (Football),
+EyeToy Play Sports,Playstation 2,European,London Studio,Sony Computer Entertainment,2003,No,Yes,Yes,Sports / Party,
+EyeToy Play 3 Platinum,Playstation 2,European,London Studio,Sony Computer Entertainment,2005,No,Yes,Yes,Party,
+Commandos Strike Force,Playstation 2,European,Pyro Studios,Eidos Interactive,2006,No,No,Yes,First-Person Shooter / Stealth,
+Casper And The Ghostly Trio,Playstation 2,European,Data Design Interactive,Mastertronic Group,2006,No,Yes,Yes,Platformer,
+Cabela's Dangerous Adventures,Playstation 2,European,Fun Labs,Activision,2003,No,Yes,Yes,Hunting / Shooter,
+Brothers in Arms: Road to Hill 30,Playstation 2,European,Gearbox Software,Ubisoft,2005,No,No,Yes,Tactical Shooter,
+Brothers In Arms Earned In Blood,Playstation 2,European,Gearbox Software,Ubisoft,2005,No,Yes,Yes,Tactical Shooter,
+Battlefield 2: Modern Combat,Playstation 2,European,Digital Illusions,Electronic Arts,2005,No,Yes,Yes,First-Person Shooter,
+龍が如く２,Playstation 2,Japanese,Ryu Ga Gotoku Studio,SEGA,2006,No,Yes,Yes,Action-Adventure,
+鬼武者,Playstation 2,Japanese,CAPCOM,CAPCOM,2001,No,Yes,Yes,Action-Adventure,
+真女神転生３ノクターン,Playstation 2,Japanese,Atlus,Atlus,2003,No,Yes,Yes,JRPG,
+真・三國無双３,Playstation 2,Japanese,Omega Force,Koei,2003,No,Yes,No,Action / Hack and Slash,
+真・三國無双２,Playstation 2,Japanese,Omega Force,Koei,2001,No,Yes,Yes,Action / Hack and Slash,
+真・三國無双,Playstation 2,Japanese,Omega Force,Koei,2000,No,Yes,Yes,Fighting,
+決戦,Playstation 2,Japanese,Koei,Koei,2000,No,Yes,Yes,Real-Time Strategy,
+桃太郎電鉄11 ブラックボンビー出現!の巻,Playstation 2,Japanese,Hudson Soft,Hudson Soft,2002,No,Yes,Yes,Board Game / Party,
+戦国BASARA2英雄外伝,Playstation 2,Japanese,CAPCOM,CAPCOM,2006,No,Yes,Yes,Action / Hack and Slash,
+実践パチンコ必勝法! 鬼武者,Playstation 2,Japanese,Paon Corporation,Tecmo,2003,No,Yes,Yes,Simulation (Pachinko),
+実況パワフルプロ野球2009,Playstation 2,Japanese,Konami,Konami,2009,No,Yes,Yes,Sports (Baseball),
+実況パワフルプロ野球14,Playstation 2,Japanese,Konami,Konami,2007,No,Yes,No,Sports (Baseball),
+実戦パチンコ必勝法北斗の拳,Playstation 2,Japanese,Paon Corporation,Tecmo,2003,No,Yes,Yes,Simulation (Pachinko),
+塊魂,Playstation 2,Japanese,Namco,Namco,2004,No,Yes,Yes,Puzzle / Action,
+劇空間プロ野球,Playstation 2,Japanese,Square,Square,2000,No,Yes,Yes,Sports (Baseball),
+信長の野望 嵐世記,Playstation 2,Japanese,Koei,Koei,2001,No,Yes,Yes,Grand Strategy,
+三國志VIII,Playstation 2,Japanese,Koei,Koei,2001,No,Yes,Yes,Grand Strategy,
+ワールドサッカーウイニングイレブン6,Playstation 2,Japanese,Konami,Konami,2002,No,Yes,No,Sports (Football),
+ロマンシングサガ ミンストレルソング,Playstation 2,Japanese,Square Enix,Square Enix,2005,No,Yes,Yes,JRPG,
+みんなのテニス,Playstation 2,Japanese,Clap Hanz,Sony Computer Entertainment,2006,No,Yes,Yes,Sports (Tennis),
+みんなのGOLF3,Playstation 2,Japanese,Clap Hanz,Sony Computer Entertainment,2001,No,Yes,Yes,Sports (Golf),
+みんなのGOLF4,Playstation 2,Japanese,Clap Hanz,Sony Computer Entertainment,2003,No,Yes,Yes,Sports (Golf),
+ぼくのなつやすみ2,Playstation 2,Japanese,Millennium Kitchen,Sony Computer Entertainment,2002,No,Yes,Yes,Adventure / Life Simulation,
+プロ野球スピリッツ2,Playstation 2,Japanese,Konami,Konami,2005,No,Yes,Yes,Sports (Baseball),
+ファンタビジョン,Playstation 2,Japanese,Sony Computer Entertainment Japan,Sony Computer Entertainment,2000,No,Yes,Yes,Puzzle,
+ファイナルファンタジーXII,Playstation 2,Japanese,Square Enix,Square Enix,2006,No,Yes,Yes,JRPG,
+ファイナルファンタジーX,Playstation 2,Japanese,Square Enix,Square Enix,2001,No,Yes,Yes,JRPG,
+ドラゴンクエストVIII 空と海と大地と呪われし姫君,Playstation 2,Japanese,Armour Project,Square Enix,2004,No,Yes,Yes,JRPG,
+ドラゴンクエストV 天空の花嫁,Playstation 2,Japanese,ArtePiazza,Square Enix,2004,No,Yes,No,JRPG,
+セイレン,Playstation 2,Japanese,Japan Studio,Sony Computer Entertainment,2003,No,Yes,Yes,Adventure,
+クラナド,Playstation 2,Japanese,Studio Key,Studio Key,2006,No,Yes,Yes,Visual Novel,
+ウイニングポスト5,Playstation 2,Japanese,Koei,Koei,2000,No,Yes,Yes,Simulation / Horse Racing,
+World Rally Championship,Playstation 2,European,Evolution Studios,Bam! Entertainment,2001,No,Yes,No,Racing,
+Virtua Tennis 2,Playstation 2,European,SEGA,SEGA,2001,No,No,No,Sports (Tennis),
+Unreal Tournament,Playstation 2,European,Epic Games,Epic Games,2001,No,Yes,Yes,First-Person Shooter,
+Time Crisis II,Playstation 2,European,Namco,Sony,2001,No,No,No,Light Gun Shooter,
+Theme Park World,Playstation 2,European,Bullfrog Productions,Electronic Arts,2000,No,Yes,Yes,Construction and Management Simulation,
+SSX,Playstation 2,European,Electronic Arts,Electronic Arts,2000,No,Yes,Yes,Snowboarding,
+Snowboard Racer 2,Playstation 2,European,Atelier Double,Midas Interactive Entertainment,2003,No,Yes,Yes,Racing / Snowboarding,
+Sled Storm,Playstation 2,European,Electronic Arts,Electronic Arts,2002,No,Yes,No,Racing,
+Return to Castle Wolfenstein: Operation Resurrection,Playstation 2,European,id Software,Activision,2001,No,Yes,Yes,First-Person Shooter,
+Red Faction,Playstation 2,European,Volition Inc,THQ,2001,No,Yes,No,First-Person Shooter,
+Rayman Revolution,Playstation 2,European,Ubisoft,Ubisoft,2000,No,Yes,Yes,Platformer,
+Play It Pinball,Playstation 2,European,Astroll,Play It,2003,No,Yes,No,Pinball,
+Onimusha: Warlords,Playstation 2,European,CAPCOM,CAPCOM,2001,No,Yes,Yes,Action-Adventure,
+Neowave The King of Fighters,Playstation 2,European,SNK Corporation,SNK Corporation,2004,No,No,No,Fighting,
+Need For Speed Underground 2,Playstation 2,European,Electronic Arts,Electronic Arts,2004,No,Yes,Yes,Racing,
+Need For Speed Most Wanted,Playstation 2,European,Electronic Arts,Electronic Arts,2005,No,Yes,Yes,Racing,
+Nascar 09,Playstation 2,European,Electronic Arts,Electronic Arts,2008,No,Yes,No,Racing,
+MX vs. ATV Unleashed,Playstation 2,European,Rainbow Studios,THQ,2005,No,Yes,Yes,Racing,
+Midway Arcade Treasures,Playstation 2,European,Midway Games,Midway Games,2003,No,Yes,No,Compilation / Arcade,
+Metal Gear Solid 2: Sons of Liberty,Playstation 2,European,Konami,Konami,2001,No,Yes,Yes,Stealth / Action-Adventure,
+Kingdom Hearts Platinum,Playstation 2,European,Square,Square,2002,No,Yes,No,Action RPG,
+Hitman 2: Silent Assassin,Playstation 2,European,IO Interactive,IO Interactive,2002,No,Yes,Yes,Stealth,
+Grand Theft Auto Liberty City Stories,Playstation 2,European,Rockstar,Rockstar Games,2005,No,Yes,No,Action-Adventure / Open World,
+Gran Turismo 4,Playstation 2,European,Polyphony Digital,Sony Computer Entertainment,2004,No,Yes,Yes,Racing / Simulation,
+Gran Turismo 3 A-Spec Platinum,Playstation 2,European,Polyphony Digital,Sony Computer Entertainment,2001,No,Yes,Yes,Racing / Simulation,
+Gran Turismo 3 A-Spec,Playstation 2,European,Polyphony Digital,Sony Computer Entertainment,2001,No,Yes,Yes,Racing / Simulation,
+Gran Turismo 3 Prologue,Playstation 2,European,Polyphony Digital,Sony Computer Entertainment,2003,No,Yes,No,Racing / Simulation,
+Formula One 06,Playstation 2,European,SCE Studio,Sony Computer Entertainment,2006,No,Yes,Yes,Racing,
+Final Fantasy XII Zodiac Age,Playstation 2,European,Square Enix,Square Enix,2007,No,Yes,Yes,JRPG,
+Final Fantasy X-2,Playstation 2,European,Square Enix,Square Enix,2004,No,Yes,Yes,JRPG,
+Final Fantasy X,Playstation 2,European,Square Enix,Square Enix,2002,No,Yes,Yes,JRPG,
+闘神伝,Playstation,Japanese,Tamsoft,Takara,1995,No,Yes,Yes,Fighting,
+鉄拳3,Playstation,Japanese,Namco,Namco,1997,No,Yes,No,Fighting,
+遊☆戯☆王 モンスターカプセル ブリード＆バトル,Playstation,Japanese,Konami Computer Entertainment Shinjuku,Konami,1998,No,Yes,Yes,Strategy / Board Game,
+牌神,Playstation,Japanese,Aques,Aques,1997,No,Yes,Yes,Board Game / Mahjong,
+実況パワプロ野球99,Playstation,Japanese,Konami,Konami,1999,No,Yes,Yes,Sports (Baseball),
+信長の野望 天翔記,Playstation,Japanese,Koei,Koei,1994,No,Yes,Yes,Grand Strategy,
+ワールドスタジアム2,Playstation,Japanese,Namco,Namco,1998,No,Yes,Yes,Sports (Baseball),
+ワールドサッカー実況ウイニングイレブン3,Playstation,Japanese,Konami,Konami,1998,No,Yes,Yes,Sports (Football),
+ポケットムームー,Playstation,Japanese,Sugar & Rockets,Sony Computer Entertainment,1999,No,Yes,No,Simulation,
+フロントミッション セカンド,Playstation,Japanese,Square,Square,1997,No,Yes,No,Strategy RPG,
+ファイナルファンタジーVIII,Playstation,Japanese,Square Enix,Square Enix,1999,No,Yes,Yes,JRPG,
+ファイナルファンタジー タクティクス,Playstation,Japanese,Square,Square,1997,No,Yes,No,Strategy RPG,
+ドラゴンクエストVII,Playstation,Japanese,Enix,Enix,2001,No,Yes,Yes,JRPG,
+テトリスX,Playstation,Japanese,Bullet-Proof Software,Bullet-Proof Software,1996,No,Yes,Yes,Puzzle,
+テイルズ オブ ファンタジア,Playstation,Japanese,Namco Tales Studio,Namco,1998,No,Yes,Yes,Action RPG,
+テイルズ オブ デスティニー,Playstation,Japanese,Namco Tales Studio,Namco,1997,No,Yes,Yes,Action RPG,
+サガ フロンティア,Playstation,Japanese,Square,Square,1997,No,Yes,Yes,JRPG,
+サガ フロンティア2,Playstation,Japanese,Square,Square,1999,No,Yes,Yes,JRPG,
+グランツーリスモ,Playstation,Japanese,Polyphony Digital,Sony Computer Entertainment,1997,No,Yes,Yes,Racing / Simulation,
+クラッシュ・バンディクー,Playstation,Japanese,Naughty Dog,Sony Computer Entertainment,1996,No,Yes,No,Platformer,
+クラッシュ・バンディクー2,Playstation,Japanese,Naughty Dog,Sony Computer Entertainment,1997,No,Yes,No,Platformer,
+ファイナルファンタジーVII,Playstation,Japanese,Square Enix,Square Enix,1997,No,Yes,Yes,JRPG,
+ファイナルファンタジーIX,Playstation,Japanese,Square Enix,Square Enix,2000,No,Yes,Yes,JRPG,
+どこでもいっしょ,Playstation,Japanese,BeXide,Sony Computer Entertainment,1999,No,Yes,Yes,Life Simulation,
+ダービースタリオン,Playstation,Japanese,ParityBit,ASCII,1997,No,Yes,Yes,Simulation / Horse Racing,
+Tony Hawk's Pro Skater,Playstation,European,Neversoft,Activision,1999,No,Yes,No,Sports (Skateboarding),
+Tony Hawk's Pro Skater 2,Playstation,European,Neversoft,Activision,2000,No,Yes,No,Sports (Skateboarding),
+Tony Hawk's Pro Skater 3,Playstation,European,Neversoft,Activision,2001,No,Yes,No,Sports (Skateboarding),
+The Simpsons Wrestling,Playstation,European,Electronic Arts,Electronic Arts,2001,No,Yes,Yes,Wrestling / Fighting,
+Tekken 3,Playstation,European,Namco,Namco,1997,No,Yes,Yes,Fighting,
+Gran Turismo,Playstation,European,Polyphony Digital,Sony Computer Entertainment,1997,No,Yes,Yes,Racing / Simulation,
+Crash Bandicoot,Playstation,European,Naughty Dog,Sony Computer Entertainment,1996,No,Yes,No,Platformer,
+Crash Bandicoot 2 Cortex Strikes Back,Playstation,European,Naughty Dog,Sony Computer Entertainment,1997,No,Yes,Yes,Platformer,
+Crash Bandicoot 3 Warped,Playstation,European,Naughty Dog,Sony Computer Entertainment,1998,No,Yes,Yes,Platformer,
+FIFA Road to World Cup 98,Playstation,European,Electronic Arts,Electronic Arts,1997,No,Yes,Yes,Sports (Football),
+Final Fantasy VIII,PC,European,Squaresoft,Eidos Interactive,2000,No,Yes,Yes,JRPG,
+X-Men: Destiny,Nintendo Wii,European,Silicon Knights,Activision,2011,No,Yes,Yes,Action RPG,
+Wii Sports Resort,Nintendo Wii,European,Nintendo,Nintendo,2009,No,Yes,Yes,Sports / Party,
+Wii Fit Plus,Nintendo Wii,European,Nintendo EAD,Nintendo,2009,No,Yes,Yes,Exergame / Fitness,
+Wii Console Black: Wii Sports + Wii Sports Resort Edition,Nintendo Wii,European,Nintendo,Nintendo,2009,No,No,No,Bundle (Sports / Party),
+Virtua Tennis 2009,Nintendo Wii,European,Sumo Digital,SEGA,2009,No,Yes,Yes,Sports (Tennis),
+Trauma Center Second Opinion,Nintendo Wii,European,ATLUS,Nintendo,2006,No,Yes,Yes,Simulation / Visual Novel,
+Top Spin 4,Nintendo Wii,European,2K Games,2K Sports,2011,No,Yes,Yes,Sports (Tennis),
+Tomb Raider: Underworld,Nintendo Wii,European,Crystal Dynamics,Eidos Interactive,2008,No,Yes,Yes,Action-Adventure,
+Star Wars The Clone Wars: Republic Heroes,Nintendo Wii,European,Krome Studios,LucasArts,2009,No,Yes,Yes,Action-Adventure,
+Sonic and the Black Knight,Nintendo Wii,European,Sonic Team,SEGA,2009,No,Yes,Yes,Action-Adventure / Platformer,
+Skylanders Giants,Nintendo Wii,European,Toys for Bob,Activision,2012,No,Yes,Yes,Action-Adventure / Toys-to-Life,
+The Legend of Zelda: Twilight Princess,Nintendo Wii,European,Nintendo EAD,Nintendo,2006,No,Yes,Yes,Action-Adventure,
+Call of Duty: World at War,Nintendo Wii,European,Exakt Entertainment,Activision,2008,No,Yes,Yes,First-Person Shooter,
+Animal Crossing: Let's Go to the City,Nintendo Wii,European,Nintendo,Nintendo,2008,No,Yes,Yes,Life Simulation,
+Xenoblade Chronicles 3,Nintendo Switch,European,Monolith Soft,Nintendo,2022,No,Yes,Yes,JRPG,
+Super Smash Bros. Ultimate,Nintendo Switch,European,Bandai Namco,Nintendo,2018,No,Yes,Yes,Fighting / Party,
+Super Mario RPG,Nintendo Switch,European,Nintendo,Nintendo,2023,No,Yes,Yes,JRPG,
+Splatoon 3,Nintendo Switch,European,Nintendo,Nintendo,2022,No,Yes,Yes,Third-Person Shooter,
+Pokemon Brilliant Diamond,Nintendo Switch,European,ILCA,Nintendo,2021,No,Yes,Yes,JRPG,
+Pokemon Shining Pearl,Nintendo Switch,European,ILCA,Nintendo,2021,No,Yes,Yes,JRPG,
+Mario Kart 8 Deluxe,Nintendo Switch,European,Nintendo,Nintendo,2017,No,Yes,Yes,Kart Racing,
+Legend of Zelda: Tears of the Kingdom,Nintendo Switch,European,Nintendo,Nintendo,2023,No,Yes,Yes,Action-Adventure,
+Super Mario Sunshine,Nintendo GameCube,European,Nintendo,Nintendo,2002,No,Yes,Yes,Platformer,
+Resident Evil 4,Nintendo GameCube,USA,Capcom,Capcom,2005,No,Yes,Yes,Survival Horror / Shooter,
+Super Mario Land 2,Nintendo Game Boy,European,Nintendo,Nintendo,1992,No,No,Yes,Platformer,
+Super Mario 64,Nintendo 64,European,Nintendo,Nintendo,1996,No,Yes,Yes,Platformer,
+Legend of Zelda: Ocarina of Time,Nintendo 64,European,Nintendo,Nintendo,1998,No,Yes,Yes,Action-Adventure,
+Super Mario Bros,NES,European,Nintendo,Nintendo,1985,No,No,No,Platformer,
+Destiny 2,Xbox One,European,Bungie,Activision,2017,No,Yes,Yes,First-Person Shooter / MMO,
+Gears of War 3,Xbox 360,European,Epic Games,Microsoft,2011,No,Yes,Yes,Third-Person Shooter,
+FIFA 08,Xbox 360,European,Electronic Arts,Electronic Arts,2007,No,Yes,Yes,Sports (Football),
+European Tennis Pro,Playstation 2,European,Magical Company,Pheonix Games,2003,No,Yes,Yes,Sports (Tennis),
+Devil May Cry,Playstation 2,European,CAPCOM,CAPCOM,2001,No,Yes,No,Action-Adventure / Hack and Slash,
+Crashed,Playstation 2,European,Rage Software,Rage Software,2002,No,Yes,Yes,Vehicular Combat / Racing,
+Colin McRae Rally 3,Playstation 2,European,Codemasters,Codemasters,2003,No,Yes,Yes,Rally Racing,
+Colin McRae Rally 2005 platinum,Playstation 2,European,Codemasters,Codemasters,2004,No,Yes,Yes,Rally Racing,
+Colin McRae Rally 2005,Playstation 2,European,Codemasters,Codemasters,2004,No,Yes,Yes,Rally Racing,
+Burnout Revenge,Playstation 2,European,Electronic Arts,Electronic Arts,2005,No,Yes,Yes,Arcade Racing,
+Bomberman Kart,Playstation 2,European,Racejin,Hudson Studios,2001,No,No,No,Kart Racing,
+.Hack //感染拡大,Playstation 2,Japanese,CyberConnect2,Bandai Namco,2002,No,Yes,Yes,Action RPG,
+パチンコアルゼ王国,Playstation,Japanese,Universal Entertainment,Universal Entertainment,1999,No,Yes,No,Pachinko / Gambling,
+ドミノ君をトメナイデ,Playstation,Japanese,Artdink,Artdink,1998,No,Yes,No,Action / Puzzle,
+チョコボの不思議なダンジョン,Playstation,Japanese,Square,Square,1997,No,Yes,No,Roguelike / Dungeon Crawler,
+ザ・キング・オブ・ファイターズ '95,Playstation,Japanese,SNK,SNK,1996,No,Yes,No,Fighting,
+THEブロックくずし,Playstation,Japanese,TAMSOFT,D3 Publisher,1999,No,Yes,No,Breakout / Arcade,
+THEビリヤード,Playstation,Japanese,アジェンダ,D3 Publisher,1999,No,Yes,No,Sports (Billiards),
+ONE PIECE とびだせ海賊団!,Playstation,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,2001,No,Yes,Yes,Strategy / Board Game,
+ONE PIECE グランドバトル! 2,Playstation,Japanese,Ganbarin,Bandai Namco Entertainment,2002,No,Yes,No,Fighting,
+I.Q.: Intelligent Qube,Playstation,Japanese,G-Artists,Sony Interactive Entertainment,1997,No,Yes,Yes,Puzzle,
+Duke Nukem: Time to Kill,Playstation,European,n-Space,GT Interactive,1998,No,Yes,Yes,Third-Person Shooter,
+Dino Crises,Playstation,Japanese,CAPCOM,CAPCOM,1999,No,Yes,Yes,Survival Horror,
+BASTARD!! -虚ろなる神々の器-,Playstation,Japanese,SETA Corporation,SETA Corporation,1996,No,Yes,No,RPG,
+闘神伝２PLUS,Playstation,Japanese,Aques,Aques,1996,No,Yes,No,Fighting,
+金沢将棋９５,Playstation,Japanese,SETA,SETA,1995,No,Yes,No,Board / Shogi,
+聖剣伝説,Playstation,Japanese,Square,Square,1999,No,Yes,Yes,Action RPG,
+桃太郎電鉄７,Playstation,Japanese,Hudson Soft,Hudson Soft,1997,No,Yes,No,Board Game / Party,
+柿木商議,Playstation,Japanese,ASCII,ASCII,1994,No,Yes,No,Board / Shogi,
+東京魔人學園朧綺譚,Playstation,Japanese,Asmik Ace Entertainment,Asmik Ace Entertainment,1999,No,Yes,Yes,Adventure / Visual Novel,
+大戦略 Playstation the Best,Playstation,Japanese,SystemSoft,SystemSoft,1996,No,Yes,Yes,Turn-Based Strategy,
+信長の野望烈婦伝,Playstation,Japanese,Koei,Koei,1999,No,Yes,Yes,Grand Strategy,
+レッジレーサー,Playstation,Japanese,Namco,Namco,1994,No,Yes,No,Racing,
+レイストーム,Playstation,Japanese,Taito,Working Designes,1996,No,Yes,No,Shoot 'em Up,
+レイジレーサー,Playstation,Japanese,Namco,Namco,1996,No,Yes,Yes,Racing,
+リッジレーサー,Playstation,Japanese,Namco,Namco,1995,No,Yes,Yes,Racing,
+みんなのGOLF,Playstation,Japanese,Camelot Software Planning,Sony Computer Entertainment,1997,No,Yes,No,Sports (Golf),
+ペルソナ２悲 Playstation the Best,Playstation,Japanese,Atlus,Atlus,1999,No,Yes,Yes,JRPG,
+ブレイスタジアム,Playstation,Japanese,Banpresto,Banpresto,1996,No,Yes,Yes,Sports (Baseball),
+ダンシングステージ フューチャリング,Playstation,Japanese,Konami,Konami,1999,No,Yes,Yes,Rhythm / Music,
+ダービースタリオン９９,Playstation,Japanese,ASCII,ASCII,1999,No,Yes,Yes,Horse Racing / Simulation,
+こねこもいっしょ,Playstation,Japanese,Bomber Express,Sony Computer Entertainment,2000,No,Yes,Yes,Virtual Pet / Simulation,
+クラッシュ・バンディクー3 ブッとび!世界一周,Playstation,Japanese,Naughty Dog,Vivendi Games,1998,No,Yes,Yes,Platformer,
+ククロセアトロ〜悠久の瞳,Playstation,Japanese,SUNCORPORATION,Crave Entertainment,1999,No,Yes,Yes,Tactical RPG,
+がんばれ森川君2号,Playstation,Japanese,Sony Interactive Entertainment,Sony Interactive Entertainment,1997,No,Yes,Yes,Simulation / Artificial Life,
+アンジェリークSpecial,Playstation,Japanese,Ruby party,Koei,1996,No,Yes,Yes,Visual Novel / Dating Sim,
+アークザラッドII,Playstation,Japanese,Sony Interactive Entertainment,Sony Interactive Entertainment,1996,No,Yes,Yes,Tactical RPG,
+アークザラッド２,Playstation,Japanese,Working Designes,Working Designes,1996,No,Yes,Yes,Tactical RPG,
+THE スノーボード,Playstation,Japanese,Atelier Double,D3 Publisher,1999,No,Yes,Yes,Sports (Snowboarding),
+Tekken Tag Tournament,Playstation,European,Namco,Sony Computer Entertainment,1999,No,Yes,No,Fighting,
+Street Skater,Playstation,European,Atelier Double,Electronic Arts,1998,No,Yes,Yes,Sports (Skateboarding),
+Sled Storm,Playstation,European,Electronic Arts,Electronic Arts,1999,No,Yes,Yes,Racing,
+SDガンダムじっじエネルーション,Playstation,Japanese,Tom Create,Bandai,1998,No,Yes,No,Strategy RPG,
+RPG ツクール３,Playstation,Japanese,Enterbrain,Enterbrain,1997,No,Yes,No,Game Creation / RPG Editor,
+R4: Ridge Racer Type 4,Playstation,Japanese,Namco,Namco,1998,No,Yes,Yes,Racing,
+PGA Tour 96,Playstation,European,Hitmen Productions,Black Pearl Software,1995,No,Yes,No,Sports (Golf),
+No Fear Downhill Mountain Biking,Playstation,European,Unique Development Studios,ASCII,1999,No,Yes,No,Sports (Cycling),
+NHL 98,Playstation,European,EA sports,Electronic Arts,1997,No,Yes,Yes,Sports (Ice Hockey),
+Mat Hoffman's Pro BMX,Playstation,European,Hotgen,Activision,2001,No,Yes,No,Sports (BMX),
+Knockout Kings 99,Playstation,European,EA sports,Electronic Arts,1998,No,Yes,Yes,Sports (Boxing),
+Kileak the Blood,Playstation,Japanese,Genki,Sony Interactive Entertainment,1995,No,Yes,Yes,First-Person Shooter,
+jリーグ 実況ウイニングイレブン２０００2nd,Playstation,Japanese,Konami,Konami,2000,No,Yes,Yes,Sports (Football),
+Dの食卓 コンプリートグラフィックス,Playstation,Japanese,From Yellow To Orange,Aclaim Entertainment,1995,No,Yes,Yes,Companion Book / Art Book,
+Virtua Tennis 2009,Nintendo Wii,European,Sumo Digital,Sega,2009,No,Yes,Yes,Sports (Tennis),
+Sims 2: Pets,Nintendo Wii,European,Maxis,Electronic Arts,2006,No,Yes,Yes,Life Simulation,
+Shaun White Snowboarding: Road Trip,Nintendo Wii,European,Ubisoft Montreal,Ubisoft,2008,No,Yes,Yes,Sports (Snowboarding),
+Samba de Amigo,Nintendo Wii,European,Sega,Sega,2008,No,Yes,Yes,Rhythm / Music,
+Rockstar Games presents Table Tennis,Nintendo Wii,European,Rockstar San Diego,Rockstar Games,2006,No,Yes,Yes,Sports (Table Tennis),
+Rayman Raving Rabbids: TV Party,Nintendo Wii,European,Ubisoft,Ubisoft,2008,No,Yes,Yes,Party / Minigame,
+Need for Speed: Undercover,Nintendo Wii,European,Exient Entertainment,Electronic Arts,2008,No,Yes,Yes,Racing,
+My Fitness Coach: Get In Shape,Nintendo Wii,European,Ubisoft,Ubisoft Entertainment,2008,No,Yes,Yes,Exergame / Fitness,
+Michael Jackson The Experience,Nintendo Wii,European,"Ubisoft Paris, Ubisoft Montpellier",Ubisoft,2010,No,Yes,Yes,Rhythm / Dance,
+LEGO Star Wars III: The Clone Wars,Nintendo Wii,European,Traveller's Tales Ltd.,LucasArts Entertainment Company LLC,2011,No,Yes,Yes,Action-Adventure,
+Klonoa,Nintendo Wii,European,Namco,Namco,2008,No,Yes,Yes,Platformer,
+Heatseeker,Nintendo Wii,European,IR Gurus,Codemasters,2007,No,Yes,Yes,Combat Flight Simulator,
+Game Party,Nintendo Wii,European,Midway Games,Midway Games,2008,No,Yes,Yes,Party / Minigame,
+FIFA 13,Nintendo Wii,European,EA Canada,EA Sports,2012,No,Yes,Yes,Sports (Football),
+FIFA 08,Nintendo Wii,European,EA Canada,EA Sports,2007,No,Yes,Yes,Sports (Football),
+Disney Phineas and Ferb: Across the 2nd Dimension,Nintendo Wii,European,High Impact Games,Disney Interactive Studios,2011,No,Yes,Yes,Action-Adventure / Platformer,
+Dewy's Adventure,Nintendo Wii,European,Konami,Konami,2007,No,Yes,Yes,Platformer / Action,
+Death Jr.: Root of Evil,Nintendo Wii,European,Backbone Entertainment,Eidos Interactive,2006,No,Yes,Yes,Action-Adventure / Platformer,
+Boogie Superstar,Nintendo Wii,European,EA Montreal,Electronic Arts,2008,No,Yes,Yes,Rhythm / Music,
+Ben 10: Alien Force,Nintendo Wii,European,Monkey Bar Games,D3 Publisher Inc.,2008,No,Yes,Yes,Action-Adventure,
+Bakugan: Battle Brawlers,Nintendo Wii,European,NOW Production,Activision,2008,No,Yes,Yes,Action / Fighting,
+Unicorn Overlord,Nintendo Switch,European,Vanillaware,Atlus,2024,No,Yes,Yes,Tactical RPG,
+Toki,Nintendo Switch,European,Microids,Missing Field,2019,No,Yes,Yes,Platformer,
+The Legend of Zela Breath of the Wild,Nintendo Switch,European,Nintendo,Nintendo,2017,No,Yes,No,Action-Adventure,
+Super Monkey Ball: Banana Blitz HD,Nintendo Switch,European,Missing Field,Sega,2019,No,Yes,Yes,Platform / Party,
+Super Mario Maker 2,Nintendo Switch,European,Nintendo,Nintendo,2019,No,Yes,Yes,Platformer / Level Editor,
+Super Mario 3D World + Bowser's Fury,Nintendo Switch,European,Nintendo EAD Tokyo,Nintendo,2021,No,Yes,Yes,Platformer,
+Super Mario 3D All-Stars,Nintendo Switch,European,Nintendo,Nintendo,2020,No,Yes,Yes,Compilation / Platformer,
+Persona 5 Tactica,Nintendo Switch,European,Atlus,Atlus,2023,No,Yes,Yes,Tactical RPG,
+Octopath Traveler II,Nintendo Switch,European,Square Enix,Square Enix,2023,No,Yes,Yes,JRPG,
+Nintendo Switch Sports,Nintendo Switch,Japanese,Nintendo EPD,Nintendo,2022,No,Yes,Yes,Sports / Party,
+NieR: Automata - The End of YoRHa Edition,Nintendo Switch,European,"PlatinumGames, Virtuos",Square Enix,2022,No,Yes,Yes,Action RPG,
+Monster Hunter Rise,Nintendo Switch,European,Capcom,Capcom,2021,No,Yes,Yes,Action RPG,
+Mario Party Superstars,Nintendo Switch,European,NDCube,Nintendo,2021,No,Yes,Yes,Party / Board Game,
+Luigi's Mansion 3,Nintendo Switch,European,Next Level Games,Nintendo,2019,No,Yes,Yes,Action-Adventure,
+Legend of Zelda: Link's Awakening,Nintendo Switch,European,Grezzo,Nintendo,2019,No,Yes,Yes,Action-Adventure,
+Hyrule Warriors: Age of Calamity,Nintendo Switch,European,"Koei Tecmo, Omega Force",Nintendo,2020,No,Yes,Yes,Musou / Action,
+Fire Emblem: Three Houses,Nintendo Switch,European,Intelligent Systems,Nintendo,2019,No,Yes,Yes,Tactical RPG,
+Fire Emblem Warriors: Three Hopes,Nintendo Switch,European,Koei Tecmo,Nintendo,2022,No,Yes,Yes,Musou / Action RPG,
+Fire Emblem Engage,Nintendo Switch,European,Intelligent Systems,Nintendo,2023,No,Yes,Yes,Tactical RPG,
+ARMS,Nintendo Switch,European,Nintendo,Nintendo,2017,No,Yes,Yes,Fighting / Sports,
+銀玉親方の実戦パチンコ必勝法,Nintendo Super Famicom,Japanese,Sammy,Sammy,1995,No,No,No,Pachinko / Gambling,
+聖剣伝説２,Nintendo Super Famicom,Japanese,Square,Square,1993,No,No,No,Action RPG,
+炎の闘球児 ドッジ弾平,Nintendo Super Famicom,Japanese,Sunsoft,Sunsoft,1992,No,No,No,Sports (Dodgeball),
+機動戦士ガンダムF91 フォーミュラー戦記0122,Nintendo Super Famicom,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,1991,No,No,No,Action / Shooter,
+機動戦士ガンダム CROSS DIMENSION 0079,Nintendo Super Famicom,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,1995,No,No,No,Tactical RPG,
+新桃太郎伝説,Nintendo Super Famicom,Japanese,Hudson Soft,Hudson Studios,1993,No,No,No,JRPG,
+ロマンシングサガ３,Nintendo Super Famicom,Japanese,Square,Square,1995,No,No,No,JRPG,
+ミニ四駆 シャイニングスコーピオン レッツ＆ゴー!!,Nintendo Super Famicom,Japanese,KID,ASCII,1996,No,No,No,Racing / Simulation,
+ファイナルファンタジーVI,Nintendo Super Famicom,Japanese,Square,Square,1994,No,No,No,JRPG,
+ファイナルファンタジーVI,Nintendo Super Famicom,Japanese,Square,Square,1995,No,Yes,Yes,JRPG,
+ファイナルファンタジーV,Nintendo Super Famicom,Japanese,Square,Square,1992,No,No,No,JRPG,
+ファイナルファンタジーIV,Nintendo Super Famicom,Japanese,Square,Square,1991,Yes,Yes,Yes,JRPG,
+"ファイアーエムブレム 紋章の謎,",Nintendo Super Famicom,Japanese,Intelligent Systems,Nintendo,1994,No,No,No,Tactical RPG,
+ドラゴンクエストV 天空の花嫁,Nintendo Super Famicom,Japanese,Enix,Enix,1992,No,No,No,JRPG,
+ドラゴンクエストIII そして伝説へ,Nintendo Super Famicom,Japanese,Enix,Square,1996,No,No,No,JRPG,
+ゼロヨンチャンプ ダブルアール,Nintendo Super Famicom,Japanese,Media Rings,Media Rings,1994,No,No,No,Racing / Simulation,
+スターフォックス,Nintendo Super Famicom,Japanese,Argonaut Games,Nintendo,1993,No,No,No,Rail Shooter,
+スーパー麻雀大会,Nintendo Super Famicom,Japanese,Koei,Koei,1992,No,No,No,Tabletop / Mahjong,
+スーパー究極ハリキリスタジアム,Nintendo Super Famicom,Japanese,SETA,SETA,1994,No,No,No,Sports (Baseball),
+スーパー桃太郎電鉄III,Nintendo Super Famicom,Japanese,Hudson Soft,Hudson Soft,1994,No,No,No,Board Game / Party,
+スーパー将棋,Nintendo Super Famicom,Japanese,I'MAX,I'MAX,1992,No,No,No,Board / Shogi,
+スーパー三国志,Nintendo Super Famicom,Japanese,Koei,Koei,1992,No,No,No,Grand Strategy,
+スーパーマリオワールド,Nintendo Super Famicom,Japanese,Nintendo,Nintendo,1990,No,No,No,Platformer,
+スーパーマリオコレクション,Nintendo Super Famicom,Japanese,Nintendo EAD,Nintendo,1993,No,No,No,Compilation / Platformer,
+スーパーマリオカート,Nintendo Super Famicom,Japanese,Nintendo EAD,Nintendo,1992,No,No,No,Kart Racing,
+スーパーブラックバス,Nintendo Super Famicom,Japanese,Hot-B,Hot-B,1992,No,No,No,Sports (Fishing),
+スーパーファミスタ５,Nintendo Super Famicom,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,1996,No,No,No,Sports (Baseball),
+スーパーファミスタ3,Nintendo Super Famicom,Japanese,Namco,Namco,1994,No,No,No,Sports (Baseball),
+スーパードンキーコング,Nintendo Super Famicom,Japanese,Rare,Nintendo,1994,No,No,No,Platformer,
+スーパースラムダンク,Nintendo Super Famicom,Japanese,Park Place Productions,Virgin Interactive,1993,No,No,No,Sports (Basketball),
+スーパースコープ６,Nintendo Super Famicom,Japanese,Nintendo Research & Development 1,Nintendo,1992,No,No,No,Light Gun Shooter,
+クロノ・トリガー,Nintendo Super Famicom,Japanese,Square Enix,Square Enix,1995,No,Yes,Yes,JRPG,
+がんばれゴエモン3 獅子重禄兵衛のからくり卍固め,Nintendo Super Famicom,Japanese,Konami,Konami,1994,No,No,No,Platformer / Action-Adventure,
+Street Fighter II,Nintendo Super Famicom,Japanese,CAPCOM,CAPCOM,1991,No,No,No,Fighting,
+SDガンダムGX,Nintendo Super Famicom,Japanese,Bandai Namco Entertainment,Bandai Namco Entertainment,1994,No,No,No,Strategy,
+Jリーグ エキサイトステージ'94,Nintendo Super Famicom,Japanese,A-Max,Epoch,1994,No,No,No,Sports (Football),
+j.リーグエキサイトステージ９５,Nintendo Super Famicom,Japanese,A-Max,Epoch,1995,No,No,No,Sports (Football),
+武田修宏のスーパーカップサッカー,Nintendo Super Famicom,Japanese,AIM,Jaleco,1993,No,No,No,Sports (Football),
+幽☆遊☆白書,Nintendo Super Famicom,Japanese,Bandai Namco Entertainment,Namco,1993,No,Yes,Yes,Fighting,
+常勝麻雀 天牌,Nintendo Super Famicom,Japanese,Game Arts,Enix,1995,No,Yes,Yes,Tabletop / Mahjong,
+ラゴンクエストVI 幻の大地,Nintendo Super Famicom,Japanese,Enix,Enix,1995,No,No,No,JRPG,
+スーパー人生ゲーム,Nintendo Super Famicom,Japanese,Geo Factory,Takara,1994,No,No,No,Board Game / Party,
+スーパーボンバーマン ぱにっくボンバーW,Nintendo Super Famicom,Japanese,Rising Production,Hudson Soft,1995,No,No,No,Puzzle,
+すーぱーぷよぷよ,Nintendo Super Famicom,Japanese,Compile Corporation,Banpresto,1993,No,Yes,Yes,Puzzle,
+Super Monkey Ball 2,Nintendo GameCube,European,"Amusement Vision, Ltd.",Sega,2002,No,Yes,Yes,Platform / Party,
+Super Mario Sunshine [Player's Choice],Nintendo GameCube,European,Nintendo,Nintendo,2002,No,Yes,Yes,Platformer,
+Super Mario Strikers,Nintendo GameCube,United States of America,Next Level Games,Nintendo,2005,No,Yes,Yes,Sports (Football),
+Resident Evil 0,Nintendo GameCube,United States of America,Capcom,Capcom,2002,No,Yes,Yes,Survival Horror,
+Mario Power Tennis,Nintendo GameCube,United States of America,Camelot Software Planning,Nintendo,2004,No,Yes,Yes,Sports (Tennis),
+Legend of Zelda: The Wind Waker [Limited Edition],Nintendo GameCube,European,Nintendo EAD,Nintendo,2002,No,Yes,Yes,Action-Adventure,
+Harvest Moon: A Wonderful Life [Player's Choice],Nintendo GameCube,European,Tose,Natsume,2003,No,Yes,Yes,Life Simulation / Farming,
+Final Fantasy: Crystal Chronicles,Nintendo GameCube,Japanese,Square Enix,Nintendo,2003,No,Yes,Yes,Action RPG,
+Donkey Konga,Nintendo GameCube,United States of America,Nintendo,Nintendo,2003,No,Yes,Yes,Rhythm / Music,
+Dancing Stage Mario Mix,Nintendo GameCube,European,Konami,Nintendo,2005,No,Yes,Yes,Rhythm / Dance,
+ドラゴンクエストモンスターズ,Nintendo Game Boy Color,Japanese,Tose,Enix,1998,No,No,No,JRPG / Monster Taming,
+ドラゴンクエストII 悪霊の神々,Nintendo Game Boy Color,Japanese,Tose,Enix,1999,No,No,No,JRPG,
+幽☆遊☆白書 第2弾 暗黒武術会編,Nintendo Game Boy,Japanese,Tose,Tomy Coporation,1994,No,No,No,Fighting,
+全日本プロレスジェット,Nintendo Game Boy,Japanese,Geo Factory,Masaya,1994,No,No,No,Sports (Wrestling),
+スーパーブラックバスポケット2,Nintendo Game Boy,Japanese,Starfish,Starfish,1997,No,No,No,Sports (Fishing),
+Mickey's Dangerous Chase,Nintendo Game Boy,European,Now Production,CAPCOM,1991,No,No,Yes,Platformer,
+Kirby's Block Ball,Nintendo Game Boy,European,HAL Laboratory,Nintendo,1996,No,No,No,Puzzle,
+幽☆遊☆白書 第4弾 魔界統一編,Nintendo Game Boy,Japanese,Tose,Tomy Coporation,1994,No,No,No,Fighting,
+大戦略,Nintendo Game Boy,Japanese,Tose,Jaleco,1991,No,No,No,Turn-Based Strategy,
+人生ゲーム,Nintendo Game Boy,Japanese,Electronics Application,Takara,1995,No,No,No,Board Game,
+ベースボールキッズ,Nintendo Game Boy,Japanese,Tose,Jaleco,1990,No,No,No,Sports (Baseball),
+ころダイス,Nintendo Game Boy,Japanese,King Records,King Records,1990,No,No,No,Board Game / Puzzle,
+Yakuman,Nintendo Game Boy,Japanese,Inteligent Systems,Nintendo,1989,No,No,No,Tabletop / Mahjong,
+Baseball,Nintendo Game Boy,European,Nintendo,Nintendo,1989,No,No,No,Sports (Baseball),
+Amazing Spiderman,Nintendo Game Boy,European,Missing Field,Missing Field,1990,No,No,No,Action-Platformer,
+忍者ハットリくん,Nintendo Famicom,Japanese,Hudson,Hudson,1986,No,No,No,Action-Platformer,
+シャーロック・ホームズ 伯爵令嬢誘拐事件,Nintendo Famicom,Japanese,Towa Chiki,Towa Chiki,1986,No,Yes,Yes,Adventure,
+Mahjong,Nintendo Famicom,Japanese,Nintendo,Nintendo,1983,No,No,No,Tabletop / Mahjong,
+聖剣伝説DS チルドレン オブ マナ,Nintendo DS,Japanese,Nex Entertainment,Square Enix,2006,No,Yes,Yes,Action RPG,
+ファイナルファンタジータクティクス Ａ２ 封穴のグリモア,Nintendo DS,Japanese,Square Enix,Square Enix,2007,No,Yes,Yes,Tactical RPG,
+超空間ナイター プロ野球キング,Nintendo 64,Japanese,Genki,"Imagineer Co., Ltd.",1996,No,No,No,Sports (Baseball),
+マリオテニス６４,Nintendo 64,Japanese,Camelot Software Planning,Nintendo,2000,No,No,No,Sports (Tennis),
+マリオゴルフ６４,Nintendo 64,Japanese,Camelot Software Planning,Nintendo,1999,No,No,No,Sports (Golf),
+マリオカート６４,Nintendo 64,Japanese,Nintendo EAD,Nintendo,1996,No,No,No,Kart Racing,
+ポケモンスタジアム２,Nintendo 64,Japanese,"HAL Laboratory, Inc.",Nintendo,2000,No,No,No,Battle / Strategy,
+ドンキーコング64,Nintendo 64,Japanese,Rare,Nintendo,1999,No,Yes,Yes,Platformer,
+真・女神転生IV,Nintendo 3DS,Japanese,Atlus,Atlus,2013,No,Yes,Yes,JRPG,
+モンスターハンター４,Nintendo 3DS,Japanese,CAPCOM,CAPCOM,2013,No,Yes,Yes,Action RPG,
+ブレイブリーデフォルト,Nintendo 3DS,Japanese,Square Enix,Square Enix,2012,No,Yes,Yes,JRPG,
+ファイアーエムブレムif,Nintendo 3DS,Japanese,Inteligent Systems,Nintendo,2015,No,Yes,Yes,Tactical RPG,
+とびだせどうぶつの森,Nintendo 3DS,Japanese,Nintendo,Nintendo,2012,No,Yes,Yes,Life Simulation,
+シアトリズム ファイナルファンタジーカーテンコール,Nintendo 3DS,Japanese,Indeoszero,Square Enix,2014,No,Yes,Yes,Rhythm / Music,
+Skylanders spyro's adventure,Nintendo 3DS,European,Toys for Bob,Activision,2011,No,Yes,Yes,Action-Adventure / Toys-to-Life,
